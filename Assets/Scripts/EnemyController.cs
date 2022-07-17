@@ -13,6 +13,7 @@ public enum EnemyState
 
 public class EnemyController : MonoBehaviour
 {
+    public static EnemyController instance;
 
     GameObject player;
     public EnemyState currState = EnemyState.Wander;
@@ -23,11 +24,11 @@ public class EnemyController : MonoBehaviour
     private Vector2 randomDir;
     public float health = 10f;
 
-
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+   
     }
 
     // Update is called once per frame
@@ -102,5 +103,9 @@ public class EnemyController : MonoBehaviour
     public void Death()
     {
         Destroy(gameObject);
+        Counters.killCount += 1;
+        
+        
+
     }
 }
