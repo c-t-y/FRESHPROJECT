@@ -83,7 +83,7 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(2f, 8f));
         randomDir = new Vector2(0, Random.Range(0, 360));
         Quaternion nextRotation = Quaternion.Euler(randomDir);
-        transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
+        //transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
         chooseDir = false;
     }
     void Wander()
