@@ -146,7 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bd3df56b4e5bb4e981bdb08c7fbff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
   currState: 0
   range: 50
   speed: 3
   health: 4
+  attackRange: 1
+  coolDown: 0.5

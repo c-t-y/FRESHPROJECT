@@ -7,6 +7,7 @@ public enum EnemyState
 {
     Wander,
     Follow,
+    Attack,
     Die
 };
 
@@ -23,12 +24,16 @@ public class EnemyController : MonoBehaviour
     private bool chooseDir = false;
     private Vector2 randomDir;
     public float health = 10f;
+    public float attackRange;
+    private bool coolDownAttack = false;
+    public float coolDown;
+    public float attackDamage = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-   
+
     }
 
     // Update is called once per frame
@@ -46,6 +51,11 @@ public class EnemyController : MonoBehaviour
         {
             Death();
         }
+        else if (currState == EnemyState.Attack)
+        {
+            Attack();
+        }
+
 
 
         if (IsPlayerInRange(range) && currState != EnemyState.Die)
@@ -55,6 +65,11 @@ public class EnemyController : MonoBehaviour
         else if (!IsPlayerInRange(range) && currState != EnemyState.Die)
         {
             currState = EnemyState.Wander;
+        }
+        // attack player
+        if (Vector3.Distance(transform.position, player.transform.position) <= attackRange)
+        {
+            currState = EnemyState.Attack;
         }
     }
 
@@ -85,6 +100,22 @@ public class EnemyController : MonoBehaviour
         }
 
     }
+
+    void Attack()
+    {
+        if (!coolDownAttack)
+        {
+            player.GetComponent<PlayerController>().TakeDamage(attackDamage);
+            StartCoroutine(CoolDown());
+        }
+
+    }
+    IEnumerator CoolDown()
+    {
+        coolDownAttack = true;
+        yield return new WaitForSeconds(coolDown);
+        coolDownAttack = false;
+    }
     void Follow()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
@@ -103,9 +134,9 @@ public class EnemyController : MonoBehaviour
     public void Death()
     {
         Destroy(gameObject);
-        Counters.killCount += 1;
-        
-        
+        GameManager.killCount += 1;
+
+
 
     }
 }

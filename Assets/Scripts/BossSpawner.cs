@@ -20,17 +20,17 @@ public class BossSpawner : MonoBehaviour
 
     private void SpawnBoss()
     {
-       
+
     }
     // Update is called once per frame
     void Update()
     {
-        if (Counters.killCount == 10)
+        if (GameManager.killCount == 10)
         {
             spawnPosition = player.transform.position + new Vector3(3f, 3f, 0f);
             newBoss = Instantiate(boss, spawnPosition, Quaternion.identity);
             rend = newBoss.GetComponent<SpriteRenderer>();
-            Counters.killCount -= 10;
+            GameManager.killCount -= 10;
         }
     }
 }
