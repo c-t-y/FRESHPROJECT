@@ -20,6 +20,9 @@ public class ItemInteraction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        player = GameObject.FindGameObjectWithTag("Player");
+
         coinName = name.Substring(0, 5);
 
         switch (coinName)
@@ -55,10 +58,10 @@ public class ItemInteraction : MonoBehaviour
             collidedCoinValue = coinValue;
             GameManager.coinCount += collidedCoinValue;
 
-            collidedHealthValue = healthValue;
-            currentHealth += healthValue;
-            healthBar.SetHealth(currentHealth);
-
+            //collidedHealthValue = healthValue;
+            //currentHealth += healthValue;
+            //healthBar.SetHealth(currentHealth);
+            player.GetComponent<PlayerController>().Heal(3);
 
         }
     }
