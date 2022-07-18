@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemInteraction : MonoBehaviour
 {
     public GameObject player;
+    public GameObject gameManager;
     private string coinName;
     public int coinValue;
     private string healthName;
@@ -22,6 +23,7 @@ public class ItemInteraction : MonoBehaviour
     {
 
         player = GameObject.FindGameObjectWithTag("Player");
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
 
         coinName = name.Substring(0, 5);
 
@@ -56,7 +58,7 @@ public class ItemInteraction : MonoBehaviour
             Destroy(gameObject);
 
             collidedCoinValue = coinValue;
-            GameManager.coinCount += collidedCoinValue;
+            gameManager.GetComponent<GameManager>().coinCount += collidedCoinValue;
 
             //collidedHealthValue = healthValue;
             //currentHealth += healthValue;

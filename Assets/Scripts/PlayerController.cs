@@ -110,8 +110,16 @@ public class PlayerController : MonoBehaviour
     }
     public void Heal(float damage)
     {
-        currentHealth += damage;
+        if (currentHealth < GameManager.maxHealth)
+        {
+            currentHealth += damage;
+        }
+        else
+        {
+            currentHealth = GameManager.maxHealth;
+        }
         healthBar.SetHealth(currentHealth);
+
     }
 
 
