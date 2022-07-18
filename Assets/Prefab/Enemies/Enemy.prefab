@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4050165427265814881}
   - component: {fileID: 4050165427265814880}
-  - component: {fileID: 4050165427265814883}
   - component: {fileID: 4050165427265814882}
   - component: {fileID: 4050165427265814893}
   - component: {fileID: 1051638927131473960}
+  - component: {fileID: 5973960798949743152}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -57,32 +57,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &4050165427265814883
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4050165427265814892}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.72, y: 2.48}
-    newSize: {x: 2.72, y: 2.48}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!212 &4050165427265814882
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -182,3 +156,19 @@ MonoBehaviour:
     item: {fileID: 5172921154453317751, guid: 235962bfbf41aa049b17a90ba13c2b5d, type: 3}
     dropRarity: 5
   dropChance: 25
+--- !u!58 &5973960798949743152
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050165427265814892}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.048999786, y: -0.10930753}
+  serializedVersion: 2
+  m_Radius: 0.43969226

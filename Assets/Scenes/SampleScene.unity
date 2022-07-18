@@ -2528,9 +2528,9 @@ GameObject:
   m_Component:
   - component: {fileID: 117968660}
   - component: {fileID: 117968659}
-  - component: {fileID: 117968658}
   - component: {fileID: 117968657}
   - component: {fileID: 117968656}
+  - component: {fileID: 117968661}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2609,32 +2609,6 @@ MonoBehaviour:
   bulletSpeed: 100
   fireRate: 0.5
   currentHealth: 0
---- !u!61 &117968658
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117968655}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.017154247, y: -0.12007986}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.72, y: 2.48}
-    newSize: {x: 2.72, y: 2.48}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.7108281, y: 0.43635985}
-  m_EdgeRadius: 0
 --- !u!50 &117968659
 Rigidbody2D:
   serializedVersion: 4
@@ -2672,6 +2646,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &117968661
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117968655}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.011871338, y: -0.122668505}
+  serializedVersion: 2
+  m_Radius: 0.39208412
 --- !u!1001 &119045182
 PrefabInstance:
   m_ObjectHideFlags: 0
