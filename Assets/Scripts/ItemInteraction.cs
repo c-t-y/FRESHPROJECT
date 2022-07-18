@@ -11,7 +11,7 @@ public class ItemInteraction : MonoBehaviour
     public int healthValue;
     public float currentHealth;
     public HealthBar healthBar;
-
+    public bool allowHeal;
 
     private int collidedCoinValue;
     private int collidedHealthValue;
@@ -61,8 +61,10 @@ public class ItemInteraction : MonoBehaviour
             //collidedHealthValue = healthValue;
             //currentHealth += healthValue;
             //healthBar.SetHealth(currentHealth);
-            player.GetComponent<PlayerController>().Heal(3);
-
+            if (allowHeal == true)
+            {
+                player.GetComponent<PlayerController>().Heal(3);
+            }
         }
     }
 }

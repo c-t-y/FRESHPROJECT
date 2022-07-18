@@ -129,3 +129,4 @@ MonoBehaviour:
   healthValue: 3
   currentHealth: 0
   healthBar: {fileID: 0}
+  allowHeal: 1
