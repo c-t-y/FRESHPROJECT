@@ -1326,7 +1326,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -4372,7 +4372,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -5352,7 +5352,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &669589179
 GameObject:
@@ -7901,7 +7901,7 @@ Transform:
   - {fileID: 1254898173}
   - {fileID: 1566795156}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1019364246
 PrefabInstance:
@@ -12495,6 +12495,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2670600704070866567, guid: 0f789f61a1494734aaa4c5a0ea441dfc, type: 3}
   m_PrefabInstance: {fileID: 1582656072}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1586690375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1586690377}
+  - component: {fileID: 1586690376}
+  m_Layer: 0
+  m_Name: Loot
+  m_TagString: LootTable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1586690376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586690375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16b273603a2dee54d8415712fe055310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4050165427265814892, guid: 1cb2fe5739fb65e4ea8ddc5b7bd0a16a, type: 3}
+  allowLoot: 0
+  LootTable:
+  - name: Coin1
+    item: {fileID: 4930197919604210742, guid: 84e47102fa4fd814eac0c650925f705d, type: 3}
+    dropRarity: 50
+  - name: Coin2
+    item: {fileID: 658746632730724373, guid: da1825a8e0ddc0d4e88c725d323dbbf0, type: 3}
+    dropRarity: 25
+  - name: Coin3
+    item: {fileID: 4169134738605321540, guid: 6947994aaf9d4fd46b5ff6a562931c61, type: 3}
+    dropRarity: 10
+  - name: Heart1
+    item: {fileID: 5172921154453317751, guid: 235962bfbf41aa049b17a90ba13c2b5d, type: 3}
+    dropRarity: 5
+  dropChance: 50
+--- !u!4 &1586690377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586690375}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.15394574, y: 2.3703427, z: 0.036034543}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1588818510
 GameObject:
   m_ObjectHideFlags: 0
