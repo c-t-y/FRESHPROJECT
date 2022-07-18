@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4781186375336744413}
   - component: {fileID: 4781186375336744412}
   - component: {fileID: 4781186375336744403}
+  - component: {fileID: -5740624386944318743}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -154,3 +155,21 @@ MonoBehaviour:
   attackRange: 0
   coolDown: 0
   attackDamage: 1
+--- !u!114 &-5740624386944318743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4781186375336744402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16b273603a2dee54d8415712fe055310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowLoot: 1
+  LootTable:
+  - name: Heart1
+    item: {fileID: 5172921154453317751, guid: 235962bfbf41aa049b17a90ba13c2b5d, type: 3}
+    dropRarity: 5
+  dropChance: 100

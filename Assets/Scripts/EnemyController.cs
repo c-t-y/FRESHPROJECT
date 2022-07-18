@@ -35,7 +35,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        loot = GameObject.FindGameObjectWithTag("LootTable").GetComponent<LootScript>();
+        loot = GetComponent<LootScript>();
 
     }
 

@@ -5322,7 +5322,7 @@ GameObject:
   - component: {fileID: 665430089}
   m_Layer: 0
   m_Name: Game Manager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5339,6 +5339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e4364f57f4b9f84e807cef90959d364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinCount: 0
 --- !u!4 &665430090
 Transform:
   m_ObjectHideFlags: 0
@@ -10364,6 +10365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 4050165427265814892, guid: 1cb2fe5739fb65e4ea8ddc5b7bd0a16a, type: 3}
   player: {fileID: 117968655}
+  spawnRate: 2
 --- !u!4 &1306081747
 Transform:
   m_ObjectHideFlags: 0
@@ -12511,7 +12513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1586690376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12524,7 +12526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b273603a2dee54d8415712fe055310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 4050165427265814892, guid: 1cb2fe5739fb65e4ea8ddc5b7bd0a16a, type: 3}
   allowLoot: 0
   LootTable:
   - name: Coin1

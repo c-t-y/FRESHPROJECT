@@ -12,10 +12,11 @@ public class EnemySpawner : MonoBehaviour
     private int randomSpawnZone;
     private float randomXposition, randomYposition;
     private Vector3 spawnPosition;
+    public float spawnRate = 2f;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnNewEnemy", 0f, 1f);
+        InvokeRepeating("SpawnNewEnemy", 0f, spawnRate);
     }
 
     private void SpawnNewEnemy()
@@ -52,6 +53,6 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
+
     }
 }

@@ -5,7 +5,6 @@ public class LootScript : MonoBehaviour
 
 {
 
-    public GameObject enemy;
     public bool allowLoot;
 
     private void Update()
