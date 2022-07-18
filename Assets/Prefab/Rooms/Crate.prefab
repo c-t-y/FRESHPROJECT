@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4504758459474319082}
   - component: {fileID: 3007259658318442280}
   - component: {fileID: 9158946648438346812}
+  - component: {fileID: 4834548246076030275}
   m_Layer: 0
   m_Name: Crate
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,3 +112,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4834548246076030275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018521359150281007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46bd3df56b4e5bb4e981bdb08c7fbff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 911232556942619303, guid: fe40acc574ef53243b026d8a34f5293e, type: 3}
+  currState: 2
+  range: 0
+  speed: 0
+  health: 2
+  attackRange: 0
+  coolDown: 0
+  attackDamage: 0
