@@ -15,8 +15,10 @@ public enum EnemyState
 public class EnemyController : MonoBehaviour
 {
     public static EnemyController instance;
-
+    public GameObject bullet;
+    LootScript loot;
     GameObject player;
+
     public EnemyState currState = EnemyState.Wander;
 
     public float range;
@@ -33,6 +35,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        loot = GameObject.FindGameObjectWithTag("LootTable").GetComponent<LootScript>();
 
     }
 
@@ -122,20 +125,21 @@ public class EnemyController : MonoBehaviour
     }
     public void Hit()
     {
-        if (health > 0)
+        if ((health -= bullet.GetComponent<BulletController>().bulletDamage) <= 0)
         {
-            health -= 2;
+            Death();
         }
         else
         {
-            Death();
+
+            health -= bullet.GetComponent<BulletController>().bulletDamage;
         }
     }
     public void Death()
     {
         Destroy(gameObject);
         GameManager.killCount += 1;
-
+        loot.GetComponent<LootScript>().calculateLoot();
 
 
     }

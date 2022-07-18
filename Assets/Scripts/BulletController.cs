@@ -6,7 +6,8 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
 
-    public float lifeTime;
+    public float lifeTime = 4f;
+    public float bulletDamage = 2f;
     public GameObject player;
 
     // Start is called before the first frame update
