@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
     public GameObject bullet;
     LootScript loot;
     GameObject player;
-
+    GameObject xpBar;
     public EnemyState currState = EnemyState.Wander;
 
     public float range;
@@ -35,6 +35,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        xpBar = GameObject.FindGameObjectWithTag("XPBar");
         loot = GetComponent<LootScript>();
 
     }
@@ -137,6 +138,7 @@ public class EnemyController : MonoBehaviour
     }
     public void Death()
     {
+        xpBar.GetComponent<XPBar>().GainXP(1);
         Destroy(gameObject);
         GameManager.killCount += 1;
         loot.GetComponent<LootScript>().calculateLoot();

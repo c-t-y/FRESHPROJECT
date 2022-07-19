@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject bulletPrefab;
     public HealthBar healthBar;
+    //public XPBar xpBar;
     public float playerSpeed;
     public bool allowFire;
     public float bulletSpeed;
@@ -22,12 +23,20 @@ public class PlayerController : MonoBehaviour
         currentHealth = GameManager.maxHealth;
         healthBar.SetMaxHealth(GameManager.maxHealth);
 
+        
+
         rb = GetComponent<Rigidbody2D>();
         allowFire = true;
     }
     // Update is called once per frame
     void Update()
     {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    xpBar.GainXP(1);
+
+
+        //}
 
         // old movement input
         //float horizontal = Input.GetAxis("Horizontal");
