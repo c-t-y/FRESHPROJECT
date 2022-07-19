@@ -7,6 +7,7 @@ public class XPBar : MonoBehaviour
 {
     public Slider slider;
     public Image fill;
+    public GameObject upgradeMenu;
     public float currentXP;
     public float XPToLevelUp;
     public float currentLevel;
@@ -30,7 +31,7 @@ public class XPBar : MonoBehaviour
                 LevelUp();
             }
             slider.value = currentXP;
-            
+
         }
         else
         {
@@ -41,6 +42,8 @@ public class XPBar : MonoBehaviour
 
     void LevelUp()
     {
+        Time.timeScale = 0;
+        upgradeMenu.SetActive(true);
         currentXP = 0;
         slider.value = 0;
         XPToLevelUp *= 1.5f;
