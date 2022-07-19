@@ -29,16 +29,36 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        // old movement input
+        //float horizontal = Input.GetAxis("Horizontal");
+        //float vertical = Input.GetAxis("Vertical");
+        //rb.velocity = new Vector3(horizontal * playerSpeed, vertical * playerSpeed, 0);
+
+        // new movement input
+        if (Input.GetAxisRaw("Horizontal") > 0.1)
         {
-            TakeDamage(1f);
-
+            rb.velocity = new Vector2(playerSpeed, rb.velocity.y);
         }
-
-        // movement input
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        rb.velocity = new Vector3(horizontal * playerSpeed, vertical * playerSpeed, 0);
+        else if (Input.GetAxisRaw("Horizontal") < -0.1)
+        {
+            rb.velocity = new Vector2(-playerSpeed, rb.velocity.y);
+        }
+        else if (Input.GetAxisRaw("Horizontal") == 0)
+        {
+           rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+        if (Input.GetAxisRaw("Vertical") > 0.1)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, playerSpeed);
+        }
+        else if (Input.GetAxisRaw("Vertical") < -0.1)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -playerSpeed);
+        }
+        else if (Input.GetAxisRaw("Vertical") == 0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+        }
 
 
         //shooting input
