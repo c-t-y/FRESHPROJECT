@@ -52,6 +52,9 @@ public class XPBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentXP >= XPToLevelUp)
+        {
+            LevelUp();
+        }
     }
 }
