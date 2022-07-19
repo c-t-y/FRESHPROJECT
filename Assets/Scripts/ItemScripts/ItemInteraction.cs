@@ -58,7 +58,7 @@ public class ItemInteraction : MonoBehaviour
             Destroy(gameObject);
 
             collidedCoinValue = coinValue;
-            gameManager.GetComponent<GameManager>().coinCount += collidedCoinValue;
+            GameManager.coinCount += collidedCoinValue;
 
             //collidedHealthValue = healthValue;
             //currentHealth += healthValue;
