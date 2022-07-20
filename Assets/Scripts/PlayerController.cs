@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject bulletPrefab;
     public HealthBar healthBar;
+    public GameObject deathScreen;
     //public XPBar xpBar;
     public float playerSpeed;
     public bool allowFire;
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public float fireRate;
     public float currentHealth;
     public float playerDamage;
+
 
 
 
@@ -102,6 +104,12 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(FireCooldown());
 
         }
+
+        //check death
+        if (currentHealth <= 0)
+        {
+            Death();
+        }
     }
     void Shoot(string direction)
     {
@@ -151,6 +159,11 @@ public class PlayerController : MonoBehaviour
         }
         healthBar.SetHealth(currentHealth);
 
+    }
+    public void Death()
+    {
+        deathScreen.SetActive(true);
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
 
