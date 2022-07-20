@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bd3df56b4e5bb4e981bdb08c7fbff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 911232556942619303, guid: fe40acc574ef53243b026d8a34f5293e, type: 3}
+  damageIndication: {fileID: 5744389645827954008, guid: 2e5b4b77d997747a4ae0904c9db4eaaa, type: 3}
   currState: 0
   range: 50
   speed: 3

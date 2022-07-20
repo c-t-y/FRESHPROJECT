@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 10
-  bulletDamage: 2
   player: {fileID: 0}
+  damageIndication: {fileID: 5744389645827954008, guid: 2e5b4b77d997747a4ae0904c9db4eaaa, type: 3}
 --- !u!50 &5420352341303781954
 Rigidbody2D:
   serializedVersion: 4

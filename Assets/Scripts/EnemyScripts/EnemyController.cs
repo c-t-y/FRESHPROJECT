@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
     LootScript loot;
     GameObject player;
     GameObject xpBar;
+    public GameObject damageIndication;
     public EnemyState currState = EnemyState.Wander;
 
     public float range;

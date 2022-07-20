@@ -40,5 +40,13 @@ public class Upgrades : MonoBehaviour
         gameObject.SetActive(false);
 
     }
+    public void ThirdChoice()
+    {
+        Debug.Log("third choice clicked");
+        player.GetComponent<PlayerController>().playerDamage += 0.5f;
+        Time.timeScale = 1;
+        gameObject.SetActive(false);
+
+    }
 
 }
