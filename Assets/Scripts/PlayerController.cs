@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     public GameObject bulletPrefab;
+    public GameObject statsEnemy;
     public HealthBar healthBar;
     public GameObject deathScreen;
     //public XPBar xpBar;
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerDamage = 1f;
+        playerDamage = StatsEnemy.eHealth * 0.25f;
         currentHealth = GameManager.maxHealth;
         healthBar.SetMaxHealth(GameManager.maxHealth);
 

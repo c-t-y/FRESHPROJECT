@@ -19,17 +19,19 @@ public class EnemyController : MonoBehaviour
     GameObject player;
     GameObject xpBar;
     public GameObject damageIndication;
+    public GameObject statsEnemy;
+
     public EnemyState currState = EnemyState.Wander;
+    private bool chooseDir = false;
+    private Vector2 randomDir;
+    private bool coolDownAttack = false;
 
     public float range;
     public float speed;
-    private bool chooseDir = false;
-    private Vector2 randomDir;
-    public float health = 10f;
+    public float health;
     public float attackRange;
-    private bool coolDownAttack = false;
     public float coolDown;
-    public float attackDamage = 1f;
+    public float attackDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,13 @@ public class EnemyController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         xpBar = GameObject.FindGameObjectWithTag("XPBar");
         loot = GetComponent<LootScript>();
+
+        health = StatsEnemy.eHealth;
+        range = StatsEnemy.eRange;
+        speed = StatsEnemy.eSpeed;
+        attackRange = StatsEnemy.eAttackRng;
+        coolDown = StatsEnemy.eAttackCD;
+        attackDamage = StatsEnemy.eAttackDmg;
 
     }
 
