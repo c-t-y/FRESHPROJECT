@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
     private int randomSpawnZone;
     private float randomXposition, randomYposition;
     private Vector3 spawnPosition;
-    public float spawnRate = 2f;
+    public float spawnRate = 1f;
     // Start is called before the first frame update
     void Start()
     {
