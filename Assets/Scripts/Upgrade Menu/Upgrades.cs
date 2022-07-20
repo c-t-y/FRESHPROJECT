@@ -35,7 +35,7 @@ public class Upgrades : MonoBehaviour
     public void SecondChoice()
     {
         Debug.Log("second choice clicked");
-        player.GetComponent<PlayerController>().fireRate -= 0.1f;
+        player.GetComponent<PlayerController>().fireRate -= 0.05f;
         Time.timeScale = 1;
         gameObject.SetActive(false);
 

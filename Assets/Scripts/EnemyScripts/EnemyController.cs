@@ -15,7 +15,6 @@ public enum EnemyState
 public class EnemyController : MonoBehaviour
 {
     public static EnemyController instance;
-    public GameObject bullet;
     LootScript loot;
     GameObject player;
     GameObject xpBar;
@@ -126,14 +125,14 @@ public class EnemyController : MonoBehaviour
     }
     public void Hit()
     {
-        if ((health -= bullet.GetComponent<BulletController>().bulletDamage) <= 0)
+        if ((health -= player.GetComponent<PlayerController>().playerDamage) <= 0)
         {
             Death();
         }
         else
         {
 
-            health -= bullet.GetComponent<BulletController>().bulletDamage;
+            health -= player.GetComponent<PlayerController>().playerDamage;
         }
     }
     public void Death()

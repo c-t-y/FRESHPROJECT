@@ -14,16 +14,18 @@ public class PlayerController : MonoBehaviour
     public float bulletSpeed;
     public float fireRate;
     public float currentHealth;
+    public float playerDamage;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        playerDamage = 1f;
         currentHealth = GameManager.maxHealth;
         healthBar.SetMaxHealth(GameManager.maxHealth);
 
-        
+
 
         rb = GetComponent<Rigidbody2D>();
         allowFire = true;
@@ -54,7 +56,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetAxisRaw("Horizontal") == 0)
         {
-           rb.velocity = new Vector2(0, rb.velocity.y);
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
         if (Input.GetAxisRaw("Vertical") > 0.1)
         {
