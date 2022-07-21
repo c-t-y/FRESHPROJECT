@@ -48,6 +48,15 @@ public class Upgrades : MonoBehaviour
         gameObject.SetActive(false);
 
     }
+    public void FourthChoice()
+    {
+        Debug.Log("fourth choice clicked");
+        GameManager.maxHealth += 5;
+        player.GetComponent<PlayerController>().Heal(5);
+        Time.timeScale = 1;
+        gameObject.SetActive(false);
+
+    }
 
 
 }
