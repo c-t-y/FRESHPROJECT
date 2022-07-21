@@ -102,6 +102,7 @@ MonoBehaviour:
   lifeTime: 10
   player: {fileID: 0}
   damageIndication: {fileID: 5744389645827954008, guid: 2e5b4b77d997747a4ae0904c9db4eaaa, type: 3}
+  particles: {fileID: 3313945515137165701, guid: 428d149572cb584438346a3be62cd123, type: 3}
 --- !u!50 &5420352341303781954
 Rigidbody2D:
   serializedVersion: 4
