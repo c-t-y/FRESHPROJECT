@@ -28,7 +28,8 @@ public class EnemyController : MonoBehaviour
 
     public float range;
     public float speed;
-    public float health;
+    public float currentHealth;
+    public float maxHealth;
     public float attackRange;
     public float coolDown;
     public float attackDamage;
@@ -40,7 +41,7 @@ public class EnemyController : MonoBehaviour
         xpBar = GameObject.FindGameObjectWithTag("XPBar");
         loot = GetComponent<LootScript>();
 
-        health = StatsEnemy.eHealth;
+        currentHealth = StatsEnemy.eHealth;
         range = StatsEnemy.eRange;
         speed = StatsEnemy.eSpeed;
         attackRange = StatsEnemy.eAttackRng;
@@ -135,15 +136,12 @@ public class EnemyController : MonoBehaviour
     }
     public void Hit()
     {
-        if ((health -= player.GetComponent<PlayerController>().playerDamage) <= 0)
+        currentHealth -= player.GetComponent<PlayerController>().playerDamage;
+        if ((currentHealth <= 0))
         {
             Death();
         }
-        else
-        {
 
-            health -= player.GetComponent<PlayerController>().playerDamage;
-        }
     }
     public void Death()
     {
