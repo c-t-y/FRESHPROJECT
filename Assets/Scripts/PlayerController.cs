@@ -7,20 +7,28 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     public GameObject bulletPrefab;
+    public GameObject statsEnemy;
     public HealthBar healthBar;
+    public GameObject deathScreen;
+    //public XPBar xpBar;
     public float playerSpeed;
     public bool allowFire;
     public float bulletSpeed;
     public float fireRate;
     public float currentHealth;
+    public float playerDamage;
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        playerDamage = StatsEnemy.eHealth * 0.25f;
         currentHealth = GameManager.maxHealth;
         healthBar.SetMaxHealth(GameManager.maxHealth);
+
+
 
         rb = GetComponent<Rigidbody2D>();
         allowFire = true;
@@ -28,17 +36,43 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    xpBar.GainXP(1);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        //}
+
+        // old movement input
+        //float horizontal = Input.GetAxis("Horizontal");
+        //float vertical = Input.GetAxis("Vertical");
+        //rb.velocity = new Vector3(horizontal * playerSpeed, vertical * playerSpeed, 0);
+
+        // new movement input
+        if (Input.GetAxisRaw("Horizontal") > 0.1)
         {
-            TakeDamage(1f);
-
+            rb.velocity = new Vector2(playerSpeed, rb.velocity.y);
         }
-
-        // movement input
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        rb.velocity = new Vector3(horizontal * playerSpeed, vertical * playerSpeed, 0);
+        else if (Input.GetAxisRaw("Horizontal") < -0.1)
+        {
+            rb.velocity = new Vector2(-playerSpeed, rb.velocity.y);
+        }
+        else if (Input.GetAxisRaw("Horizontal") == 0)
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+        if (Input.GetAxisRaw("Vertical") > 0.1)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, playerSpeed);
+        }
+        else if (Input.GetAxisRaw("Vertical") < -0.1)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -playerSpeed);
+        }
+        else if (Input.GetAxisRaw("Vertical") == 0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+        }
 
 
         //shooting input
@@ -70,6 +104,12 @@ public class PlayerController : MonoBehaviour
             allowFire = false;
             StartCoroutine(FireCooldown());
 
+        }
+
+        //check death
+        if (currentHealth <= 0)
+        {
+            Death();
         }
     }
     void Shoot(string direction)
@@ -120,6 +160,11 @@ public class PlayerController : MonoBehaviour
         }
         healthBar.SetHealth(currentHealth);
 
+    }
+    public void Death()
+    {
+        deathScreen.SetActive(true);
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
 

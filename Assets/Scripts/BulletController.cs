@@ -7,8 +7,8 @@ public class BulletController : MonoBehaviour
 {
 
     public float lifeTime = 4f;
-    public float bulletDamage = 2f;
     public GameObject player;
+    public GameObject damageIndication;
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +31,11 @@ public class BulletController : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            Instantiate(damageIndication, transform.position, Quaternion.identity);
             other.gameObject.GetComponent<EnemyController>().Hit();
             Destroy(gameObject);
         }
-        if(other.CompareTag("Object"))
+        if (other.CompareTag("Object"))
         {
             other.gameObject.GetComponent<ObjectController>().Hit();
             Destroy(gameObject);

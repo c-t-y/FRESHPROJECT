@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
 
     public static int killCount;
-    public int coinCount;
+    public static int coinCount;
     public static int bombCount;
 
     public static float maxHealth = 10f;
 
-
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 }

@@ -15,27 +15,37 @@ public enum EnemyState
 public class EnemyController : MonoBehaviour
 {
     public static EnemyController instance;
-    public GameObject bullet;
     LootScript loot;
     GameObject player;
+    GameObject xpBar;
+    public GameObject damageIndication;
+    public GameObject statsEnemy;
 
     public EnemyState currState = EnemyState.Wander;
+    private bool chooseDir = false;
+    private Vector2 randomDir;
+    private bool coolDownAttack = false;
 
     public float range;
     public float speed;
-    private bool chooseDir = false;
-    private Vector2 randomDir;
-    public float health = 10f;
+    public float health;
     public float attackRange;
-    private bool coolDownAttack = false;
     public float coolDown;
-    public float attackDamage = 1f;
+    public float attackDamage;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        xpBar = GameObject.FindGameObjectWithTag("XPBar");
         loot = GetComponent<LootScript>();
+
+        health = StatsEnemy.eHealth;
+        range = StatsEnemy.eRange;
+        speed = StatsEnemy.eSpeed;
+        attackRange = StatsEnemy.eAttackRng;
+        coolDown = StatsEnemy.eAttackCD;
+        attackDamage = StatsEnemy.eAttackDmg;
 
     }
 
@@ -125,18 +135,19 @@ public class EnemyController : MonoBehaviour
     }
     public void Hit()
     {
-        if ((health -= bullet.GetComponent<BulletController>().bulletDamage) <= 0)
+        if ((health -= player.GetComponent<PlayerController>().playerDamage) <= 0)
         {
             Death();
         }
         else
         {
 
-            health -= bullet.GetComponent<BulletController>().bulletDamage;
+            health -= player.GetComponent<PlayerController>().playerDamage;
         }
     }
     public void Death()
     {
+        xpBar.GetComponent<XPBar>().GainXP(1);
         Destroy(gameObject);
         GameManager.killCount += 1;
         loot.GetComponent<LootScript>().calculateLoot();

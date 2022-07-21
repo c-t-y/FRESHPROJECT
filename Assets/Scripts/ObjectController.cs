@@ -10,24 +10,25 @@ public class ObjectController : MonoBehaviour
 
 
     public float health = 10f;
- 
+
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         loot = GetComponent<LootScript>();
     }
 
     public void Hit()
     {
-        if ((health -= bullet.GetComponent<BulletController>().bulletDamage) <= 0)
+        if ((health -= player.GetComponent<PlayerController>().playerDamage) <= 0)
         {
             Death();
         }
         else
         {
 
-            health -= bullet.GetComponent<BulletController>().bulletDamage;
+            health -= player.GetComponent<PlayerController>().playerDamage;
         }
     }
     public void Death()
@@ -41,6 +42,6 @@ public class ObjectController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
