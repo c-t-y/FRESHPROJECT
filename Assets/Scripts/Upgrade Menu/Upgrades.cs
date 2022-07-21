@@ -43,10 +43,11 @@ public class Upgrades : MonoBehaviour
     public void ThirdChoice()
     {
         Debug.Log("third choice clicked");
-        player.GetComponent<PlayerController>().playerDamage += 0.5f;
+        player.GetComponent<PlayerController>().playerDamage += StatsEnemy.eHealth * 0.25f;
         Time.timeScale = 1;
         gameObject.SetActive(false);
 
     }
+
 
 }
