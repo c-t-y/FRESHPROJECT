@@ -9,7 +9,8 @@ public class BulletController : MonoBehaviour
     public float lifeTime = 4f;
     public GameObject player;
     public GameObject damageIndication;
-    public GameObject particles;
+    public GameObject strikeparticles;
+    public GameObject bloodparticles;
 
     // Start is called before the first frame update
     void Start()
@@ -35,14 +36,14 @@ public class BulletController : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Instantiate(damageIndication, transform.position, Quaternion.identity);
-            Instantiate(particles, transform.position, Quaternion.identity);
+            Instantiate(bloodparticles, transform.position, Quaternion.identity);
             other.gameObject.GetComponent<EnemyController>().Hit();
             Destroy(gameObject);
         }
         if (other.CompareTag("Object"))
         {
             other.gameObject.GetComponent<ObjectController>().Hit();
-            Instantiate(particles, transform.position, Quaternion.identity);
+            Instantiate(strikeparticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
 
         }
