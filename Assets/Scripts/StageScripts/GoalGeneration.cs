@@ -22,7 +22,7 @@ public class GoalGeneration : MonoBehaviour
         Instantiate(teleporter, teleporter.transform.position, Quaternion.identity);
 
         //select merchant position
-        if (randGoalPos > 5)
+        if (randGoalPos > 4)
         {
             merchant.transform.position = goalPositions[0].position;
             Instantiate(merchant, merchant.transform.position, Quaternion.identity);

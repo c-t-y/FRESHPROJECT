@@ -122,11 +122,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageIndication: {fileID: 5744389645827954008, guid: 2e5b4b77d997747a4ae0904c9db4eaaa, type: 3}
-  statsEnemy: {fileID: 220029856846636092, guid: cbfe7de0ac32a564b8829ebc6ff9b5e8, type: 3}
+  EnemyScriptableObject: {fileID: 11400000, guid: ed0646be3ec088644bb909f5c2550bdb, type: 2}
   currState: 0
   range: 50
   speed: 3
-  health: 10
+  currentHealth: 0
+  maxHealth: 0
   attackRange: 1
   coolDown: 0.5
   attackDamage: 1

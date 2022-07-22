@@ -68,7 +68,7 @@ public class Upgrades : MonoBehaviour
 
         else if (firstChoiceText.text == "Fire Rate Up")
         {
-            player.GetComponent<PlayerController>().fireRate -= 0.05f;
+            player.GetComponent<PlayerController>().fireRate *= 0.9f;
         }
 
         else if (firstChoiceText.text == "Damage Up")
@@ -98,7 +98,7 @@ public class Upgrades : MonoBehaviour
 
         else if (secondChoiceText.text == "Fire Rate Up")
         {
-            player.GetComponent<PlayerController>().fireRate -= 0.05f;
+            player.GetComponent<PlayerController>().fireRate *= 0.9f;
         }
 
         else if (secondChoiceText.text == "Damage Up")
@@ -128,7 +128,7 @@ public class Upgrades : MonoBehaviour
 
         else if (thirdChoiceText.text == "Fire Rate Up")
         {
-            player.GetComponent<PlayerController>().fireRate -= 0.05f;
+            player.GetComponent<PlayerController>().fireRate *= 0.9f;
         }
 
         else if (thirdChoiceText.text == "Damage Up")
@@ -158,7 +158,7 @@ public class Upgrades : MonoBehaviour
 
         else if (fourthChoiceText.text == "Fire Rate Up")
         {
-            player.GetComponent<PlayerController>().fireRate -= 0.05f;
+            player.GetComponent<PlayerController>().fireRate *= 0.9f;
         }
 
         else if (fourthChoiceText.text == "Damage Up")

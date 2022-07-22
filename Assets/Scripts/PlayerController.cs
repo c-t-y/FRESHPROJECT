@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public float fireRate;
     public float currentHealth;
     public float playerDamage;
+    public float calcPlayerDamage;
+    public float bulletDev = .3f;
 
 
 
@@ -36,6 +38,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        calcPlayerDamage = Mathf.Ceil(playerDamage);
+
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
         //    xpBar.GainXP(1);
@@ -114,26 +118,28 @@ public class PlayerController : MonoBehaviour
     }
     void Shoot(string direction)
     {
+        float randBullet = Random.Range(bulletDev * -1f, bulletDev);
+
         if (direction == "up")
         {
 
             var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-            bulletInstance.GetComponent<Rigidbody2D>().AddForce(Vector3.up * bulletSpeed);
+            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, 1, 0) * bulletSpeed);
         }
         if (direction == "down")
         {
             var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-            bulletInstance.GetComponent<Rigidbody2D>().AddForce(Vector3.down * bulletSpeed);
+            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, -1, 0) * bulletSpeed);
         }
         if (direction == "left")
         {
             var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-            bulletInstance.GetComponent<Rigidbody2D>().AddForce(Vector3.left * bulletSpeed);
+            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, randBullet, 0) * bulletSpeed);
         }
         if (direction == "right")
         {
             var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-            bulletInstance.GetComponent<Rigidbody2D>().AddForce(Vector3.right * bulletSpeed);
+            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, randBullet, 0) * bulletSpeed);
         }
     }
 
