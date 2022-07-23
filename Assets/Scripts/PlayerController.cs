@@ -6,18 +6,18 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public GameObject bulletPrefab;
+    //public GameObject bulletPrefab;
     public HealthBar healthBar;
     public GameObject deathScreen;
-    public float playerSpeed;
-    public bool allowFire;
+    public float calcPlayerDamage;
+
+    // base player stats
     public float bulletSpeed;
     public float fireRate;
+    public float bulletSpread = .3f;
     public float currentHealth;
     public float playerDamage;
-    public float calcPlayerDamage;
-    public float bulletSpread = .3f;
-
+    public float playerSpeed;
 
 
 
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
 
         rb = GetComponent<Rigidbody2D>();
-        allowFire = true;
+        //allowFire = true;
     }
     void FixedUpdate()
     {
@@ -67,36 +67,7 @@ public class PlayerController : MonoBehaviour
         calcPlayerDamage = Mathf.Ceil(playerDamage);
 
 
-        //shooting input
-        if (Input.GetKey(KeyCode.UpArrow) && allowFire == true)
-        {
 
-            Shoot("up");
-            allowFire = false;
-            StartCoroutine(FireCooldown());
-
-        }
-        if (Input.GetKey(KeyCode.DownArrow) && allowFire == true)
-        {
-            Shoot("down");
-            allowFire = false;
-            StartCoroutine(FireCooldown());
-
-        }
-        if (Input.GetKey(KeyCode.LeftArrow) && allowFire == true)
-        {
-            Shoot("left");
-            allowFire = false;
-            StartCoroutine(FireCooldown());
-
-        }
-        if (Input.GetKey(KeyCode.RightArrow) && allowFire == true)
-        {
-            Shoot("right");
-            allowFire = false;
-            StartCoroutine(FireCooldown());
-
-        }
 
         //check death
         if (currentHealth <= 0)
@@ -104,38 +75,38 @@ public class PlayerController : MonoBehaviour
             Death();
         }
     }
-    void Shoot(string direction)
-    {
-        float randBullet = Random.Range(-bulletSpread, bulletSpread);
+    //void Shoot(string direction)
+    //{
+    //    float randBullet = Random.Range(-bulletSpread, bulletSpread);
 
-        if (direction == "up")
-        {
+    //    if (direction == "up")
+    //    {
 
-            var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, 1, 0) * bulletSpeed);
-        }
-        if (direction == "down")
-        {
-            var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, -1, 0) * bulletSpeed);
-        }
-        if (direction == "left")
-        {
-            var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, randBullet, 0) * bulletSpeed);
-        }
-        if (direction == "right")
-        {
-            var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, randBullet, 0) * bulletSpeed);
-        }
-    }
+    //        var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+    //        bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, 1, 0) * bulletSpeed);
+    //    }
+    //    if (direction == "down")
+    //    {
+    //        var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+    //        bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, -1, 0) * bulletSpeed);
+    //    }
+    //    if (direction == "left")
+    //    {
+    //        var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+    //        bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, randBullet, 0) * bulletSpeed);
+    //    }
+    //    if (direction == "right")
+    //    {
+    //        var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+    //        bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, randBullet, 0) * bulletSpeed);
+    //    }
+    //}
 
-    public IEnumerator FireCooldown()
-    {
-        yield return new WaitForSeconds(fireRate);
-        allowFire = true;
-    }
+    //public IEnumerator FireCooldown()
+    //{
+    //    yield return new WaitForSeconds(fireRate);
+    //    allowFire = true;
+    //}
 
     public void TakeDamage(float damage)
     {
