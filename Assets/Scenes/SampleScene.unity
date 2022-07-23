@@ -1646,11 +1646,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 911232556942619303, guid: fe40acc574ef53243b026d8a34f5293e, type: 3}
-  weaponScriptableObject: {fileID: 11400000, guid: 799c098a7d83e42efbeb0ca25d09b253, type: 2}
   allowFire: 0
   bulletSpread: 0.3
-  bulletSpeed: 0
-  fireRate: 0
+  bulletSpeed: 100
+  fireRate: 0.5
 --- !u!1001 &119045182
 PrefabInstance:
   m_ObjectHideFlags: 0
