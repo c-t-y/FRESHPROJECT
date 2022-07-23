@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36c4771ba1296b4d8aeeba360db118c, type: 3}
   m_Name: Cat Enemy
   m_EditorClassIdentifier: 
+  eHealth: 100
+  eRange: 25
+  eSpeed: 1
+  eAttackDmg: 1
+  eAttackRng: 1
+  eAttackCD: 1

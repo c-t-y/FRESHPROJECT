@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6138827670826203616}
   - component: {fileID: 6436770976855669554}
+  - component: {fileID: -8866928368839989843}
   m_Layer: 0
   m_Name: RoomSpawner
   m_TagString: Untagged
@@ -48,3 +49,26 @@ MonoBehaviour:
   - {fileID: 7388704629972260193, guid: c066ba07d1dba8446be8f3d8c7287b7b, type: 3}
   - {fileID: 824240464784831698, guid: bd073219f6d11db499ba43759f592b9f, type: 3}
   - {fileID: 3205281668198500794, guid: eeaa87f9e0793984dbb268feeea679ef, type: 3}
+--- !u!114 &-8866928368839989843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6138827670826203617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d295abe3f225b43a9030ee9db0a881, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnRate: 10
+  spawnIncrease: 1
+  spawnBlockDistance: 10
+  SpawnTable:
+  - name: CatEnemy
+    enemy: {fileID: 4050165427265814892, guid: 1cb2fe5739fb65e4ea8ddc5b7bd0a16a, type: 3}
+    spawnRarity: 90
+  - name: BossEnemy
+    enemy: {fileID: 4781186375336744402, guid: a2ae555cef121b7478c880067f408a78, type: 3}
+    spawnRarity: 10
+  spawnChance: 100
