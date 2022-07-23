@@ -5,7 +5,6 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public WeaponScriptableObject weaponScriptableObject;
     public bool allowFire;
     public float bulletSpread = .3f;
     public float bulletSpeed;
@@ -15,7 +14,6 @@ public class WeaponController : MonoBehaviour
     void Start()
     {
         allowFire = true;
-        GunSetup();
     }
 
     // Update is called once per frame
@@ -52,14 +50,7 @@ public class WeaponController : MonoBehaviour
 
         }
     }
-    void GunSetup()
-    {
 
-        bulletSpeed = weaponScriptableObject.gunShotSpeed;
-        fireRate = weaponScriptableObject.gunFireRate;
-
-
-    }
     void Shoot(string direction)
     {
         float randBullet = Random.Range(-bulletSpread, bulletSpread);
