@@ -12,6 +12,4 @@ public class EnemyScriptableObject : ScriptableObject
     public float eAttackDmg = 1f;
     public float eAttackRng = 1f;
     public float eAttackCD = 1f;
-
-
 }

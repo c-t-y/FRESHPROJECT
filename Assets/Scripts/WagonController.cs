@@ -17,15 +17,15 @@ public class WagonController : MonoBehaviour
     public static WagonController instance;
     LootScript loot;
     public GameObject target;
-    
- 
-  
+
+
+
 
 
     public WagonState currState = WagonState.Follow;
     //private bool chooseDir = false;
     private Vector2 randomDir;
-   // private bool coolDownAttack = false;
+    // private bool coolDownAttack = false;
     public bool holdWagon;
 
     public float range = 10f;
@@ -41,9 +41,9 @@ public class WagonController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
-     
-  
+
+
+
 
 
 
@@ -55,18 +55,18 @@ public class WagonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // if (currState == WagonState.Wander)
+        // if (currState == WagonState.Wander)
         //{
-         //   Wander();
+        //   Wander();
         //}
         if (currState == WagonState.Follow && holdWagon == false)
         {
             Follow();
         }
         //else if (currState == WagonState.Die)
-       // {
+        // {
         //    Death();
-       // }
+        // }
         else if (currState == WagonState.Attack)
         {
             Attack();
@@ -80,8 +80,8 @@ public class WagonController : MonoBehaviour
         }
         //else if (!IsPlayerInRange(range) && currState != WagonState.Die)
         //{
-         //   currState = WagonState.Wander;
-       // }
+        //   currState = WagonState.Wander;
+        // }
         // attack player
         if (Vector3.Distance(transform.position, target.transform.position) <= attackRange)
         {
@@ -106,40 +106,40 @@ public class WagonController : MonoBehaviour
         //transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
         //chooseDir = false;
     }
-   // void Wander()
+    // void Wander()
     //{
-     //   if (!chooseDir)
-      //  {
-       //     StartCoroutine(ChooseDirection());
-        //}
+    //   if (!chooseDir)
+    //  {
+    //     StartCoroutine(ChooseDirection());
+    //}
 
-        //transform.position += -transform.right * speed * Time.deltaTime;
-        //if (IsPlayerInRange(range))
-        //{
-         //   currState = WagonState.Follow;
-        //}
+    //transform.position += -transform.right * speed * Time.deltaTime;
+    //if (IsPlayerInRange(range))
+    //{
+    //   currState = WagonState.Follow;
+    //}
 
     //}
 
     void Attack()
     {
         //if (!coolDownAttack)
-       // {
-         //   player.GetComponent<PlayerController>().TakeDamage(attackDamage);
+        // {
+        //   player.GetComponent<PlayerController>().TakeDamage(attackDamage);
         //    StartCoroutine(CoolDown());
-       // }
+        // }
 
     }
     //IEnumerator CoolDown()
     //{
-        //coolDownAttack = true;
-        //yield return new WaitForSeconds(coolDown);
-        //coolDownAttack = false;
-   // }
+    //coolDownAttack = true;
+    //yield return new WaitForSeconds(coolDown);
+    //coolDownAttack = false;
+    // }
     void Follow()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
-  
-   
+
+
 }

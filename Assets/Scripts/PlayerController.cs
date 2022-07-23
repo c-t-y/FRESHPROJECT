@@ -7,10 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     public GameObject bulletPrefab;
-    public GameObject statsEnemy;
     public HealthBar healthBar;
     public GameObject deathScreen;
-    //public XPBar xpBar;
     public float playerSpeed;
     public bool allowFire;
     public float bulletSpeed;
@@ -18,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public float currentHealth;
     public float playerDamage;
     public float calcPlayerDamage;
-    public float bulletDev = .3f;
+    public float bulletSpread = .3f;
 
 
 
@@ -35,23 +33,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         allowFire = true;
     }
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        calcPlayerDamage = Mathf.Ceil(playerDamage);
-
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    xpBar.GainXP(1);
-
-
-        //}
-
-        // old movement input
-        //float horizontal = Input.GetAxis("Horizontal");
-        //float vertical = Input.GetAxis("Vertical");
-        //rb.velocity = new Vector3(horizontal * playerSpeed, vertical * playerSpeed, 0);
-
         // new movement input
         if (Input.GetAxisRaw("Horizontal") > 0.1)
         {
@@ -77,6 +60,11 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
         }
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        calcPlayerDamage = Mathf.Ceil(playerDamage);
 
 
         //shooting input
@@ -118,7 +106,7 @@ public class PlayerController : MonoBehaviour
     }
     void Shoot(string direction)
     {
-        float randBullet = Random.Range(bulletDev * -1f, bulletDev);
+        float randBullet = Random.Range(-bulletSpread, bulletSpread);
 
         if (direction == "up")
         {

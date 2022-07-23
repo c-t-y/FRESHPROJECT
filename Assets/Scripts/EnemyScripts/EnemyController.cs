@@ -35,24 +35,23 @@ public class EnemyController : MonoBehaviour
     public float coolDown;
     public float attackDamage;
 
-    public virtual void OnEnable()
-    {
-        SetupAgentFromConfiguration();
+    //public virtual void OnEnable()
+    //{
 
-    }
+    //    SetupAgentFromConfiguration();
+
+    //}
 
     // Start is called before the first frame update
     void Start()
     {
+        EnemySetup();
         player = GameObject.FindGameObjectWithTag("Player");
         xpBar = GameObject.FindGameObjectWithTag("XPBar");
         loot = GetComponent<LootScript>();
-
-      
-
     }
 
-    public virtual void SetupAgentFromConfiguration()
+    public void EnemySetup()
     {
         currentHealth = EnemyScriptableObject.eHealth;
         range = EnemyScriptableObject.eRange;
@@ -155,7 +154,6 @@ public class EnemyController : MonoBehaviour
         {
             Death();
         }
-
     }
     public void Death()
     {
