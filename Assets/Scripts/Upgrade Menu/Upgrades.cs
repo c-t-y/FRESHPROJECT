@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
@@ -9,6 +10,7 @@ public class Upgrades : MonoBehaviour
     //public Button firstChoice;
     //public Button secondChoice;
     //public Button thirdChoice;
+    public GameObject upgradeFirstButton;
 
     public TextMeshProUGUI firstChoiceText;
     public TextMeshProUGUI secondChoiceText;
