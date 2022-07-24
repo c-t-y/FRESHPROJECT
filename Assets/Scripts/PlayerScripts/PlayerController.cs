@@ -38,27 +38,27 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // new movement input
-        if (Input.GetAxisRaw("Horizontal") > 0.1)
+        if (Input.GetAxisRaw("HorizontalMovement") > 0.1)
         {
             rb.velocity = new Vector2(playerSpeed, rb.velocity.y);
         }
-        else if (Input.GetAxisRaw("Horizontal") < -0.1)
+        else if (Input.GetAxisRaw("HorizontalMovement") < -0.1)
         {
             rb.velocity = new Vector2(-playerSpeed, rb.velocity.y);
         }
-        else if (Input.GetAxisRaw("Horizontal") == 0)
+        else if (Input.GetAxisRaw("HorizontalMovement") == 0)
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
-        if (Input.GetAxisRaw("Vertical") > 0.1)
+        if (Input.GetAxisRaw("VerticalMovement") > 0.1)
         {
             rb.velocity = new Vector2(rb.velocity.x, playerSpeed);
         }
-        else if (Input.GetAxisRaw("Vertical") < -0.1)
+        else if (Input.GetAxisRaw("VerticalMovement") < -0.1)
         {
             rb.velocity = new Vector2(rb.velocity.x, -playerSpeed);
         }
-        else if (Input.GetAxisRaw("Vertical") == 0)
+        else if (Input.GetAxisRaw("VerticalMovement") == 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
         }
@@ -68,7 +68,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         calcPlayerDamage = Mathf.Ceil(playerDamage);
-        animator.SetFloat("Horizontal", Input.GetAxisRaw("Horizontal"));
+        animator.SetFloat("Horizontal", Input.GetAxisRaw("HorizontalMovement"));
+        animator.SetFloat("Vertical", Input.GetAxisRaw("VerticalMovement"));
         animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
 
 
