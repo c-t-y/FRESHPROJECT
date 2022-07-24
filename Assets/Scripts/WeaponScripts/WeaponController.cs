@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     public GameObject bulletPrefab;
+    public Animator animator;
     public bool allowFire;
     public float bulletSpread = .3f;
     public float bulletSpeed;
@@ -49,6 +50,25 @@ public class WeaponController : MonoBehaviour
             StartCoroutine(FireCooldown());
 
         }
+
+
+        // animation check
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            animator.SetBool("ShootLeft", true);
+        }
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            animator.SetBool("ShootLeft", false);
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            animator.SetBool("ShootRight", true);
+        }
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            animator.SetBool("ShootRight", false);
+        }
     }
 
     void Shoot(string direction)
@@ -70,11 +90,14 @@ public class WeaponController : MonoBehaviour
         {
             var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
             bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, randBullet, 0) * bulletSpeed);
+
+
         }
         if (direction == "right")
         {
             var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
             bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, randBullet, 0) * bulletSpeed);
+            animator.SetBool("ShootRight", true);
         }
     }
     public IEnumerator FireCooldown()
