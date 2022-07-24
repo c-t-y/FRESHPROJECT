@@ -8,33 +8,37 @@ public class EnemyWaveSpawner : MonoBehaviour
     GameObject player;
     public float spawnRate = 3f;
     //public float spawnIncrease = 1f;
-    public float spawnBlockDistance = 7f;
-
+    public float spawnBlockDistance;
+    public float spawnMaxDistance;
+    private float spawnspace;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         
+
         spawnRate = 3f;
-        spawnBlockDistance = 7f;
+        spawnBlockDistance = 10f;
+        spawnMaxDistance = 22f;
 
         //StartCoroutine(SpawnTimer());
         InvokeRepeating("CalculateSpawn", 3f, spawnRate);
-        InvokeRepeating("IncreaseEnemySpawn", 1f, 4f);
+        InvokeRepeating("IncreaseEnemySpawn", 0f, 4f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        spawnspace = Vector3.Distance(transform.position, player.transform.position);
 
-        if (Vector3.Distance(transform.position, player.transform.position) <= spawnBlockDistance)
+        if (spawnspace >= spawnBlockDistance && spawnspace <= spawnMaxDistance)
         {
-            spawnChance = 0f;
+            spawnChance = 100f;
         }
         else
         {
-            spawnChance = 100f;
+            spawnChance = 0f;
         }
     }
 
@@ -57,8 +61,9 @@ public class EnemyWaveSpawner : MonoBehaviour
 
     //public IEnumerator SpawnTimer()
     //{
+     //   CalculateSpawn();
       //  yield return new WaitForSeconds(spawnRate);
-       // Invoke("CalculateSpawn",0f);
+        
     //}
 
     public void CalculateSpawn()
