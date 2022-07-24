@@ -1157,7 +1157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 212857276}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &93607648
@@ -2359,6 +2359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c2543a452c5464da37bd44a9720716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeFirstButton: {fileID: 212857276}
   firstChoiceText: {fileID: 829828935}
   secondChoiceText: {fileID: 121597709}
   thirdChoiceText: {fileID: 1864395560}
@@ -2651,8 +2652,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000068665, y: 109}
-  m_SizeDelta: {x: 305.44, y: 50}
+  m_AnchoredPosition: {x: -193, y: 34.001}
+  m_SizeDelta: {x: 265.63, y: 402.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212857278
 MonoBehaviour:
@@ -2667,18 +2668,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: -1
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 464784280}
-    m_SelectOnDown: {fileID: 464784280}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 464784280}
+    m_SelectOnRight: {fileID: 464784280}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.27635986, g: 0.8962264, b: 0.21560161, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.990757, g: 1, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.6217325, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -5040,8 +5041,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000068665, y: 34}
-  m_SizeDelta: {x: 305.44, y: 50}
+  m_AnchoredPosition: {x: 191, y: 34.001}
+  m_SizeDelta: {x: 265.85, y: 402.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &464784280
 MonoBehaviour:
@@ -5056,18 +5057,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: -1
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 212857278}
-    m_SelectOnDown: {fileID: 212857278}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_Mode: 4
+    m_WrapAround: 1
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 212857278}
+    m_SelectOnRight: {fileID: 212857278}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.27635986, g: 0.8962264, b: 0.21560161, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0.5261963, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -13519,6 +13520,7 @@ MonoBehaviour:
   slider: {fileID: 1321300444}
   fill: {fileID: 1007948589}
   upgradeMenu: {fileID: 172436327}
+  firstButton: {fileID: 212857276}
   currentXP: 0
   XPToLevelUp: 0
   currentLevel: 0
