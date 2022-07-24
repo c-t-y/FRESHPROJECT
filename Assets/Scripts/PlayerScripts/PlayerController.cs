@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     //public GameObject bulletPrefab;
     public HealthBar healthBar;
     public GameObject deathScreen;
+    public Animator animator;
     public float calcPlayerDamage;
 
     // base player stats
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float currentHealth;
     public float playerDamage;
     public float playerSpeed;
+
 
 
 
@@ -60,12 +62,14 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
         }
+
     }
     // Update is called once per frame
     void Update()
     {
         calcPlayerDamage = Mathf.Ceil(playerDamage);
-
+        animator.SetFloat("Horizontal", Input.GetAxisRaw("Horizontal"));
+        animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
 
 
 
