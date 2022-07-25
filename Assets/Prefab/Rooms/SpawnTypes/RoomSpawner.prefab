@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -8866928368839989843}
   m_Layer: 0
   m_Name: RoomSpawner
-  m_TagString: Untagged
+  m_TagString: RoomSpawn
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms:
-  - {fileID: 7388704629972260193, guid: c066ba07d1dba8446be8f3d8c7287b7b, type: 3}
-  - {fileID: 824240464784831698, guid: bd073219f6d11db499ba43759f592b9f, type: 3}
-  - {fileID: 3205281668198500794, guid: eeaa87f9e0793984dbb268feeea679ef, type: 3}
+  - {fileID: 1994857066888626161, guid: ca1a6e6e2c7298d489a31a4a76d73451, type: 3}
+  - {fileID: 5488856754131933812, guid: 2662cb8ecc8e3a04f8618ac53607eef2, type: 3}
+  - {fileID: 6372468795035313831, guid: eb938548e5026204cb3478fb8575732d, type: 3}
 --- !u!114 &-8866928368839989843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,8 +62,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 10
-  spawnIncrease: 1
   spawnBlockDistance: 10
+  spawnMaxDistance: 0
   SpawnTable:
   - name: CatEnemy
     enemy: {fileID: 4050165427265814892, guid: 1cb2fe5739fb65e4ea8ddc5b7bd0a16a, type: 3}
