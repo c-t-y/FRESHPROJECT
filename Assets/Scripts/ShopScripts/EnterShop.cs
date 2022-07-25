@@ -38,7 +38,9 @@ public class EnterShop : MonoBehaviour
         player.transform.position = playerSpawnMarker.transform.position;
 
 
-        Debug.Log("woooo");
+
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("wow");
         crossfader.SetActive(false);
     }
 
