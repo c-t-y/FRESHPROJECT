@@ -175,4 +175,4 @@ MonoBehaviour:
   - name: Heart1
     item: {fileID: 5172921154453317751, guid: 235962bfbf41aa049b17a90ba13c2b5d, type: 3}
     dropRarity: 5
-  dropChance: 25
+  dropChance: 10
