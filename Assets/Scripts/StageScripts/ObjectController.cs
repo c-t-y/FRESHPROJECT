@@ -7,6 +7,8 @@ public class ObjectController : MonoBehaviour
     public GameObject bullet;
     LootScript loot;
     GameObject player;
+    public Animator animator;
+   
 
 
     public float health = 10f;
@@ -17,6 +19,7 @@ public class ObjectController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         loot = GetComponent<LootScript>();
+        animator = GetComponent<Animator>();
     }
 
     public void Hit()
@@ -33,8 +36,10 @@ public class ObjectController : MonoBehaviour
     }
     public void Death()
     {
-        Destroy(gameObject);
+        animator.Play("DestroyObj");
+        Destroy(gameObject, 0.5f);
         loot.GetComponent<LootScript>().calculateLoot();
+        
 
 
     }
