@@ -11,6 +11,7 @@ TagManager:
   - Object
   - XPBar
   - Weapon
+  - Shop
   layers:
   - Default
   - TransparentFX
