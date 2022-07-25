@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class XPBar : MonoBehaviour
 {
     public Slider slider;
     public Image fill;
     public GameObject upgradeMenu;
+    public GameObject firstButton;
     public float currentXP;
     public float XPToLevelUp;
     public float currentLevel;
@@ -49,6 +51,11 @@ public class XPBar : MonoBehaviour
         XPToLevelUp *= 1.5f;
         slider.maxValue = XPToLevelUp;
         currentLevel++;
+
+        // clear and set a new selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstButton);
+
         Debug.Log("congrats you are now level " + currentLevel);
     }
 

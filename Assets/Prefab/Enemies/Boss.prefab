@@ -147,11 +147,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bd3df56b4e5bb4e981bdb08c7fbff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 911232556942619303, guid: fe40acc574ef53243b026d8a34f5293e, type: 3}
+  damageIndication: {fileID: 5744389645827954008, guid: 2e5b4b77d997747a4ae0904c9db4eaaa, type: 3}
+  EnemyScriptableObject: {fileID: 11400000, guid: 3fe2261bbda081f49b2254abd6b59488, type: 2}
   currState: 0
   range: 50
   speed: 3
-  health: 25
+  currentHealth: 0
+  maxHealth: 0
   attackRange: 0
   coolDown: 0
   attackDamage: 1

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
@@ -9,6 +10,7 @@ public class Upgrades : MonoBehaviour
     //public Button firstChoice;
     //public Button secondChoice;
     //public Button thirdChoice;
+    public GameObject upgradeFirstButton;
 
     public TextMeshProUGUI firstChoiceText;
     public TextMeshProUGUI secondChoiceText;
@@ -68,7 +70,7 @@ public class Upgrades : MonoBehaviour
 
         else if (firstChoiceText.text == "Fire Rate Up")
         {
-            player.GetComponent<PlayerController>().fireRate -= 0.05f;
+            player.GetComponent<PlayerController>().fireRate *= 0.9f;
         }
 
         else if (firstChoiceText.text == "Damage Up")
@@ -98,7 +100,7 @@ public class Upgrades : MonoBehaviour
 
         else if (secondChoiceText.text == "Fire Rate Up")
         {
-            player.GetComponent<PlayerController>().fireRate -= 0.05f;
+            player.GetComponent<PlayerController>().fireRate *= 0.9f;
         }
 
         else if (secondChoiceText.text == "Damage Up")
@@ -128,7 +130,7 @@ public class Upgrades : MonoBehaviour
 
         else if (thirdChoiceText.text == "Fire Rate Up")
         {
-            player.GetComponent<PlayerController>().fireRate -= 0.05f;
+            player.GetComponent<PlayerController>().fireRate *= 0.9f;
         }
 
         else if (thirdChoiceText.text == "Damage Up")
@@ -158,7 +160,7 @@ public class Upgrades : MonoBehaviour
 
         else if (fourthChoiceText.text == "Fire Rate Up")
         {
-            player.GetComponent<PlayerController>().fireRate -= 0.05f;
+            player.GetComponent<PlayerController>().fireRate *= 0.9f;
         }
 
         else if (fourthChoiceText.text == "Damage Up")

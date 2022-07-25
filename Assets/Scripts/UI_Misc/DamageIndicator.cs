@@ -11,7 +11,7 @@ public class DamageIndicator : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        damageText.text = player.GetComponent<PlayerController>().playerDamage.ToString();
+        damageText.text = player.GetComponent<PlayerController>().calcPlayerDamage.ToString();
         Destroy(gameObject, 1f);
         transform.localPosition += new Vector3(0, 1f, 0);
 

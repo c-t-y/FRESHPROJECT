@@ -19,7 +19,8 @@ public class EnemyController : MonoBehaviour
     GameObject player;
     GameObject xpBar;
     public GameObject damageIndication;
-    public GameObject statsEnemy;
+    public EnemyScriptableObject EnemyScriptableObject;
+
 
     public EnemyState currState = EnemyState.Wander;
     private bool chooseDir = false;
@@ -34,21 +35,33 @@ public class EnemyController : MonoBehaviour
     public float coolDown;
     public float attackDamage;
 
+    //public virtual void OnEnable()
+    //{
+
+    //    SetupAgentFromConfiguration();
+
+    //}
+
     // Start is called before the first frame update
     void Start()
     {
+        EnemySetup();
         player = GameObject.FindGameObjectWithTag("Player");
         xpBar = GameObject.FindGameObjectWithTag("XPBar");
         loot = GetComponent<LootScript>();
+    }
 
-        currentHealth = StatsEnemy.eHealth;
-        range = StatsEnemy.eRange;
-        speed = StatsEnemy.eSpeed;
-        attackRange = StatsEnemy.eAttackRng;
-        coolDown = StatsEnemy.eAttackCD;
-        attackDamage = StatsEnemy.eAttackDmg;
+    public void EnemySetup()
+    {
+        currentHealth = EnemyScriptableObject.eHealth;
+        range = EnemyScriptableObject.eRange;
+        speed = EnemyScriptableObject.eSpeed;
+        attackRange = EnemyScriptableObject.eAttackRng;
+        coolDown = EnemyScriptableObject.eAttackCD;
+        attackDamage = EnemyScriptableObject.eAttackDmg;
 
     }
+
 
     // Update is called once per frame
     void Update()
@@ -136,12 +149,11 @@ public class EnemyController : MonoBehaviour
     }
     public void Hit()
     {
-        currentHealth -= player.GetComponent<PlayerController>().playerDamage;
+        currentHealth -= player.GetComponent<PlayerController>().calcPlayerDamage;
         if ((currentHealth <= 0))
         {
             Death();
         }
-
     }
     public void Death()
     {
