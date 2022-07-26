@@ -38,6 +38,7 @@ public class BulletController : MonoBehaviour
             Instantiate(damageIndication, transform.position, Quaternion.identity);
             Instantiate(bloodparticles, transform.position, Quaternion.identity);
             other.gameObject.GetComponent<EnemyController>().Hit();
+
             Destroy(gameObject);
         }
         if (other.CompareTag("Object"))
@@ -47,7 +48,9 @@ public class BulletController : MonoBehaviour
             Destroy(gameObject);
 
         }
+
     }
+
 
 }
 

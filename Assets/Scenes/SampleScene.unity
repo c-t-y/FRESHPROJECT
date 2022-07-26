@@ -802,6 +802,7 @@ MonoBehaviour:
   healthBar: {fileID: 1952322695}
   deathScreen: {fileID: 1714593396}
   animator: {fileID: 117968663}
+  spriteRenderer: {fileID: 0}
   calcPlayerDamage: 0
   bulletSpeed: 200
   fireRate: 0.5

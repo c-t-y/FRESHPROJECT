@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     LootScript loot;
     GameObject player;
     GameObject xpBar;
+    SpriteRenderer spriteRenderer;
     public GameObject damageIndication;
     public EnemyScriptableObject EnemyScriptableObject;
 
@@ -26,6 +27,7 @@ public class EnemyController : MonoBehaviour
         EnemySetup();
         player = GameObject.FindGameObjectWithTag("Player");
         xpBar = GameObject.FindGameObjectWithTag("XPBar");
+        spriteRenderer = GetComponent<SpriteRenderer>();
         loot = GetComponent<LootScript>();
     }
 
@@ -73,6 +75,7 @@ public class EnemyController : MonoBehaviour
 
     public void Hit()
     {
+        StartCoroutine(FlashRed());
         currentHealth -= player.GetComponent<PlayerController>().calcPlayerDamage;
         if ((currentHealth <= 0))
         {
@@ -87,5 +90,11 @@ public class EnemyController : MonoBehaviour
         loot.GetComponent<LootScript>().calculateLoot();
 
 
+    }
+    public IEnumerator FlashRed()
+    {
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = Color.white;
     }
 }

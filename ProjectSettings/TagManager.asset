@@ -17,6 +17,7 @@ TagManager:
   - Transition
   - ShopSpawnMarker
   - ShopEntranceMarker
+  - Bullet
   layers:
   - Default
   - TransparentFX

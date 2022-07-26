@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public HealthBar healthBar;
     public GameObject deathScreen;
     public Animator animator;
+    public SpriteRenderer spriteRenderer;
     public float calcPlayerDamage;
 
     // base player stats
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
         playerDamage = StatsEnemy.eHealth * 0.25f;
         currentHealth = GameManager.maxHealth;
         healthBar.SetMaxHealth(GameManager.maxHealth);
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
 
 
@@ -117,7 +119,11 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        StartCoroutine(FlashRed());
     }
+
+
+
     public void Heal(float damage)
     {
         if (currentHealth < GameManager.maxHealth)
@@ -137,6 +143,13 @@ public class PlayerController : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
+
+    public IEnumerator FlashRed()
+    {
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = Color.white;
+    }
 
 }
 
