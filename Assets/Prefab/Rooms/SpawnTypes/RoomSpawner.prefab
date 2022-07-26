@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6138827670826203616}
   - component: {fileID: 6436770976855669554}
   - component: {fileID: -8866928368839989843}
-  - component: {fileID: 4125445919912465753}
   m_Layer: 0
   m_Name: RoomSpawner
   m_TagString: RoomSpawn
@@ -47,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms:
-  - {fileID: 4661358149398523659, guid: c81d931746ad55749864a64e8de28bb5, type: 3}
+  - {fileID: 535380272395373592, guid: c81d931746ad55749864a64e8de28bb5, type: 3}
 --- !u!114 &-8866928368839989843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,17 +70,3 @@ MonoBehaviour:
     enemy: {fileID: 4781186375336744402, guid: a2ae555cef121b7478c880067f408a78, type: 3}
     spawnRarity: 0
   spawnChance: 100
---- !u!114 &4125445919912465753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6138827670826203617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bb0b5e34c680a049af8abb531d7b042, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawns: []
-  objects: []
