@@ -30,11 +30,11 @@ public class FrogEnemy : MonoBehaviour
     {
         spriteRenderer.flipX = player.transform.position.x < transform.position.x;
 
-        if (currState == "Wander")
+        if (currState == "Wander" && !GameManager.playerInShop)
         {
             Wander();
         }
-        else if (currState == "Follow")
+        else if (currState == "Follow" && !GameManager.playerInShop)
         {
             Follow();
         }

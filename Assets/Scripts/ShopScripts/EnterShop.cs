@@ -32,10 +32,12 @@ public class EnterShop : MonoBehaviour
 
     IEnumerator GoToShop()
     {
+        GameManager.playerInShop = true;
         //crossfader.SetActive(true);
         crossfader.GetComponent<Animator>().SetBool("shouldAnimate", true);
         Debug.Log("waitttt");
-
+        
+        
         yield return new WaitForSeconds(0.5f);
         player.transform.position = playerSpawnMarker.transform.position;
 

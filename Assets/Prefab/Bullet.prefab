@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c225482b8f084634f964830760030f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 10
+  lifeTime: 2
   player: {fileID: 0}
   damageIndication: {fileID: 5744389645827954008, guid: 2e5b4b77d997747a4ae0904c9db4eaaa, type: 3}
   strikeparticles: {fileID: 1806807420283366394, guid: 5045eae3e1d754f218027a781c89a75a, type: 3}
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.878
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.48
+  m_Intensity: 0.18
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000

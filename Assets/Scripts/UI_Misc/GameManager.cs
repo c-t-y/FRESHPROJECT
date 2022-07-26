@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static int killCount;
     public static int coinCount;
     public static int bombCount;
+    public static bool playerInShop;
 
     public static float maxHealth = 10f;
 
