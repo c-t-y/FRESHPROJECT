@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     public GameObject damageIndication;
     public EnemyScriptableObject EnemyScriptableObject;
+    private UnityEngine.Object explosionRef;
 
 
     private bool coolDownAttack = false;
@@ -24,6 +25,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        explosionRef = Resources.Load("Explode");
         EnemySetup();
         player = GameObject.FindGameObjectWithTag("Player");
         xpBar = GameObject.FindGameObjectWithTag("XPBar");
@@ -84,6 +86,9 @@ public class EnemyController : MonoBehaviour
     }
     public void Death()
     {
+        GameObject explosion = (GameObject)Instantiate(explosionRef);
+        explosion.transform.position = new Vector3(transform.position.x, transform.position.y + .3f, transform.position.z);
+
         xpBar.GetComponent<XPBar>().GainXP(1);
         Destroy(gameObject);
         GameManager.killCount += 1;
