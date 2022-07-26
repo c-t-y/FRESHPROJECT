@@ -10,6 +10,7 @@ public class XPBar : MonoBehaviour
     public Image fill;
     public GameObject upgradeMenu;
     public GameObject firstButton;
+    public Animator levelUpAnimator;
     public float currentXP;
     public float XPToLevelUp;
     public float currentLevel;
@@ -21,6 +22,7 @@ public class XPBar : MonoBehaviour
         XPToLevelUp = 2f;
         slider.maxValue = XPToLevelUp;
         slider.value = 0;
+
     }
 
     public void GainXP(float xp)
@@ -28,10 +30,6 @@ public class XPBar : MonoBehaviour
         if (currentXP < XPToLevelUp)
         {
             currentXP += xp;
-            if (currentXP > XPToLevelUp)
-            {
-                LevelUp();
-            }
             slider.value = currentXP;
 
         }
@@ -44,13 +42,14 @@ public class XPBar : MonoBehaviour
 
     void LevelUp()
     {
-        Time.timeScale = 0;
-        upgradeMenu.SetActive(true);
         currentXP = 0;
         slider.value = 0;
         XPToLevelUp *= 1.5f;
         slider.maxValue = XPToLevelUp;
         currentLevel++;
+        StartCoroutine(LevelUpCooldown());
+
+
 
         // clear and set a new selected object
         EventSystem.current.SetSelectedGameObject(null);
@@ -64,7 +63,16 @@ public class XPBar : MonoBehaviour
     {
         if (currentXP >= XPToLevelUp)
         {
+            levelUpAnimator.SetBool("PlayLevelUpAnim", true);
             LevelUp();
         }
     }
+    IEnumerator LevelUpCooldown()
+    {
+        yield return new WaitForSeconds(1);
+        Time.timeScale = 0;
+        upgradeMenu.SetActive(true);
+        levelUpAnimator.SetBool("PlayLevelUpAnim", false);
+    }
+
 }
