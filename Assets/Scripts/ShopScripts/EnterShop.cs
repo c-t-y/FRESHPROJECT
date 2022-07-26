@@ -5,13 +5,14 @@ using UnityEngine;
 public class EnterShop : MonoBehaviour
 {
     public GameObject player;
-    public Animator transition;
     public GameObject crossfader;
     public GameObject playerSpawnMarker;
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerSpawnMarker = GameObject.FindGameObjectWithTag("ShopSpawnMarker");
+        crossfader = GameObject.FindGameObjectWithTag("Transition");
     }
 
     // Update is called once per frame
@@ -31,7 +32,8 @@ public class EnterShop : MonoBehaviour
 
     IEnumerator GoToShop()
     {
-        crossfader.SetActive(true);
+        //crossfader.SetActive(true);
+        crossfader.GetComponent<Animator>().SetBool("shouldAnimate", true);
         Debug.Log("waitttt");
 
         yield return new WaitForSeconds(0.5f);
@@ -41,7 +43,8 @@ public class EnterShop : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         Debug.Log("wow");
-        crossfader.SetActive(false);
+        crossfader.GetComponent<Animator>().SetBool("shouldAnimate", false);
+        //crossfader.SetActive(false);
     }
 
 }

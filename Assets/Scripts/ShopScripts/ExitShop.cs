@@ -21,7 +21,8 @@ public class ExitShop : MonoBehaviour
 
     IEnumerator LeaveShop()
     {
-        crossfader.SetActive(true);
+        //crossfader.SetActive(true);
+        crossfader.GetComponent<Animator>().SetBool("shouldAnimate", true);
         Debug.Log("waitttt");
 
         yield return new WaitForSeconds(0.5f);
@@ -29,7 +30,8 @@ public class ExitShop : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         Debug.Log("wow");
-        crossfader.SetActive(false);
+        //crossfader.SetActive(false);
+        crossfader.GetComponent<Animator>().SetBool("shouldAnimate", false);
     }
 
 }
