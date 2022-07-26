@@ -11,12 +11,14 @@ public class XPBar : MonoBehaviour
     public GameObject upgradeMenu;
     public GameObject firstButton;
     public Animator levelUpAnimator;
+    public SpriteRenderer playerSpriteRenderer;
     public float currentXP;
     public float XPToLevelUp;
     public float currentLevel;
 
     void Start()
     {
+        playerSpriteRenderer = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         currentLevel = 1;
         currentXP = 0;
         XPToLevelUp = 2f;
@@ -42,6 +44,7 @@ public class XPBar : MonoBehaviour
 
     void LevelUp()
     {
+        StartCoroutine(FlashLevelUp());
         currentXP = 0;
         slider.value = 0;
         XPToLevelUp *= 1.5f;
@@ -73,6 +76,26 @@ public class XPBar : MonoBehaviour
         Time.timeScale = 0;
         upgradeMenu.SetActive(true);
         levelUpAnimator.SetBool("PlayLevelUpAnim", false);
+    }
+
+    public IEnumerator FlashLevelUp()
+    {
+        playerSpriteRenderer.color = Color.cyan;
+        yield return new WaitForSeconds(0.1f);
+        playerSpriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        playerSpriteRenderer.color = Color.cyan;
+        yield return new WaitForSeconds(0.1f);
+        playerSpriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        playerSpriteRenderer.color = Color.cyan;
+        yield return new WaitForSeconds(0.1f);
+        playerSpriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        playerSpriteRenderer.color = Color.cyan;
+        yield return new WaitForSeconds(0.1f);
+        playerSpriteRenderer.color = Color.white;
+
     }
 
 }

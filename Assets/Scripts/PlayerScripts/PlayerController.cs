@@ -151,6 +151,26 @@ public class PlayerController : MonoBehaviour
         spriteRenderer.color = Color.white;
     }
 
+    public IEnumerator FlashLevelUp()
+    {
+        spriteRenderer.color = Color.cyan;
+        yield return new WaitForSeconds(0.05f);
+        spriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(0.05f);
+        spriteRenderer.color = Color.cyan;
+        yield return new WaitForSeconds(0.05f);
+        spriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(0.05f);
+        spriteRenderer.color = Color.cyan;
+        yield return new WaitForSeconds(0.05f);
+        spriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(0.05f);
+        spriteRenderer.color = Color.cyan;
+        yield return new WaitForSeconds(0.05f);
+        spriteRenderer.color = Color.white;
+
+    }
+
 }
 
 
