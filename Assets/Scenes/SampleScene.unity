@@ -757,7 +757,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 112595435}
-  - component: {fileID: 112595434}
+  - component: {fileID: 112595436}
   m_Layer: 0
   m_Name: POISpawn
   m_TagString: Untagged
@@ -765,7 +765,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &112595434
+--- !u!4 &112595435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112595433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.053572, y: -3.7825284, z: -0.30829716}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &112595436
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -846,21 +861,6 @@ MonoBehaviour:
   - {fileID: 6930321179349464020, guid: 59c5e63b75675804197931be6661e65f, type: 3}
   - {fileID: 7203143471920349298, guid: ade06bca8f8519f49b31bc140e762ffc, type: 3}
   - {fileID: 3596774260778751598, guid: e0260964c6d47194090ea64707c0977f, type: 3}
---- !u!4 &112595435
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112595433}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.053572, y: -3.7825284, z: -0.30829716}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &113136229 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6138827670826203617, guid: c407c4a85c8005b44b778755a9cbcf1b, type: 3}
