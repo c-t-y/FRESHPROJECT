@@ -53,22 +53,22 @@ public class WeaponController : MonoBehaviour
 
 
         // animation check
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            animator.SetBool("ShootLeft", true);
-        }
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            animator.SetBool("ShootLeft", false);
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            animator.SetBool("ShootRight", true);
-        }
-        if (Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            animator.SetBool("ShootRight", false);
-        }
+        //if (Input.GetKeyDown(KeyCode.LeftArrow))
+        //{
+        //    //animator.SetBool("ShootLeft", true);
+        //}
+        //if (Input.GetKeyUp(KeyCode.LeftArrow))
+        //{
+        //    //animator.SetBool("ShootLeft", false);
+        //}
+        //if (Input.GetKeyDown(KeyCode.RightArrow))
+        //{
+        //    animator.SetBool("ShootRight", true);
+        //}
+        //if (Input.GetKeyUp(KeyCode.RightArrow))
+        //{
+        //    animator.SetBool("ShootRight", false);
+        //}
     }
 
     void Shoot(string direction)
@@ -88,6 +88,7 @@ public class WeaponController : MonoBehaviour
         }
         if (direction == "left")
         {
+            animator.SetBool("ShootLeft", true);
             var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
             bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, randBullet, 0) * bulletSpeed);
 
@@ -95,14 +96,17 @@ public class WeaponController : MonoBehaviour
         }
         if (direction == "right")
         {
+            animator.SetBool("ShootRight", true);
             var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
             bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, randBullet, 0) * bulletSpeed);
-            animator.SetBool("ShootRight", true);
+
         }
     }
     public IEnumerator FireCooldown()
     {
         yield return new WaitForSeconds(fireRate);
+        animator.SetBool("ShootLeft", false);
+        animator.SetBool("ShootRight", false);
         allowFire = true;
     }
 
