@@ -17,7 +17,7 @@ public class FrogEnemy : MonoBehaviour
     public bool frogCanJump;
     private Vector2 randomDir;
 
-    public static float eSpeed = 8f;
+    public float eSpeed = 8f;
 
 
     private void Start()
