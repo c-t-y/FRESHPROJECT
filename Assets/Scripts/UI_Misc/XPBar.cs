@@ -80,19 +80,19 @@ public class XPBar : MonoBehaviour
 
     public IEnumerator FlashLevelUp()
     {
-        playerSpriteRenderer.color = Color.cyan;
+        playerSpriteRenderer.color = Color.yellow;
         yield return new WaitForSeconds(0.1f);
         playerSpriteRenderer.color = Color.white;
         yield return new WaitForSeconds(0.1f);
-        playerSpriteRenderer.color = Color.cyan;
+        playerSpriteRenderer.color = Color.yellow;
         yield return new WaitForSeconds(0.1f);
         playerSpriteRenderer.color = Color.white;
         yield return new WaitForSeconds(0.1f);
-        playerSpriteRenderer.color = Color.cyan;
+        playerSpriteRenderer.color = Color.yellow;
         yield return new WaitForSeconds(0.1f);
         playerSpriteRenderer.color = Color.white;
         yield return new WaitForSeconds(0.1f);
-        playerSpriteRenderer.color = Color.cyan;
+        playerSpriteRenderer.color = Color.yellow;
         yield return new WaitForSeconds(0.1f);
         playerSpriteRenderer.color = Color.white;
 
