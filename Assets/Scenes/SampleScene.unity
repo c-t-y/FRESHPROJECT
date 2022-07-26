@@ -851,7 +851,7 @@ MonoBehaviour:
   bulletSpread: 0.3
   currentHealth: 0
   playerDamage: 0
-  playerSpeed: 15
+  playerSpeed: 5
 --- !u!50 &117968659
 Rigidbody2D:
   serializedVersion: 4
@@ -7552,7 +7552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 215776338834440911, guid: 383ba449a92dcce478c3c7451be20cae, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 215776338834440911, guid: 383ba449a92dcce478c3c7451be20cae, type: 3}
       propertyPath: m_LocalPosition.x

@@ -72,7 +72,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  enemyController: {fileID: 4050165427265814893}
   spriteRenderer: {fileID: 4456778938045789932}
+  animator: {fileID: -2302507929637448151}
+  currState: 
+  range: 50
+  attackRange: 5
+  frogCanJump: 0
 --- !u!114 &4050165427265814893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,7 +93,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageIndication: {fileID: 5744389645827954008, guid: 2e5b4b77d997747a4ae0904c9db4eaaa, type: 3}
   EnemyScriptableObject: {fileID: 11400000, guid: ed0646be3ec088644bb909f5c2550bdb, type: 2}
-  currState: 0
   range: 50
   speed: 3
   currentHealth: 0
