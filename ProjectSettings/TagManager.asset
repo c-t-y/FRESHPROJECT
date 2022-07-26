@@ -16,6 +16,7 @@ TagManager:
   - RoomSpawn
   - Transition
   - ShopSpawnMarker
+  - ShopEntranceMarker
   layers:
   - Default
   - TransparentFX

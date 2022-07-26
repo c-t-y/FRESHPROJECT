@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms:
-  - {fileID: 1994857066888626161, guid: ca1a6e6e2c7298d489a31a4a76d73451, type: 3}
-  - {fileID: 5488856754131933812, guid: 2662cb8ecc8e3a04f8618ac53607eef2, type: 3}
-  - {fileID: 6372468795035313831, guid: eb938548e5026204cb3478fb8575732d, type: 3}
+  - {fileID: 3418865539576982369, guid: ca1a6e6e2c7298d489a31a4a76d73451, type: 3}
+  - {fileID: 736764919453806204, guid: 2662cb8ecc8e3a04f8618ac53607eef2, type: 3}
+  - {fileID: 2201413181501616894, guid: eb938548e5026204cb3478fb8575732d, type: 3}
 --- !u!114 &-8866928368839989843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,8 +67,8 @@ MonoBehaviour:
   SpawnTable:
   - name: CatEnemy
     enemy: {fileID: 4050165427265814892, guid: 1cb2fe5739fb65e4ea8ddc5b7bd0a16a, type: 3}
-    spawnRarity: 90
+    spawnRarity: 100
   - name: BossEnemy
     enemy: {fileID: 4781186375336744402, guid: a2ae555cef121b7478c880067f408a78, type: 3}
-    spawnRarity: 10
+    spawnRarity: 0
   spawnChance: 100
