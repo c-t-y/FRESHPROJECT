@@ -47,6 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rooms:
   - {fileID: 535380272395373592, guid: c81d931746ad55749864a64e8de28bb5, type: 3}
+  - {fileID: 8678674380707423431, guid: 2662cb8ecc8e3a04f8618ac53607eef2, type: 3}
+  - {fileID: 6870931277483303967, guid: eb938548e5026204cb3478fb8575732d, type: 3}
+  - {fileID: 8137989118361380881, guid: 59a3ae9b769892b4993ad2cc38b02764, type: 3}
 --- !u!114 &-8866928368839989843
 MonoBehaviour:
   m_ObjectHideFlags: 0

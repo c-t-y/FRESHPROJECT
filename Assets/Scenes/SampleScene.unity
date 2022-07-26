@@ -1116,7 +1116,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &151624757
 Transform:
   m_ObjectHideFlags: 0
@@ -1141,10 +1141,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 151624756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bb0b5e34c680a049af8abb531d7b042, type: 3}
+  m_Script: {fileID: 11500000, guid: 327f374421b06434aad65b352acd7365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawns:
+  roomPositions:
   - {fileID: 777787861}
   - {fileID: 1124691201}
   - {fileID: 504014185}
@@ -1208,7 +1208,7 @@ MonoBehaviour:
   - {fileID: 68661403}
   - {fileID: 565553388}
   - {fileID: 2110411500}
-  objects:
+  pointsInterest:
   - {fileID: 7092471635542682257, guid: 85668998c216cc240ab535064d522c4e, type: 3}
   - {fileID: 6930321179349464020, guid: 59c5e63b75675804197931be6661e65f, type: 3}
   - {fileID: 7203143471920349298, guid: ade06bca8f8519f49b31bc140e762ffc, type: 3}
