@@ -26,7 +26,7 @@ public class EnemyWaveSpawner : MonoBehaviour
         spawnRate = 3f;
         spawnBlockDistance = 10f;
         spawnMaxDistance = 22f;
-        maxEnemies = 10;
+        maxEnemies = 200;
 
         //StartCoroutine(SpawnTimer());
         InvokeRepeating("CalculateSpawn", 3f, spawnRate);
@@ -58,7 +58,7 @@ public class EnemyWaveSpawner : MonoBehaviour
         }
         else
         {
-            spawnChance = 0f;
+            spawnChance = 20f;
         }
     }
 
