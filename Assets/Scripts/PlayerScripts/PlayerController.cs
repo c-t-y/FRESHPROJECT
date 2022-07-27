@@ -82,38 +82,7 @@ public class PlayerController : MonoBehaviour
             Death();
         }
     }
-    //void Shoot(string direction)
-    //{
-    //    float randBullet = Random.Range(-bulletSpread, bulletSpread);
 
-    //    if (direction == "up")
-    //    {
-
-    //        var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-    //        bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, 1, 0) * bulletSpeed);
-    //    }
-    //    if (direction == "down")
-    //    {
-    //        var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-    //        bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, -1, 0) * bulletSpeed);
-    //    }
-    //    if (direction == "left")
-    //    {
-    //        var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-    //        bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, randBullet, 0) * bulletSpeed);
-    //    }
-    //    if (direction == "right")
-    //    {
-    //        var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-    //        bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, randBullet, 0) * bulletSpeed);
-    //    }
-    //}
-
-    //public IEnumerator FireCooldown()
-    //{
-    //    yield return new WaitForSeconds(fireRate);
-    //    allowFire = true;
-    //}
 
     public void TakeDamage(float damage)
     {
@@ -124,15 +93,19 @@ public class PlayerController : MonoBehaviour
 
 
 
-    public void Heal(float damage)
+    public void Heal(float hp)
     {
         if (currentHealth < GameManager.maxHealth)
         {
-            currentHealth += damage;
-        }
-        else
-        {
-            currentHealth = GameManager.maxHealth;
+            if (currentHealth + hp > GameManager.maxHealth)
+            {
+                currentHealth = GameManager.maxHealth;
+            }
+            else
+            {
+                currentHealth += hp;
+            }
+
         }
         healthBar.SetHealth(currentHealth);
 
