@@ -67,8 +67,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 10
-  spawnBlockDistance: 10
-  spawnMaxDistance: 0
+  spawnBlockDistance: 15
+  spawnMaxDistance: 25
   SpawnTable:
   - name: CatEnemy
     enemy: {fileID: 4050165427265814892, guid: 1cb2fe5739fb65e4ea8ddc5b7bd0a16a, type: 3}
