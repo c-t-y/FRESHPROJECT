@@ -80,6 +80,7 @@ MonoBehaviour:
   range: 50
   attackRange: 5
   frogCanJump: 0
+  eSpeed: 8
 --- !u!114 &4050165427265814893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,14 +121,14 @@ MonoBehaviour:
     dropRarity: 50
   - name: Coin2
     item: {fileID: 658746632730724373, guid: da1825a8e0ddc0d4e88c725d323dbbf0, type: 3}
-    dropRarity: 25
+    dropRarity: 40
   - name: Coin3
     item: {fileID: 4169134738605321540, guid: 6947994aaf9d4fd46b5ff6a562931c61, type: 3}
-    dropRarity: 10
+    dropRarity: 30
   - name: Heart1
     item: {fileID: 5172921154453317751, guid: 235962bfbf41aa049b17a90ba13c2b5d, type: 3}
-    dropRarity: 5
-  dropChance: 25
+    dropRarity: 20
+  dropChance: 50
 --- !u!58 &5973960798949743152
 CircleCollider2D:
   m_ObjectHideFlags: 0
