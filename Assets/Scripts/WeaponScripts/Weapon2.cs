@@ -29,7 +29,7 @@ public class Weapon2 : MonoBehaviour
         {
             text.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.E) && IsPlayerInRange() && GameManager.coinCount > cost)
+        if (Input.GetKeyDown(KeyCode.E) && IsPlayerInRange() && GameManager.coinCount >= cost)
         {
             ApplyItemEffect();
             GameManager.coinCount -= cost;

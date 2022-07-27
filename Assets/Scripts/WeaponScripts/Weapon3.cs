@@ -12,7 +12,7 @@ public class Weapon3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cost = 5;
+        cost = 6;
         player = GameObject.FindGameObjectWithTag("Player");
         playerWeaponController = player.GetComponent<WeaponController>();
         text = transform.GetChild(0).gameObject;
@@ -29,7 +29,7 @@ public class Weapon3 : MonoBehaviour
         {
             text.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.E) && IsPlayerInRange() && GameManager.coinCount > cost)
+        if (Input.GetKeyDown(KeyCode.E) && IsPlayerInRange() && GameManager.coinCount >= cost)
         {
             ApplyItemEffect();
             GameManager.coinCount -= cost;
