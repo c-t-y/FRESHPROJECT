@@ -79,12 +79,11 @@ public class FrogEnemy : MonoBehaviour
     }
     public IEnumerator FrogJumpCooldown()
     {
-        float randInt = Random.Range(2f, 2.3f);
 
         yield return new WaitForSeconds(0.3f);
         frogCanJump = false;
         animator.SetBool("isJumping", false);
-        yield return new WaitForSeconds(randInt);
+        yield return new WaitForSeconds(4);
         frogCanJump = true;
     }
 
