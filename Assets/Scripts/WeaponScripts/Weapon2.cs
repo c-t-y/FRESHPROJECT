@@ -42,7 +42,7 @@ public class Weapon2 : MonoBehaviour
     }
     void ApplyItemEffect()
     {
-        playerWeaponController.fireRate -= 0.3f;
+        playerWeaponController.fireRate -= 0.2f;
         playerWeaponController.bulletSpeed += 100;
     }
 }
