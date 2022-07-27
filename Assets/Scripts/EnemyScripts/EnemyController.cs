@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public static EnemyController instance;
+
     LootScript loot;
     GameObject player;
     GameObject xpBar;
