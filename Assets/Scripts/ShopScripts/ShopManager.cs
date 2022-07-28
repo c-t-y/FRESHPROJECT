@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
-    public List<GameObject> shopItems = new List<GameObject>();
+    public List<string> shopItems = new List<string>();
 }
