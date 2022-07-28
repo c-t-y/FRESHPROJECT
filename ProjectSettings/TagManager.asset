@@ -18,6 +18,7 @@ TagManager:
   - ShopSpawnMarker
   - ShopEntranceMarker
   - Bullet
+  - ShopManager
   layers:
   - Default
   - TransparentFX
