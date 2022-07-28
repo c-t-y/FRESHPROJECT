@@ -50,9 +50,5 @@ public class EnemySpawner : MonoBehaviour
         newEnemy = Instantiate(enemy, spawnPosition, Quaternion.identity);
         rend = newEnemy.GetComponent<SpriteRenderer>();
     }
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 }

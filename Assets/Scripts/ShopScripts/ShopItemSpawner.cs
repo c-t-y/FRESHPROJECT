@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShopItemSpawner : MonoBehaviour
 {
     //public bool allowLoot;
-
+    public ShopManager shopManager;
 
     [System.Serializable]
     public class DropItem
@@ -16,12 +16,14 @@ public class ShopItemSpawner : MonoBehaviour
     }
 
     public List<DropItem> ShopItemPool = new List<DropItem>();
-    public float dropChance;
 
 
     private void Start()
     {
-
+        SpawnItem();
+    }
+    void SpawnItem()
+    {
         int itemWeight = 0;
 
         for (int i = 0; i < ShopItemPool.Count; i++)
@@ -31,14 +33,17 @@ public class ShopItemSpawner : MonoBehaviour
 
         int randomValue = Random.Range(0, itemWeight);
 
-        for (int j = 0; j < ShopItemPool.Count; j++)
+        for (int i = 0; i < ShopItemPool.Count; i++)
         {
-            if (randomValue <= ShopItemPool[j].dropRarity)
+            if (randomValue <= ShopItemPool[i].dropRarity)
             {
-                Instantiate(ShopItemPool[j].item, transform.position, Quaternion.identity);
+
+                Instantiate(ShopItemPool[i].item, transform.position, Quaternion.identity);
+
+
                 return;
             }
-            randomValue -= ShopItemPool[j].dropRarity;
+            randomValue -= ShopItemPool[i].dropRarity;
 
         }
     }
