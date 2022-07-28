@@ -71,13 +71,13 @@ MonoBehaviour:
   spawnMaxDistance: 25
   maxEnemies: 0
   SpawnTable:
+  - name: Mosquito
+    enemy: {fileID: 7738067282039349218, guid: 9af3eda14be764ddc99c790b71ae6e2b, type: 3}
+    spawnRarity: 100
   - name: Frog
     enemy: {fileID: 4050165427265814892, guid: 1cb2fe5739fb65e4ea8ddc5b7bd0a16a, type: 3}
     spawnRarity: 0
   - name: Boss
     enemy: {fileID: 4781186375336744402, guid: a2ae555cef121b7478c880067f408a78, type: 3}
     spawnRarity: 0
-  - name: Mosquito
-    enemy: {fileID: 7738067282039349218, guid: 9af3eda14be764ddc99c790b71ae6e2b, type: 3}
-    spawnRarity: 100
   spawnChance: 100

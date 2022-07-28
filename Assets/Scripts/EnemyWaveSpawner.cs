@@ -81,8 +81,9 @@ public class EnemyWaveSpawner : MonoBehaviour
 
     //public IEnumerator SpawnTimer()
     //{
-     //   CalculateSpawn();
-      //  yield return new WaitForSeconds(spawnRate);
+     //   yield return new WaitForSeconds(.1f);
+      //  CalculateSpawn();
+       // yield return new WaitForSeconds(spawnRate);
         
     //}
 
