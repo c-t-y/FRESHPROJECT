@@ -19,6 +19,7 @@ TagManager:
   - ShopEntranceMarker
   - Bullet
   - ShopManager
+  - Camera
   layers:
   - Default
   - TransparentFX

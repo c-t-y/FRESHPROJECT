@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using EZCameraShake;
 
 public class PlayerController : MonoBehaviour
 {
@@ -94,6 +95,7 @@ public class PlayerController : MonoBehaviour
         currentHealth -= damage;
         canTakeDmg = false;
         healthBar.SetHealth(currentHealth);
+        CameraShaker.Instance.ShakeOnce(8f, 4f, .05f, .3f);
         StartCoroutine(FlashRed());
         StartCoroutine(TakeDamageCooldown());
 
