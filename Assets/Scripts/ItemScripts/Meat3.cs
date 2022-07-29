@@ -11,14 +11,24 @@ public class Meat3 : MonoBehaviour
         coinValue = 7;
         player = GameObject.FindGameObjectWithTag("Player");
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.gameObject == player)
+        if (IsPlayerInRange(2))
         {
-            Destroy(gameObject);
-            GameManager.coinCount += coinValue;
-            Debug.Log("meat 3 picked up");
-        }
+            StartCoroutine(FlyTowardsPlayer());
 
+        }
+    }
+    public bool IsPlayerInRange(float range)
+    {
+        return Vector3.Distance(transform.position, player.transform.position) <= range;
+    }
+    IEnumerator FlyTowardsPlayer()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, 10 * Time.deltaTime);
+        yield return new WaitForSeconds(0.5f);
+        GameManager.coinCount += coinValue;
+        Debug.Log("meat 2 picked up");
+        Destroy(gameObject);
     }
 }

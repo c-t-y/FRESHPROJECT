@@ -6,19 +6,31 @@ public class Heart : MonoBehaviour
 {
     public int healValue;
     public GameObject player;
+
     private void Start()
     {
         healValue = 5;
         player = GameObject.FindGameObjectWithTag("Player");
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.gameObject == player && GameManager.maxHealth != player.GetComponent<PlayerController>().currentHealth)
+        if (IsPlayerInRange(2) && GameManager.maxHealth != player.GetComponent<PlayerController>().currentHealth)
         {
-            Destroy(gameObject);
-            player.GetComponent<PlayerController>().Heal(healValue);
-            Debug.Log("heart picked up");
-        }
+            StartCoroutine(FlyTowardsPlayer());
 
+        }
+    }
+    public bool IsPlayerInRange(float range)
+    {
+        return Vector3.Distance(transform.position, player.transform.position) <= range;
+    }
+    IEnumerator FlyTowardsPlayer()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, 10 * Time.deltaTime);
+        yield return new WaitForSeconds(0.5f);
+        player.GetComponent<PlayerController>().Heal(healValue);
+        Debug.Log("meat 2 picked up");
+        Destroy(gameObject);
     }
 }
+
