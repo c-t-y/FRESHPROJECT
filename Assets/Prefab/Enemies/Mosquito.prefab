@@ -97,7 +97,6 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7966753505342990434}
   currState: 
   range: 50
-  attackRange: 0
 --- !u!114 &6759371731554313894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,9 +137,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010867536, y: -0.03304684}
+  m_Offset: {x: -0.00074002147, y: 0.021133378}
   serializedVersion: 2
-  m_Radius: 0.19819969
+  m_Radius: 0.21754842
 --- !u!212 &7966753505342990434
 SpriteRenderer:
   m_ObjectHideFlags: 0

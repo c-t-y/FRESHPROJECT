@@ -11,7 +11,6 @@ public class MosquitoEnemy : MonoBehaviour
 
     public string currState;
     public float range;
-    public float attackRange;
     private bool chooseDir = false;
     private Vector2 randomDir;
 

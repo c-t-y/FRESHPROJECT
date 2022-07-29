@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Mosquito
   m_EditorClassIdentifier: 
   eHealth: 25
-  eRange: 1
+  eRange: 100
   eSpeed: 1
   eAttackDmg: 1
-  eAttackRng: 1
+  eAttackRng: 0.5
   eAttackCD: 1

@@ -78,7 +78,7 @@ MonoBehaviour:
   animator: {fileID: -2302507929637448151}
   currState: 
   range: 50
-  attackRange: 5
+  attackRange: 0.1
   frogCanJump: 0
   eSpeed: 8
 --- !u!114 &4050165427265814893
@@ -99,7 +99,7 @@ MonoBehaviour:
   speed: 3
   currentHealth: 0
   maxHealth: 0
-  attackRange: 1
+  attackRange: 0.1
   coolDown: 0.5
   attackDamage: 1
 --- !u!114 &1051638927131473960
