@@ -141,7 +141,6 @@ public class Upgrades : MonoBehaviour
         else if (thirdChoiceText.text == "Max Health Up")
         {
             GameManager.maxHealth += 5;
-            player.GetComponent<PlayerController>().Heal(5);
         }
 
         Time.timeScale = 1;
@@ -171,7 +170,6 @@ public class Upgrades : MonoBehaviour
         else if (fourthChoiceText.text == "Max Health Up")
         {
             GameManager.maxHealth += 5;
-            player.GetComponent<PlayerController>().Heal(5);
         }
 
         Time.timeScale = 1;
