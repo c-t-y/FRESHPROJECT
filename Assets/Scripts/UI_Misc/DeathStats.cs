@@ -13,7 +13,7 @@ public class DeathStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -21,6 +21,13 @@ public class DeathStats : MonoBehaviour
     {
         coinsCollected.text = "Coins collected: " + GameManager.coinCount.ToString();
         enemiesDefeated.text = "Enemies Defeated: " + GameManager.killCount.ToString();
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            GameManager.killCount = 0;
+            GameManager.coinCount = 0;
+            gameManager.GetComponent<GameManager>().RestartGame();   
+        }
 
     }
 }

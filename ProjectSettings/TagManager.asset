@@ -11,6 +11,15 @@ TagManager:
   - Object
   - XPBar
   - Weapon
+  - Shop
+  - POI
+  - RoomSpawn
+  - Transition
+  - ShopSpawnMarker
+  - ShopEntranceMarker
+  - Bullet
+  - ShopManager
+  - Camera
   layers:
   - Default
   - TransparentFX

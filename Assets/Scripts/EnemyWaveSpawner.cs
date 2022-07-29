@@ -11,16 +11,22 @@ public class EnemyWaveSpawner : MonoBehaviour
     public float spawnBlockDistance;
     public float spawnMaxDistance;
     private float spawnspace;
+    public int maxEnemies;
+    private int remainingEnemies;
+    private bool allowSpawn;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         
+        
 
         spawnRate = 3f;
         spawnBlockDistance = 10f;
         spawnMaxDistance = 22f;
+        maxEnemies = 200;
 
         //StartCoroutine(SpawnTimer());
         InvokeRepeating("CalculateSpawn", 3f, spawnRate);
@@ -30,15 +36,29 @@ public class EnemyWaveSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        remainingEnemies = enemies.Length;
+
+        if(remainingEnemies >= maxEnemies)
+        {
+            allowSpawn = false;
+        }
+        else
+        {
+            allowSpawn = true;
+        }
+
         spawnspace = Vector3.Distance(transform.position, player.transform.position);
 
-        if (spawnspace >= spawnBlockDistance && spawnspace <= spawnMaxDistance)
+
+
+        if (spawnspace >= spawnBlockDistance && spawnspace <= spawnMaxDistance && allowSpawn == true)
         {
             spawnChance = 100f;
         }
         else
         {
-            spawnChance = 0f;
+            spawnChance = 20f;
         }
     }
 
@@ -61,8 +81,9 @@ public class EnemyWaveSpawner : MonoBehaviour
 
     //public IEnumerator SpawnTimer()
     //{
-     //   CalculateSpawn();
-      //  yield return new WaitForSeconds(spawnRate);
+     //   yield return new WaitForSeconds(.1f);
+      //  CalculateSpawn();
+       // yield return new WaitForSeconds(spawnRate);
         
     //}
 
