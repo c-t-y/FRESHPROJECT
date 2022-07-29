@@ -9,7 +9,7 @@ public class Heart : MonoBehaviour
 
     private void Start()
     {
-        healValue = 5;
+        healValue = 3;
         player = GameObject.FindGameObjectWithTag("Player");
     }
     private void Update()
@@ -29,7 +29,6 @@ public class Heart : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, 10 * Time.deltaTime);
         yield return new WaitForSeconds(0.5f);
         player.GetComponent<PlayerController>().Heal(healValue);
-        Debug.Log("meat 2 picked up");
         Destroy(gameObject);
     }
 }
