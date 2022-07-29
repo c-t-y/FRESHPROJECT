@@ -15,7 +15,7 @@ public class EnemyIncSpawner : MonoBehaviour
     private bool allowSpawn;
 
     float delayAndSpawnRate = 3;
-    float timeUntilSpawnRateIncrease = 5;
+    float timeUntilSpawnRateIncrease = 15;
 
 
     void Start()
@@ -36,7 +36,6 @@ public class EnemyIncSpawner : MonoBehaviour
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         remainingEnemies = enemies.Length;
-
         if (remainingEnemies >= maxEnemies)
         {
             allowSpawn = false;
@@ -45,23 +44,13 @@ public class EnemyIncSpawner : MonoBehaviour
         {
             allowSpawn = true;
         }
-
         spawnspace = Vector3.Distance(transform.position, player.transform.position);
 
-
-
-        if (spawnspace >= spawnBlockDistance && spawnspace <= spawnMaxDistance && allowSpawn == true)
-        {
-            spawnChance = 100f;
-        }
-        else
-        {
-            spawnChance = 20f;
-        }
     }
 
     IEnumerator SpawnObject(float firstDelay)
     {
+
         float spawnRateCountdown = timeUntilSpawnRateIncrease;
         float spawnCountdown = firstDelay;
         while (true)
@@ -81,7 +70,7 @@ public class EnemyIncSpawner : MonoBehaviour
             if (spawnRateCountdown < 0 && delayAndSpawnRate > 1)
             {
                 spawnRateCountdown += timeUntilSpawnRateIncrease;
-                delayAndSpawnRate *= .75f;
+                delayAndSpawnRate *= .9f;
             }
         }
     }
@@ -99,6 +88,21 @@ public class EnemyIncSpawner : MonoBehaviour
 
     public void CalculateSpawn()
     {
+        
+
+        
+
+
+
+        if (spawnspace >= spawnBlockDistance && spawnspace <= spawnMaxDistance && allowSpawn == true)
+        {
+            spawnChance = 100f;
+        }
+        else
+        {
+            spawnChance = 0f;
+        }
+
         float calc_dropChance = Random.Range(0, 101);
 
         if (calc_dropChance > spawnChance)
