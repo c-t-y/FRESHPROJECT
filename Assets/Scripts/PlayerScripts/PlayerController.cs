@@ -122,6 +122,10 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+        else
+        {
+            return;
+        }
         healthBar.SetHealth(currentHealth);
 
     }
