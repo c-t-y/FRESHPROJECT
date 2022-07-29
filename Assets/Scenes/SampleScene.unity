@@ -12580,6 +12580,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6138827670826203616, guid: c407c4a85c8005b44b778755a9cbcf1b, type: 3}
   m_PrefabInstance: {fileID: 1620534107}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1625505715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1625505717}
+  - component: {fileID: 1625505716}
+  m_Layer: 0
+  m_Name: EggMineObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1625505716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625505715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4a6007743e7bb4e969215f5d7245ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1625505717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625505715}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -34.645546, y: -7.3506985, z: 0.3226363}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1651940808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15501,6 +15545,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c407c4a85c8005b44b778755a9cbcf1b, type: 3}
+--- !u!1001 &6381698328869410449
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 640006618214735862, guid: f9c335baaa1dcf84bbde5a13f22e9a3d, type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 640006618214735862, guid: f9c335baaa1dcf84bbde5a13f22e9a3d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.645546
+      objectReference: {fileID: 0}
+    - target: {fileID: 640006618214735862, guid: f9c335baaa1dcf84bbde5a13f22e9a3d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.3506985
+      objectReference: {fileID: 0}
+    - target: {fileID: 640006618214735862, guid: f9c335baaa1dcf84bbde5a13f22e9a3d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.3226363
+      objectReference: {fileID: 0}
+    - target: {fileID: 640006618214735862, guid: f9c335baaa1dcf84bbde5a13f22e9a3d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 640006618214735862, guid: f9c335baaa1dcf84bbde5a13f22e9a3d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 640006618214735862, guid: f9c335baaa1dcf84bbde5a13f22e9a3d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 640006618214735862, guid: f9c335baaa1dcf84bbde5a13f22e9a3d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 640006618214735862, guid: f9c335baaa1dcf84bbde5a13f22e9a3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 640006618214735862, guid: f9c335baaa1dcf84bbde5a13f22e9a3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 640006618214735862, guid: f9c335baaa1dcf84bbde5a13f22e9a3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 945771122381367544, guid: f9c335baaa1dcf84bbde5a13f22e9a3d, type: 3}
+      propertyPath: m_Name
+      value: EggMine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f9c335baaa1dcf84bbde5a13f22e9a3d, type: 3}
 --- !u!1001 &7905243894879362057
 PrefabInstance:
   m_ObjectHideFlags: 0

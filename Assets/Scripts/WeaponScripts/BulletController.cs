@@ -6,7 +6,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
 
-    public float lifeTime = 4f;
+    public float lifeTime = 3f;
     public GameObject player;
     public GameObject damageIndication;
     public GameObject strikeParticles;
@@ -14,8 +14,8 @@ public class BulletController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        StartCoroutine(DeathDelay());
+        GetComponent<Collider2D>().enabled = false;
+        StartCoroutine(Explode());
     }
 
     // Update is called once per frame
@@ -23,9 +23,10 @@ public class BulletController : MonoBehaviour
     {
 
     }
-    IEnumerator DeathDelay()
+    IEnumerator Explode()
     {
         yield return new WaitForSeconds(lifeTime);
+        GetComponent<Collider2D>().enabled = true;
         Destroy(gameObject);
     }
 
