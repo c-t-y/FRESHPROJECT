@@ -7,9 +7,7 @@ using TMPro;
 
 public class Upgrades : MonoBehaviour
 {
-    //public Button firstChoice;
-    //public Button secondChoice;
-    //public Button thirdChoice;
+
     public GameObject upgradeFirstButton;
     public Slider healthBarSlider;
 
@@ -48,22 +46,11 @@ public class Upgrades : MonoBehaviour
     void Start()
     {
         Shuffle(upgrades);
-        //foreach (var upgrade in upgrades)
-        //{
-        //    Debug.Log(upgrade);
-        //}
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 
-    public void FirstChoice()
+    public void ApplyClickedChoice()
     {
-        Debug.Log("first choice clicked");
-
         if (firstChoiceText.text == "Speed Up")
         {
             player.GetComponent<PlayerController>().playerSpeed += 1;
@@ -89,100 +76,22 @@ public class Upgrades : MonoBehaviour
         Time.timeScale = 1;
         gameObject.SetActive(false);
         Shuffle(upgrades);
-
+    }
+    public void FirstChoice()
+    {
+        ApplyClickedChoice();
     }
     public void SecondChoice()
     {
-        Debug.Log("second choice clicked");
-
-        if (secondChoiceText.text == "Speed Up")
-        {
-            player.GetComponent<PlayerController>().playerSpeed += 1;
-        }
-
-        else if (secondChoiceText.text == "Fire Rate Up")
-        {
-            player.GetComponent<PlayerController>().fireRate *= 0.9f;
-        }
-
-        else if (secondChoiceText.text == "Damage Up")
-        {
-            player.GetComponent<PlayerController>().playerDamage *= 1.1f;
-        }
-
-        else if (secondChoiceText.text == "Max Health Up")
-        {
-            GameManager.maxHealth += 5;
-            healthBarSlider.maxValue += 5;
-            player.GetComponent<PlayerController>().Heal(5);
-        }
-
-        Time.timeScale = 1;
-        gameObject.SetActive(false);
-        Shuffle(upgrades);
-
+        ApplyClickedChoice();
     }
     public void ThirdChoice()
     {
-        Debug.Log("third choice clicked");
-
-        if (thirdChoiceText.text == "Speed Up")
-        {
-            player.GetComponent<PlayerController>().playerSpeed += 1;
-        }
-
-        else if (thirdChoiceText.text == "Fire Rate Up")
-        {
-            player.GetComponent<PlayerController>().fireRate *= 0.9f;
-        }
-
-        else if (thirdChoiceText.text == "Damage Up")
-        {
-            player.GetComponent<PlayerController>().playerDamage *= 1.1f;
-        }
-
-        else if (thirdChoiceText.text == "Max Health Up")
-        {
-            GameManager.maxHealth += 5;
-            healthBarSlider.maxValue += 5;
-            player.GetComponent<PlayerController>().Heal(5);
-        }
-
-        Time.timeScale = 1;
-        gameObject.SetActive(false);
-        Shuffle(upgrades);
-
+        ApplyClickedChoice();
     }
     public void FourthChoice()
     {
-        Debug.Log("fourth choice clicked");
-
-        if (fourthChoiceText.text == "Speed Up")
-        {
-            player.GetComponent<PlayerController>().playerSpeed += 1;
-        }
-
-        else if (fourthChoiceText.text == "Fire Rate Up")
-        {
-            player.GetComponent<PlayerController>().fireRate *= 0.9f;
-        }
-
-        else if (fourthChoiceText.text == "Damage Up")
-        {
-            player.GetComponent<PlayerController>().playerDamage *= 1.1f;
-        }
-
-        else if (fourthChoiceText.text == "Max Health Up")
-        {
-            GameManager.maxHealth += 5;
-            healthBarSlider.maxValue += 5;
-            player.GetComponent<PlayerController>().Heal(5);
-        }
-
-        Time.timeScale = 1;
-        gameObject.SetActive(false);
-        Shuffle(upgrades);
-
+        ApplyClickedChoice();
     }
 
 
