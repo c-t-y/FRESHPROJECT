@@ -1496,6 +1496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeFirstButton: {fileID: 212857276}
+  healthBarSlider: {fileID: 1952322691}
   firstChoiceText: {fileID: 829828935}
   secondChoiceText: {fileID: 121597709}
   thirdChoiceText: {fileID: 1864395560}
