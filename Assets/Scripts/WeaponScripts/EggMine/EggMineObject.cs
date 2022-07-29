@@ -15,7 +15,7 @@ public class EggMineObject : MonoBehaviour
     void Start()
     {
         GetComponent<Collider2D>().enabled = false;
-        InvokeRepeating("Explode", 3f, .1f);
+        InvokeRepeating("Explode", lifeTime, .1f);
     }
 
     // Update is called once per frame
