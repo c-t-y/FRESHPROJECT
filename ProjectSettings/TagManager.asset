@@ -20,6 +20,7 @@ TagManager:
   - Bullet
   - ShopManager
   - Camera
+  - HealthBar
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,7 @@ public class Upgrades : MonoBehaviour
     //public Button secondChoice;
     //public Button thirdChoice;
     public GameObject upgradeFirstButton;
+    public Slider healthBarSlider;
 
     public TextMeshProUGUI firstChoiceText;
     public TextMeshProUGUI secondChoiceText;
@@ -81,6 +82,7 @@ public class Upgrades : MonoBehaviour
         else if (firstChoiceText.text == "Max Health Up")
         {
             GameManager.maxHealth += 5;
+            healthBarSlider.maxValue += 5;
             player.GetComponent<PlayerController>().Heal(5);
         }
 
@@ -111,6 +113,7 @@ public class Upgrades : MonoBehaviour
         else if (secondChoiceText.text == "Max Health Up")
         {
             GameManager.maxHealth += 5;
+            healthBarSlider.maxValue += 5;
             player.GetComponent<PlayerController>().Heal(5);
         }
 
@@ -141,6 +144,8 @@ public class Upgrades : MonoBehaviour
         else if (thirdChoiceText.text == "Max Health Up")
         {
             GameManager.maxHealth += 5;
+            healthBarSlider.maxValue += 5;
+            player.GetComponent<PlayerController>().Heal(5);
         }
 
         Time.timeScale = 1;
@@ -170,6 +175,8 @@ public class Upgrades : MonoBehaviour
         else if (fourthChoiceText.text == "Max Health Up")
         {
             GameManager.maxHealth += 5;
+            healthBarSlider.maxValue += 5;
+            player.GetComponent<PlayerController>().Heal(5);
         }
 
         Time.timeScale = 1;
