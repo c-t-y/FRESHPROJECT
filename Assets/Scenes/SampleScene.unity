@@ -4826,6 +4826,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoomSpawner (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 9155106118153932745, guid: c407c4a85c8005b44b778755a9cbcf1b, type: 3}
+      propertyPath: SpawnTable.Array.data[0].spawnRarity
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c407c4a85c8005b44b778755a9cbcf1b, type: 3}
 --- !u!1001 &990029714

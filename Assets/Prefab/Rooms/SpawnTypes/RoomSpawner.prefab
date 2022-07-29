@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6138827670826203616}
   - component: {fileID: 6436770976855669554}
+  - component: {fileID: 9155106118153932745}
   - component: {fileID: -8866928368839989843}
   m_Layer: 0
   m_Name: RoomSpawner
@@ -54,7 +55,7 @@ MonoBehaviour:
   - {fileID: 535380272395373592, guid: c81d931746ad55749864a64e8de28bb5, type: 3}
   - {fileID: 535380272395373592, guid: c81d931746ad55749864a64e8de28bb5, type: 3}
   - {fileID: 535380272395373592, guid: c81d931746ad55749864a64e8de28bb5, type: 3}
---- !u!114 &-8866928368839989843
+--- !u!114 &9155106118153932745
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,6 +63,29 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6138827670826203617}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdcd4834aa5742f48bceb3604e56031a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnBlockDistance: 0
+  spawnMaxDistance: 0
+  maxEnemies: 0
+  SpawnTable:
+  - name: Mosquito
+    enemy: {fileID: 7738067282039349218, guid: 9af3eda14be764ddc99c790b71ae6e2b, type: 3}
+    spawnRarity: 100
+  - name: Frog
+    enemy: {fileID: 4050165427265814892, guid: 1cb2fe5739fb65e4ea8ddc5b7bd0a16a, type: 3}
+    spawnRarity: 10
+  spawnChance: 100
+--- !u!114 &-8866928368839989843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6138827670826203617}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2d295abe3f225b43a9030ee9db0a881, type: 3}
   m_Name: 
