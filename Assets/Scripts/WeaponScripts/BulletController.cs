@@ -5,8 +5,7 @@ using UnityEngine;
 //testing push
 public class BulletController : MonoBehaviour
 {
-
-    public float lifeTime = 3f;
+    public float lifeTime = 4f;
     public GameObject player;
     public GameObject damageIndication;
     public GameObject strikeParticles;
@@ -14,8 +13,8 @@ public class BulletController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Collider2D>().enabled = false;
-        StartCoroutine(Explode());
+
+        StartCoroutine(DeathDelay());
     }
 
     // Update is called once per frame
@@ -23,10 +22,9 @@ public class BulletController : MonoBehaviour
     {
 
     }
-    IEnumerator Explode()
+    IEnumerator DeathDelay()
     {
         yield return new WaitForSeconds(lifeTime);
-        GetComponent<Collider2D>().enabled = true;
         Destroy(gameObject);
     }
 
@@ -53,4 +51,5 @@ public class BulletController : MonoBehaviour
 
 
 }
+
 

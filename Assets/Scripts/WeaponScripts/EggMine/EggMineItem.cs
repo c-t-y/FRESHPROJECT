@@ -5,11 +5,12 @@ using UnityEngine;
 public class EggMineItem : MonoBehaviour
 {
     GameObject player;
-    WeaponController playerWeaponController;
-    GameObject text;
+
+    public bool text;
     public int cost;
     public GameObject eggMine;
     public float mineSpawnTime;
+    public bool itemGrabbed;
 
     // Start is called before the first frame update
     void Start()
@@ -17,10 +18,10 @@ public class EggMineItem : MonoBehaviour
         mineSpawnTime = 5f;
         cost = 0;
         player = GameObject.FindGameObjectWithTag("Player");
-        playerWeaponController = player.GetComponent<WeaponController>();
-        text = transform.GetChild(0).gameObject;
+        itemGrabbed = false;
+        text = false;
 
-        StartCoroutine(ApplyItemEffect());
+      
     }
 
     // Update is called once per frame
@@ -28,27 +29,37 @@ public class EggMineItem : MonoBehaviour
     {
         if (IsPlayerInRange())
         {
-            text.SetActive(true);
+            text = true;
         }
         else
         {
-            text.SetActive(false);
+            text = false;
         }
         if (Input.GetKeyDown(KeyCode.E) && IsPlayerInRange() && GameManager.coinCount >= cost)
         {
-           
+            itemGrabbed = true;
+            ActivateItem();
             GameManager.coinCount -= cost;
-            Destroy(gameObject);
+            GetComponent<SpriteRenderer>().enabled = false;
+
         }
     }
     public bool IsPlayerInRange()
     {
         return Vector3.Distance(transform.position, player.transform.position) <= 1.5;
     }
-    public IEnumerator ApplyItemEffect()
+
+    public void ActivateItem()
     {
-        yield return new WaitForSeconds(.01f);
+        if (itemGrabbed == true)
+        {
+            InvokeRepeating("ApplyItemEffect", 3f, 3f);
+        }
+    }
+    public void ApplyItemEffect()
+    {
+       
         Instantiate(eggMine, player.transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(mineSpawnTime);
+        
     }
 }
