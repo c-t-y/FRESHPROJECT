@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public float calcPlayerDamage;
+    public float dmgCooldown;
+    public bool canTakeDmg;
 
     // base player stats
     public float bulletSpeed;
@@ -24,9 +26,12 @@ public class PlayerController : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
+        canTakeDmg = true;
+        dmgCooldown = 1;
         playerDamage = StatsEnemy.eHealth * 0.25f;
         currentHealth = GameManager.maxHealth;
         healthBar.SetMaxHealth(GameManager.maxHealth);
@@ -87,10 +92,18 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        canTakeDmg = false;
         healthBar.SetHealth(currentHealth);
         StartCoroutine(FlashRed());
-    }
+        StartCoroutine(TakeDamageCooldown());
 
+    }
+    IEnumerator TakeDamageCooldown()
+    {
+        yield return new WaitForSeconds(dmgCooldown);
+        canTakeDmg = true;
+
+    }
 
 
     public void Heal(float hp)

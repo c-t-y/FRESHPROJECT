@@ -61,7 +61,7 @@ public class EnemyController : MonoBehaviour
 
     void Attack()
     {
-        if (!coolDownAttack)
+        if (!coolDownAttack && player.GetComponent<PlayerController>().canTakeDmg == true)
         {
             player.GetComponent<PlayerController>().TakeDamage(attackDamage);
             StartCoroutine(CoolDown());
