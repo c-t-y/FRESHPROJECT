@@ -4823,8 +4823,9 @@ GameObject:
   - component: {fileID: 4678087089460722299}
   - component: {fileID: 1416333215676782877}
   - component: {fileID: 2580291514279074070}
-  - component: {fileID: 4042406771534327077}
+  - component: {fileID: 3342715808922681820}
   - component: {fileID: -1922219845519407273}
+  - component: {fileID: 1010510349}
   m_Layer: 0
   m_Name: Heart1
   m_TagString: Item
@@ -4926,7 +4927,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &4042406771534327077
+--- !u!114 &3342715808922681820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4935,16 +4936,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5172921154453317751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a3dbd3b20765c24da635f4076e28a01, type: 3}
+  m_Script: {fileID: 11500000, guid: 15c158a7d3eb1455699f5394d86e3b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healValue: 0
   player: {fileID: 0}
-  gameManager: {fileID: 0}
-  coinValue: 0
-  healthValue: 3
-  currentHealth: 0
-  healthBar: {fileID: 0}
-  allowHeal: 1
 --- !u!95 &-1922219845519407273
 Animator:
   serializedVersion: 4
@@ -4965,3 +4961,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1010510349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5172921154453317751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c158a7d3eb1455699f5394d86e3b51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healValue: 0
+  player: {fileID: 0}
