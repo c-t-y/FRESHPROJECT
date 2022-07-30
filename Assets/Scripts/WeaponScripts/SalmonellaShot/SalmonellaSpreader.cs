@@ -11,6 +11,7 @@ public class SalmonellaSpreader : MonoBehaviour
     void Start()
     {
         StartCoroutine(DestroySalmonella());
+        StartCoroutine(ColliderOnOff());
     }
 
     IEnumerator DestroySalmonella()
@@ -29,14 +30,21 @@ public class SalmonellaSpreader : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            InvokeRepeating("SalmonellaSpread",1f, 1f);
+            //InvokeRepeating("SalmonellaSpread",1f, 1f);
             Instantiate(damageIndication, transform.position, Quaternion.identity);
             //Instantiate(strikeParticles, transform.position, Quaternion.identity);
+            other.gameObject.GetComponent<EnemyController>().Hit();
+           
+
         }
     }
 
-    public void SalmonellaSpread()
+    public IEnumerator ColliderOnOff()
     {
-        gameObject.GetComponent<EnemyController>().Hit();
+        yield return new WaitForSeconds(.1f);
+        GetComponent<Collider2D>().enabled = false;
+        yield return new WaitForSeconds(2f);
+        GetComponent<Collider2D>().enabled = true;
+
     }
 }

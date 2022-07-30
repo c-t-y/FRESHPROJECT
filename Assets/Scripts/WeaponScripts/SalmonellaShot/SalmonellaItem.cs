@@ -13,7 +13,7 @@ public class SalmonellaItem : MonoBehaviour
     public bool itemGrabbed;
 
     public GameObject salmonellaPrefab;
-    public Animator animator;
+    //public Animator animator;
     public bool allowFire;
     public float bulletSpread = 0f;
     public float bulletSpeed;
@@ -22,11 +22,12 @@ public class SalmonellaItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        salmonellaCoolDown = 10f;
+        salmonellaCoolDown = 5f;
         cost = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         itemGrabbed = false;
         text = false;
+        bulletSpeed = 100f;
 
         allowFire = true;
 
@@ -46,7 +47,7 @@ public class SalmonellaItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && IsPlayerInRange() && GameManager.coinCount >= cost)
         {
             itemGrabbed = true;
-            ActivateItem();
+          
             GameManager.coinCount -= cost;
             GetComponent<SpriteRenderer>().enabled = false;
             gameObject.transform.parent = player.transform;
@@ -59,7 +60,6 @@ public class SalmonellaItem : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow) && allowFire == true)
             {
-
                 ShootSalmonella("up");
                 allowFire = false;
                 StartCoroutine(FireCooldown());
@@ -95,55 +95,42 @@ public class SalmonellaItem : MonoBehaviour
         return Vector3.Distance(transform.position, player.transform.position) <= 1.5;
     }
 
-    public void ActivateItem()
-    {
-        if (itemGrabbed == true)
-        {
-            InvokeRepeating("ApplyItemEffect", 3f, 3f);
-        }
-    }
-    public void ApplyItemEffect()
-    {
 
-     
-
-    }
     void ShootSalmonella(string direction)
     {
-        float randBullet = Random.Range(-bulletSpread, bulletSpread);
+        //float randBullet = Random.Range(-bulletSpread, bulletSpread);
 
         if (direction == "up")
         {
 
-            var bulletInstance = Instantiate(salmonellaPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, 1, 0) * bulletSpeed);
+            var bulletInstance = Instantiate(salmonellaPrefab, new Vector3(player.transform.position.x, transform.position.y, -1), Quaternion.identity);
+            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 1, 0) * bulletSpeed);
         }
         if (direction == "down")
         {
-            var bulletInstance = Instantiate(salmonellaPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, -1, 0) * bulletSpeed);
+            var bulletInstance = Instantiate(salmonellaPrefab, new Vector3(player.transform.position.x, transform.position.y, -1), Quaternion.identity);
+            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(0, -1, 0) * bulletSpeed);
         }
         if (direction == "left")
         {
-            animator.SetBool("ShootLeft", true);
-            var bulletInstance = Instantiate(salmonellaPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, randBullet, 0) * bulletSpeed);
+            
+            var bulletInstance = Instantiate(salmonellaPrefab, new Vector3(player.transform.position.x, transform.position.y, -1), Quaternion.identity);
+            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, 0, 0) * bulletSpeed);
 
 
         }
         if (direction == "right")
         {
-            animator.SetBool("ShootRight", true);
-            var bulletInstance = Instantiate(salmonellaPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, randBullet, 0) * bulletSpeed);
+           
+            var bulletInstance = Instantiate(salmonellaPrefab, new Vector3(player.transform.position.x, transform.position.y, -1), Quaternion.identity);
+            bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, 0, 0) * bulletSpeed);
 
         }
     }
     public IEnumerator FireCooldown()
     {
         yield return new WaitForSeconds(salmonellaCoolDown);
-        animator.SetBool("ShootLeft", false);
-        animator.SetBool("ShootRight", false);
+       
         allowFire = true;
     }
 
