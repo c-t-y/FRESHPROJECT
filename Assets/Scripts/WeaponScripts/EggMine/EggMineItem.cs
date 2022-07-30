@@ -9,13 +9,13 @@ public class EggMineItem : MonoBehaviour
     public bool text;
     public int cost;
     public GameObject eggMine;
-    public float mineSpawnTime;
+   
     public bool itemGrabbed;
 
     // Start is called before the first frame update
     void Start()
     {
-        mineSpawnTime = 5f;
+       
         cost = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         itemGrabbed = false;
@@ -41,6 +41,7 @@ public class EggMineItem : MonoBehaviour
             ActivateItem();
             GameManager.coinCount -= cost;
             GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.transform.parent = player.transform;
 
         }
     }
