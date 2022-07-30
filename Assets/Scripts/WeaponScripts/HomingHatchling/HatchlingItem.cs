@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SalmonellaItem : MonoBehaviour
+public class HatchlingItem : MonoBehaviour
 {
     GameObject player;
     public GameObject itemStorage;
@@ -10,25 +10,25 @@ public class SalmonellaItem : MonoBehaviour
     public bool text;
     public int cost;
 
-    public float salmonellaCoolDown;
+    public float hatchCoolDown;
     public bool itemGrabbed;
 
-    public GameObject salmonellaPrefab;
+    public GameObject hatchBullet;
     //public Animator animator;
     public bool allowFire;
-  
+
     public float bulletSpeed;
-   
+
 
     // Start is called before the first frame update
     void Start()
     {
-        salmonellaCoolDown = 5f;
+        hatchCoolDown = 2f;
         cost = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         itemGrabbed = false;
         text = false;
-        bulletSpeed = 100f;
+        bulletSpeed = 200f;
 
         allowFire = true;
 
@@ -105,34 +105,34 @@ public class SalmonellaItem : MonoBehaviour
         if (direction == "up")
         {
 
-            var bulletInstance = Instantiate(salmonellaPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
+            var bulletInstance = Instantiate(hatchBullet, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
             bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 1, 0) * bulletSpeed);
         }
         if (direction == "down")
         {
-            var bulletInstance = Instantiate(salmonellaPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
+            var bulletInstance = Instantiate(hatchBullet, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
             bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(0, -1, 0) * bulletSpeed);
         }
         if (direction == "left")
         {
-            
-            var bulletInstance = Instantiate(salmonellaPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
+
+            var bulletInstance = Instantiate(hatchBullet, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
             bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, 0, 0) * bulletSpeed);
 
 
         }
         if (direction == "right")
         {
-           
-            var bulletInstance = Instantiate(salmonellaPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
+
+            var bulletInstance = Instantiate(hatchBullet, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
             bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, 0, 0) * bulletSpeed);
 
         }
     }
     public IEnumerator FireCooldown()
     {
-        yield return new WaitForSeconds(salmonellaCoolDown);
-       
+        yield return new WaitForSeconds(hatchCoolDown);
+
         allowFire = true;
     }
 

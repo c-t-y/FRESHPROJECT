@@ -5,6 +5,7 @@ using UnityEngine;
 public class EggMineItem : MonoBehaviour
 {
     GameObject player;
+    public GameObject itemStorage;
 
     public bool text;
     public int cost;
@@ -38,10 +39,12 @@ public class EggMineItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && IsPlayerInRange() && GameManager.coinCount >= cost)
         {
             itemGrabbed = true;
+            GameManager.itemsGrabbed++;
             ActivateItem();
             GameManager.coinCount -= cost;
-            GetComponent<SpriteRenderer>().enabled = false;
+            //GetComponent<SpriteRenderer>().enabled = false;
             gameObject.transform.parent = player.transform;
+            gameObject.transform.position = new Vector3(itemStorage.transform.position.x + GameManager.itemsGrabbed, itemStorage.transform.position.y, -4);
 
         }
     }

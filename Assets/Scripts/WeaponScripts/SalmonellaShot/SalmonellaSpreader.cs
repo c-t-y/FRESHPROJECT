@@ -33,7 +33,7 @@ public class SalmonellaSpreader : MonoBehaviour
             //InvokeRepeating("SalmonellaSpread",1f, 1f);
             Instantiate(damageIndication, transform.position, Quaternion.identity);
             //Instantiate(strikeParticles, transform.position, Quaternion.identity);
-            other.gameObject.GetComponent<EnemyController>().Hit();
+            other.gameObject.GetComponent<EnemyController>().HitSmall();
            
 
         }
@@ -41,7 +41,11 @@ public class SalmonellaSpreader : MonoBehaviour
 
     public IEnumerator ColliderOnOff()
     {
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.25f);
+        GetComponent<Collider2D>().enabled = false;
+        yield return new WaitForSeconds(1.5f);
+        GetComponent<Collider2D>().enabled = true;
+        yield return new WaitForSeconds(.5f);
         GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(2f);
         GetComponent<Collider2D>().enabled = true;
