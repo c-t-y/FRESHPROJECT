@@ -25,6 +25,7 @@ public class SalmonellaItem : MonoBehaviour
     {
         salmonellaCoolDown = 5f;
         cost = 0;
+        itemStorage = GameObject.FindGameObjectWithTag("ItemStorage");
         player = GameObject.FindGameObjectWithTag("Player");
         itemGrabbed = false;
         text = false;

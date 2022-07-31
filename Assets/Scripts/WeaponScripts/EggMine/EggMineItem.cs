@@ -16,7 +16,7 @@ public class EggMineItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        itemStorage = GameObject.FindGameObjectWithTag("ItemStorage");
         cost = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         itemGrabbed = false;

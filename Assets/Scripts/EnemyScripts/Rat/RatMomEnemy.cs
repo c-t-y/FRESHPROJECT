@@ -24,7 +24,7 @@ public class RatMomEnemy : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyController = GetComponent<EnemyController>();
 
-        InvokeRepeating("SpawnBabies", 3f, 5f);
+        InvokeRepeating("SpawnBabies", 3f, 10f);
     }
     private void Update()
     {

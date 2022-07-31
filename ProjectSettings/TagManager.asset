@@ -21,6 +21,7 @@ TagManager:
   - ShopManager
   - Camera
   - HealthBar
+  - ItemStorage
   layers:
   - Default
   - TransparentFX
