@@ -32,7 +32,7 @@ public class SalmonellaObject : MonoBehaviour
      
             //Instantiate(strikeParticles, transform.position, Quaternion.identity);
             Instantiate(salmonellaSpreader, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            //Destroy(gameObject);
 
          
         }
