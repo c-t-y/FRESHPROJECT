@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class MosquitoEnemy : MonoBehaviour
+public class RatEnemy : MonoBehaviour
 {
     public GameObject player;
     public EnemyController enemyController;

@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class MosquitoEnemy : MonoBehaviour
+public class RatMomEnemy : MonoBehaviour
 {
     public GameObject player;
     public EnemyController enemyController;
     public SpriteRenderer spriteRenderer;
+    public GameObject ratBaby;
 
     public string currState;
     public float range;
@@ -23,6 +23,8 @@ public class MosquitoEnemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyController = GetComponent<EnemyController>();
+
+        InvokeRepeating("SpawnBabies", 3f, 5f);
     }
     private void Update()
     {
@@ -68,8 +70,6 @@ public class MosquitoEnemy : MonoBehaviour
 
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, eSpeed * Time.deltaTime);
 
-
-
     }
 
 
@@ -82,4 +82,13 @@ public class MosquitoEnemy : MonoBehaviour
         //transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
         chooseDir = false;
     }
+
+    public void SpawnBabies()
+    {
+        Instantiate(ratBaby, transform.position, Quaternion.identity);
+
+    }
 }
+
+
+

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c36c4771ba1296b4d8aeeba360db118c, type: 3}
-  m_Name: Mosquito
+  m_Name: RatMom
   m_EditorClassIdentifier: 
-  eHealth: 25
-  eRange: 100
-  eSpeed: 7
-  eAttackDmg: 1
-  eAttackRng: 0.5
+  eHealth: 75
+  eRange: 50
+  eSpeed: 3
+  eAttackDmg: 3
+  eAttackRng: 0.75
   eAttackCD: 1
