@@ -26,7 +26,7 @@ public class DudEggsplosion : MonoBehaviour
         {
             other.gameObject.GetComponent<ObjectController>().Hit();
             //Instantiate(strikeParticles, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            
 
         }
     }
