@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DudEggObject : MonoBehaviour
 {
-    public float lifeTime = 2f;
+    public float lifeTime;
     public GameObject player;
     public int dudchance;
     public GameObject eggsplosion;
@@ -16,6 +16,7 @@ public class DudEggObject : MonoBehaviour
 
     public void Start()
     {
+        lifeTime = 2f;
         StartCoroutine(DeathDelay());
     }
 

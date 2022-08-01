@@ -64,28 +64,28 @@ public class ShotgunShells : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow) && allowFire == true)
             {
-                ShootSalmonella("up");
+                ShootShotgun("up");
                 allowFire = false;
                 StartCoroutine(FireCooldown());
 
             }
             if (Input.GetKey(KeyCode.DownArrow) && allowFire == true)
             {
-                ShootSalmonella("down");
+                ShootShotgun("down");
                 allowFire = false;
                 StartCoroutine(FireCooldown());
 
             }
             if (Input.GetKey(KeyCode.LeftArrow) && allowFire == true)
             {
-                ShootSalmonella("left");
+                ShootShotgun("left");
                 allowFire = false;
                 StartCoroutine(FireCooldown());
 
             }
             if (Input.GetKey(KeyCode.RightArrow) && allowFire == true)
             {
-                ShootSalmonella("right");
+                ShootShotgun("right");
                 allowFire = false;
                 StartCoroutine(FireCooldown());
             }
@@ -100,7 +100,7 @@ public class ShotgunShells : MonoBehaviour
     }
 
 
-    void ShootSalmonella(string direction)
+    void ShootShotgun(string direction)
     {
         for (int i = 0; i < shotgunCap; i++)
         {
