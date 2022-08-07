@@ -7,11 +7,10 @@ public class EnemyController : MonoBehaviour
 
     LootScript loot;
     GameObject player;
-    //GameObject xpBar;
     SpriteRenderer spriteRenderer;
     public GameObject damageIndication;
     public EnemyScriptableObject EnemyScriptableObject;
-    private UnityEngine.Object explosionRef;
+    public Pooler bloodParticlePool;
 
 
     private bool coolDownAttack = false;
@@ -23,12 +22,12 @@ public class EnemyController : MonoBehaviour
     public float coolDown;
     public float attackDamage;
 
+
     void Start()
     {
-        explosionRef = Resources.Load("Explode");
+        bloodParticlePool = GameObject.FindGameObjectWithTag("BloodParticlePool").GetComponent<Pooler>();
         EnemySetup();
         player = GameObject.FindGameObjectWithTag("Player");
-        //xpBar = GameObject.FindGameObjectWithTag("XPBar");
         spriteRenderer = GetComponent<SpriteRenderer>();
         loot = GetComponent<LootScript>();
     }
@@ -129,10 +128,11 @@ public class EnemyController : MonoBehaviour
 
     public void Death()
     {
-        GameObject explosion = (GameObject)Instantiate(explosionRef);
+        //GameObject explosion = (GameObject)Instantiate(explosionRef);
+        GameObject explosion = bloodParticlePool.GetObject();
         explosion.transform.position = new Vector3(transform.position.x, transform.position.y + .3f, transform.position.z);
+        explosion.SetActive(true);
 
-        //xpBar.GetComponent<XPBar>().GainXP(1);
         Destroy(gameObject);
         GameManager.killCount += 1;
         loot.GetComponent<LootScript>().calculateLoot();

@@ -22,6 +22,8 @@ TagManager:
   - Camera
   - HealthBar
   - ItemStorage
+  - StrikeParticlePool
+  - BloodParticlePool
   layers:
   - Default
   - TransparentFX

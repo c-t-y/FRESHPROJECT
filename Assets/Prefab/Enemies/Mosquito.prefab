@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageIndication: {fileID: 5744389645827954008, guid: 2e5b4b77d997747a4ae0904c9db4eaaa, type: 3}
   EnemyScriptableObject: {fileID: 11400000, guid: 14bc04745c01b48e0b637990843f19cf, type: 2}
+  bloodParticlePool: {fileID: 0}
   range: 50
   speed: 3
   currentHealth: 0
