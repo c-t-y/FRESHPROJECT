@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class SalmonellaSpreader : MonoBehaviour
 {
-    public GameObject damageIndication;
+    public Pooler damageIndicatorPool;
     //public GameObject strikeParticles;
 
     // Start is called before the first frame update
     void Start()
     {
+        damageIndicatorPool = GameObject.FindGameObjectWithTag("DamageIndicatorPooler").GetComponent<Pooler>();
         StartCoroutine(DestroySalmonella());
         StartCoroutine(ColliderOnOff());
     }
@@ -23,7 +24,7 @@ public class SalmonellaSpreader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -31,10 +32,12 @@ public class SalmonellaSpreader : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             //InvokeRepeating("SalmonellaSpread",1f, 1f);
-            Instantiate(damageIndication, transform.position, Quaternion.identity);
+            GameObject damageIndicator = damageIndicatorPool.GetObject();
+            damageIndicator.transform.position = transform.position;
+            damageIndicator.SetActive(true);
             //Instantiate(strikeParticles, transform.position, Quaternion.identity);
             other.gameObject.GetComponent<EnemyController>().HitSmall();
-           
+
 
         }
     }

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class RazorFeatherObj : MonoBehaviour
 {
-    
+
     public GameObject player;
-    public GameObject damageIndication;
+    public Pooler damageIndicatorPool;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        damageIndicatorPool = GameObject.FindGameObjectWithTag("DamageIndicatorPooler").GetComponent<Pooler>();
         player = GameObject.FindGameObjectWithTag("Player");
         InvokeRepeating("DestroyRazor", 4f, 1f);
         gameObject.transform.parent = player.transform;
@@ -29,13 +30,15 @@ public class RazorFeatherObj : MonoBehaviour
 
         if (other.CompareTag("Enemy"))
         {
-            Instantiate(damageIndication, transform.position, Quaternion.identity);
+            GameObject damageIndicator = damageIndicatorPool.GetObject();
+            damageIndicator.transform.position = transform.position;
+            damageIndicator.SetActive(true);
             //Instantiate(strikeParticles, transform.position, Quaternion.identity);
             other.gameObject.GetComponent<EnemyController>().Hit();
 
 
         }
-      
+
 
     }
 

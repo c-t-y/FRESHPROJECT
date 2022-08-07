@@ -6,11 +6,14 @@ public class HatchlingChick : MonoBehaviour
 {
     public GameObject player;
     public GameObject damageIndication;
+    public Pooler damageIndicatorPool;
+
     public float chickSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
+        damageIndicatorPool = GameObject.FindGameObjectWithTag("DamageIndicatorPooler").GetComponent<Pooler>();
         player = GameObject.FindGameObjectWithTag("Player");
         chickSpeed = 8f;
     }
@@ -26,15 +29,17 @@ public class HatchlingChick : MonoBehaviour
 
         if (other.CompareTag("Enemy"))
         {
-            Instantiate(damageIndication, transform.position, Quaternion.identity);
+            GameObject damageIndicator = damageIndicatorPool.GetObject();
+            damageIndicator.transform.position = transform.position;
+            damageIndicator.SetActive(true);
             //Instantiate(strikeParticles, transform.position, Quaternion.identity);
             other.gameObject.GetComponent<EnemyController>().Hit();
 
-           
+
         }
         if (other.CompareTag("Player"))
         {
-           
+
             //Instantiate(strikeParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
 

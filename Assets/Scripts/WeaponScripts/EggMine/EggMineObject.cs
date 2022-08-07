@@ -7,13 +7,14 @@ public class EggMineObject : MonoBehaviour
 
     public float lifeTime = 3f;
     public GameObject player;
-    public GameObject damageIndication;
-  
-    
+    public Pooler damageIndicatorPool;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+        damageIndicatorPool = GameObject.FindGameObjectWithTag("DamageIndicatorPooler").GetComponent<Pooler>();
         GetComponent<Collider2D>().enabled = false;
         InvokeRepeating("Explode", lifeTime, .1f);
     }
@@ -33,8 +34,10 @@ public class EggMineObject : MonoBehaviour
 
         if (other.CompareTag("Enemy"))
         {
-            Instantiate(damageIndication, transform.position, Quaternion.identity);
-           
+            GameObject damageIndicator = damageIndicatorPool.GetObject();
+            damageIndicator.transform.position = transform.position;
+            damageIndicator.SetActive(true);
+
             other.gameObject.GetComponent<EnemyController>().Hit();
 
             Destroy(gameObject);
@@ -42,7 +45,7 @@ public class EggMineObject : MonoBehaviour
         if (other.CompareTag("Object"))
         {
             other.gameObject.GetComponent<ObjectController>().Hit();
-          
+
             Destroy(gameObject);
 
         }

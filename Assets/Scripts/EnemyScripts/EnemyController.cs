@@ -8,7 +8,6 @@ public class EnemyController : MonoBehaviour
     LootScript loot;
     GameObject player;
     SpriteRenderer spriteRenderer;
-    public GameObject damageIndication;
     public EnemyScriptableObject EnemyScriptableObject;
     public Pooler bloodParticlePool;
 

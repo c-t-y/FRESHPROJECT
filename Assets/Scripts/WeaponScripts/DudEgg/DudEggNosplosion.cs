@@ -5,11 +5,14 @@ using UnityEngine;
 public class DudEggNosplosion : MonoBehaviour
 {
     public GameObject damageIndication;
+    public Pooler damageIndicatorPool;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        damageIndicatorPool = GameObject.FindGameObjectWithTag("DamageIndicatorPooler").GetComponent<Pooler>();
         StartCoroutine(DeathDelay());
     }
 
@@ -18,8 +21,9 @@ public class DudEggNosplosion : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
 
-            Instantiate(damageIndication, transform.position, Quaternion.identity);
-            //Instantiate(strikeParticles, transform.position, Quaternion.identity);
+            GameObject damageIndicator = damageIndicatorPool.GetObject();
+            damageIndicator.transform.position = transform.position;
+            damageIndicator.SetActive(true);
             other.gameObject.GetComponent<EnemyController>().HitXS();
 
 
