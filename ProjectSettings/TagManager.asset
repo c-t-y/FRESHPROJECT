@@ -24,6 +24,7 @@ TagManager:
   - ItemStorage
   - StrikeParticlePool
   - BloodParticlePool
+  - DamageIndicatorPooler
   layers:
   - Default
   - TransparentFX
