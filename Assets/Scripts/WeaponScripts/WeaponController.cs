@@ -6,17 +6,18 @@ public class WeaponController : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Animator animator;
+    public Pooler bulletPool;
     public bool allowFire;
     public float bulletSpread = .3f;
     public float bulletSpeed;
     public float fireRate;
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
         allowFire = true;
-       
+
     }
 
     // Update is called once per frame
@@ -75,37 +76,54 @@ public class WeaponController : MonoBehaviour
 
     void Shoot(string direction)
     {
-       
-        
-            float randBullet = Random.Range(-bulletSpread, bulletSpread);
-
-            if (direction == "up")
-            {
-
-                var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-                bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, 1, 0) * bulletSpeed);
-            }
-            if (direction == "down")
-            {
-                var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-                bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, -1, 0) * bulletSpeed);
-            }
-            if (direction == "left")
-            {
-                animator.SetBool("ShootLeft", true);
-                var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-                bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, randBullet, 0) * bulletSpeed);
 
 
-            }
-            if (direction == "right")
-            {
-                animator.SetBool("ShootRight", true);
-                var bulletInstance = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-                bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, randBullet, 0) * bulletSpeed);
+        float randBullet = Random.Range(-bulletSpread, bulletSpread);
 
-            }
-        
+        if (direction == "up")
+        {
+            GameObject g = bulletPool.GetObject();
+            g.transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+            g.transform.rotation = Quaternion.identity;
+            g.SetActive(true);
+            g.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, 1, 0) * bulletSpeed);
+        }
+        if (direction == "down")
+        {
+
+            GameObject g = bulletPool.GetObject();
+            g.transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+            g.transform.rotation = Quaternion.identity;
+            g.SetActive(true);
+            g.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, -1, 0) * bulletSpeed);
+        }
+        if (direction == "left")
+        {
+            animator.SetBool("ShootLeft", true);
+
+            GameObject g = bulletPool.GetObject();
+            g.transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+            g.transform.rotation = Quaternion.identity;
+            g.SetActive(true);
+            g.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, randBullet, 0) * bulletSpeed);
+
+
+
+
+        }
+        if (direction == "right")
+        {
+            animator.SetBool("ShootRight", true);
+
+            GameObject g = bulletPool.GetObject();
+            g.transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+            g.transform.rotation = Quaternion.identity;
+            g.SetActive(true);
+            g.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, randBullet, 0) * bulletSpeed);
+
+
+        }
+
     }
     public IEnumerator FireCooldown()
     {

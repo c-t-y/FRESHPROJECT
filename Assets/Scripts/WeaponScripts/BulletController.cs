@@ -9,11 +9,13 @@ public class BulletController : MonoBehaviour
     public GameObject player;
     public GameObject damageIndication;
     public GameObject strikeParticles;
+    private Pooler pool;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        pool = transform.parent.GetComponent<Pooler>();
         StartCoroutine(DeathDelay());
     }
 
@@ -25,7 +27,7 @@ public class BulletController : MonoBehaviour
     IEnumerator DeathDelay()
     {
         yield return new WaitForSeconds(lifeTime);
-        Destroy(gameObject);
+        pool.ReturnObject(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -37,13 +39,13 @@ public class BulletController : MonoBehaviour
             Instantiate(strikeParticles, transform.position, Quaternion.identity);
             other.gameObject.GetComponent<EnemyController>().Hit();
 
-            Destroy(gameObject);
+            pool.ReturnObject(gameObject);
         }
         if (other.CompareTag("Object"))
         {
             other.gameObject.GetComponent<ObjectController>().Hit();
             Instantiate(strikeParticles, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            pool.ReturnObject(gameObject);
 
         }
 
