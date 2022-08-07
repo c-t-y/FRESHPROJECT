@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         canTakeDmg = true;
-        dmgCooldown = 1;
+        dmgCooldown = 0.5f;
         playerDamage = StatsEnemy.eHealth * 0.25f;
         currentHealth = GameManager.maxHealth;
         healthBar.SetMaxHealth(GameManager.maxHealth);
@@ -83,8 +83,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        calcPlayerDamageXL = Mathf.Ceil(playerDamage*4f);
-        calcPlayerDamageLarge = Mathf.Ceil(playerDamage*2f);
+        calcPlayerDamageXL = Mathf.Ceil(playerDamage * 4f);
+        calcPlayerDamageLarge = Mathf.Ceil(playerDamage * 2f);
         calcPlayerDamage = Mathf.Ceil(playerDamage);
         calcPlayerDamageSmall = Mathf.Ceil(playerDamage * 0.5f);
         calcPlayerDamageXS = Mathf.Ceil(playerDamage * 0.25f);
