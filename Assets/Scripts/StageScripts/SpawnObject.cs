@@ -11,7 +11,7 @@ public class SpawnObject : MonoBehaviour
     {
         int rand = Random.Range(0, objects.Length);
         var roomObject = Instantiate(objects[rand], transform.position, Quaternion.identity);
-        roomObject.transform.parent = gameObject.transform;
+        roomObject.transform.SetParent(gameObject.transform);
     }
 
   
