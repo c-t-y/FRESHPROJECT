@@ -25,6 +25,7 @@ TagManager:
   - StrikeParticlePool
   - BloodParticlePool
   - DamageIndicatorPooler
+  - BulletPool
   layers:
   - Default
   - TransparentFX

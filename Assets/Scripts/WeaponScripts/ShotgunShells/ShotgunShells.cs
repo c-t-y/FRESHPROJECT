@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShotgunShells : MonoBehaviour
 {
     GameObject player;
+    public Pooler bulletPool;
     public GameObject itemStorage;
 
     public bool text;
@@ -12,7 +13,6 @@ public class ShotgunShells : MonoBehaviour
     public float bulletSpread;
     public float shotCoolDown;
     public bool itemGrabbed;
-
     public GameObject bulletPrefab;
     //public Animator animator;
     public bool allowFire;
@@ -23,6 +23,7 @@ public class ShotgunShells : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bulletPool = GameObject.FindGameObjectWithTag("BulletPool").GetComponent<Pooler>();
         itemStorage = GameObject.FindGameObjectWithTag("ItemStorage");
         shotCoolDown = 1f;
         cost = 0;
@@ -102,37 +103,45 @@ public class ShotgunShells : MonoBehaviour
 
     void ShootShotgun(string direction)
     {
-        for (int i = 0; i < shotgunCap; i++)
+
+        float randBullet = Random.Range(-bulletSpread, bulletSpread);
+
+        if (direction == "up")
         {
-            float randBullet = Random.Range(-bulletSpread, bulletSpread);
-
-            if (direction == "up")
-            {
-
-                var bulletInstance = Instantiate(bulletPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
-                bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, 1, 0) * bulletSpeed);
-            }
-            if (direction == "down")
-            {
-                var bulletInstance = Instantiate(bulletPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
-                bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, -1, 0) * bulletSpeed);
-            }
-            if (direction == "left")
-            {
-                //animator.SetBool("ShootLeft", true);
-                var bulletInstance = Instantiate(bulletPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
-                bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, randBullet, 0) * bulletSpeed);
-
-
-            }
-            if (direction == "right")
-            {
-                //animator.SetBool("ShootRight", true);
-                var bulletInstance = Instantiate(bulletPrefab, new Vector3(player.transform.position.x, player.transform.position.y, -1), Quaternion.identity);
-                bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, randBullet, 0) * bulletSpeed);
-
-            }
+            GameObject g = bulletPool.GetObject();
+            g.transform.position = player.transform.position;
+            g.SetActive(true);
+            g.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, 1, 0) * bulletSpeed);
         }
+        if (direction == "down")
+        {
+
+            GameObject g = bulletPool.GetObject();
+            g.transform.position = player.transform.position;
+            g.SetActive(true);
+            g.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, -1, 0) * bulletSpeed);
+        }
+        if (direction == "left")
+        {
+
+            GameObject g = bulletPool.GetObject();
+            g.transform.position = player.transform.position;
+            g.SetActive(true);
+            g.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, randBullet, 0) * bulletSpeed);
+
+        }
+        if (direction == "right")
+        {
+
+            GameObject g = bulletPool.GetObject();
+            g.transform.position = player.transform.position;
+            g.SetActive(true);
+            g.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, randBullet, 0) * bulletSpeed);
+
+
+        }
+
+
     }
     public IEnumerator FireCooldown()
     {

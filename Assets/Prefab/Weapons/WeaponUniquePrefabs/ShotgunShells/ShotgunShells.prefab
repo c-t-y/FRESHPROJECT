@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7196963ccc339d4e95d7ec4622737f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPool: {fileID: 0}
   itemStorage: {fileID: 0}
   text: 0
   cost: 0
