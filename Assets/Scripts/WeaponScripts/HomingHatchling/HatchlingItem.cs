@@ -53,7 +53,14 @@ public class HatchlingItem : MonoBehaviour
             GameManager.coinCount -= cost;
             //GetComponent<SpriteRenderer>().enabled = false;
             gameObject.transform.parent = player.transform;
-            gameObject.transform.position = new Vector3(itemStorage.transform.position.x + GameManager.itemsGrabbed, itemStorage.transform.position.y, -4);
+            if (GameManager.itemsGrabbed < 8)
+            {
+                gameObject.transform.position = new Vector3(itemStorage.transform.position.x, itemStorage.transform.position.y - GameManager.itemsGrabbed, -4);
+            }
+            else
+            {
+                gameObject.transform.position = new Vector3(itemStorage.transform.position.x + 1, itemStorage.transform.position.y + 8 - GameManager.itemsGrabbed, -4);
+            }
 
         }
 

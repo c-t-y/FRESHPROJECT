@@ -11,18 +11,10 @@ public class LevelGeneration : MonoBehaviour
     void Start()
     {
         int rand = Random.Range(0, rooms.Length);
-        Instantiate(rooms[rand], transform.position, Quaternion.identity);
-
+        var levelRooms = Instantiate(rooms[rand], transform.position, Quaternion.identity);
+        levelRooms.transform.parent = gameObject.transform;
 
 
     }
    
-
-   
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
