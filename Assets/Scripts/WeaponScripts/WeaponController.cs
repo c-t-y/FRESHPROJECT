@@ -84,7 +84,6 @@ public class WeaponController : MonoBehaviour
         {
             GameObject g = bulletPool.GetObject();
             g.transform.position = new Vector3(transform.position.x, transform.position.y, -1);
-            g.transform.rotation = Quaternion.identity;
             g.SetActive(true);
             g.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, 1, 0) * bulletSpeed);
         }
@@ -93,7 +92,6 @@ public class WeaponController : MonoBehaviour
 
             GameObject g = bulletPool.GetObject();
             g.transform.position = new Vector3(transform.position.x, transform.position.y, -1);
-            g.transform.rotation = Quaternion.identity;
             g.SetActive(true);
             g.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, -1, 0) * bulletSpeed);
         }
@@ -103,7 +101,6 @@ public class WeaponController : MonoBehaviour
 
             GameObject g = bulletPool.GetObject();
             g.transform.position = new Vector3(transform.position.x, transform.position.y, -1);
-            g.transform.rotation = Quaternion.identity;
             g.SetActive(true);
             g.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, randBullet, 0) * bulletSpeed);
 
@@ -117,7 +114,6 @@ public class WeaponController : MonoBehaviour
 
             GameObject g = bulletPool.GetObject();
             g.transform.position = new Vector3(transform.position.x, transform.position.y, -1);
-            g.transform.rotation = Quaternion.identity;
             g.SetActive(true);
             g.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, randBullet, 0) * bulletSpeed);
 

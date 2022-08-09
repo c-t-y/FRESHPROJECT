@@ -44,13 +44,13 @@ public class BulletController : MonoBehaviour
             Instantiate(strikeParticles, transform.position, Quaternion.identity);
             other.gameObject.GetComponent<EnemyController>().Hit();
 
-            pool.ReturnObject(gameObject);
+            Destroy(gameObject);
         }
         if (other.CompareTag("Object"))
         {
             other.gameObject.GetComponent<ObjectController>().Hit();
             Instantiate(strikeParticles, transform.position, Quaternion.identity);
-            pool.ReturnObject(gameObject);
+            Destroy(gameObject);
 
         }
 

@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour
         currentHealth -= damage;
         canTakeDmg = false;
         healthBar.SetHealth(currentHealth);
-        CameraShaker.Instance.ShakeOnce(8f, 4f, .05f, .3f);
+        //CameraShaker.Instance.ShakeOnce(3f, 2f, .05f, .3f);
         StartCoroutine(FlashRed());
         StartCoroutine(TakeDamageCooldown());
 

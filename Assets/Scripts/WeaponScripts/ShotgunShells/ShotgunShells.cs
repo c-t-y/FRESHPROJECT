@@ -72,7 +72,9 @@ public class ShotgunShells : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow) && allowFire == true)
             {
+
                 ShootShotgun("up");
+
                 allowFire = false;
                 StartCoroutine(FireCooldown());
 
@@ -110,44 +112,37 @@ public class ShotgunShells : MonoBehaviour
 
     void ShootShotgun(string direction)
     {
-
-        float randBullet = Random.Range(-bulletSpread, bulletSpread);
-
-        if (direction == "up")
+        for (int i = 0; i < shotgunCap; i++)
         {
-            GameObject g = bulletPool.GetObject();
-            g.transform.position = player.transform.position;
-            g.SetActive(true);
-            g.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, 1, 0) * bulletSpeed);
+            float randBullet = Random.Range(-bulletSpread, bulletSpread);
+
+            if (direction == "up")
+            {
+
+                var bulletInstance = Instantiate(bulletPrefab, new Vector3(player.transform.position.x + randBullet, player.transform.position.y, -1), Quaternion.identity);
+                bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 1, 0) * bulletSpeed);
+            }
+            if (direction == "down")
+            {
+                var bulletInstance = Instantiate(bulletPrefab, new Vector3(player.transform.position.x + randBullet, player.transform.position.y, -1), Quaternion.identity);
+                bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(0, -1, 0) * bulletSpeed);
+            }
+            if (direction == "left")
+            {
+
+                var bulletInstance = Instantiate(bulletPrefab, new Vector3(player.transform.position.x, player.transform.position.y + randBullet, -1), Quaternion.identity);
+                bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, 0, 0) * bulletSpeed);
+
+
+            }
+            if (direction == "right")
+            {
+
+                var bulletInstance = Instantiate(bulletPrefab, new Vector3(player.transform.position.x, player.transform.position.y + randBullet, -1), Quaternion.identity);
+                bulletInstance.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, 0, 0) * bulletSpeed);
+
+            }
         }
-        if (direction == "down")
-        {
-
-            GameObject g = bulletPool.GetObject();
-            g.transform.position = player.transform.position;
-            g.SetActive(true);
-            g.GetComponent<Rigidbody2D>().AddForce(new Vector3(randBullet, -1, 0) * bulletSpeed);
-        }
-        if (direction == "left")
-        {
-
-            GameObject g = bulletPool.GetObject();
-            g.transform.position = player.transform.position;
-            g.SetActive(true);
-            g.GetComponent<Rigidbody2D>().AddForce(new Vector3(-1, randBullet, 0) * bulletSpeed);
-
-        }
-        if (direction == "right")
-        {
-
-            GameObject g = bulletPool.GetObject();
-            g.transform.position = player.transform.position;
-            g.SetActive(true);
-            g.GetComponent<Rigidbody2D>().AddForce(new Vector3(1, randBullet, 0) * bulletSpeed);
-
-
-        }
-
 
     }
     public IEnumerator FireCooldown()
