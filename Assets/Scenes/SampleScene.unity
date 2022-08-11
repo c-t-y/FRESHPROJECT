@@ -1019,10 +1019,10 @@ MonoBehaviour:
   canTakeDmg: 0
   bulletSpeed: 200
   fireRate: 0.5
-  bulletSpread: 0.3
+  bulletSpread: 0.1
   currentHealth: 0
   playerDamage: 0
-  playerSpeed: 5
+  playerSpeed: 2
 --- !u!50 &117968659
 Rigidbody2D:
   serializedVersion: 4

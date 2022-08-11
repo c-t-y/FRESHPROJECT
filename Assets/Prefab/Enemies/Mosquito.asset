@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36c4771ba1296b4d8aeeba360db118c, type: 3}
   m_Name: Mosquito
   m_EditorClassIdentifier: 
-  eHealth: 25
+  eHealth: 50
   eRange: 100
   eSpeed: 7
   eAttackDmg: 1

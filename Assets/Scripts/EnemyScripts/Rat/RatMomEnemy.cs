@@ -14,7 +14,7 @@ public class RatMomEnemy : MonoBehaviour
     private bool chooseDir = false;
     private Vector2 randomDir;
 
-    public static float eSpeed = 3f;
+    public float eSpeed = 3f;
 
 
     private void Start()
@@ -24,7 +24,7 @@ public class RatMomEnemy : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyController = GetComponent<EnemyController>();
 
-        InvokeRepeating("SpawnBabies", 3f, 10f);
+        InvokeRepeating("SpawnBabies", 10f, 45f);
     }
     private void Update()
     {

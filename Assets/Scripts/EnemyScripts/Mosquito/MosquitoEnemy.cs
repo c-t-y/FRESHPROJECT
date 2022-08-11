@@ -14,7 +14,7 @@ public class MosquitoEnemy : MonoBehaviour
     private bool chooseDir = false;
     private Vector2 randomDir;
 
-    public static float eSpeed = 3f;
+    public float eSpeed = 3f;
 
 
     private void Start()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShotgunShells : MonoBehaviour
 {
     GameObject player;
-    public Pooler bulletPool;
+
     public GameObject itemStorage;
 
     public bool text;
@@ -23,7 +23,7 @@ public class ShotgunShells : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bulletPool = GameObject.FindGameObjectWithTag("BulletPool").GetComponent<Pooler>();
+      
         itemStorage = GameObject.FindGameObjectWithTag("ItemStorage");
         shotCoolDown = 1f;
         cost = 0;

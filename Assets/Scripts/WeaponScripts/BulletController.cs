@@ -8,14 +8,14 @@ public class BulletController : MonoBehaviour
     public float lifeTime = 4f;
     public GameObject player;
     public GameObject strikeParticles;
-    private Pooler pool;
+
     public Pooler damageIndicatorPool;
 
     // Start is called before the first frame update
     void Start()
     {
         damageIndicatorPool = GameObject.FindGameObjectWithTag("DamageIndicatorPooler").GetComponent<Pooler>();
-        pool = transform.parent.GetComponent<Pooler>();
+
         StartCoroutine(DeathDelay());
     }
 
@@ -27,7 +27,7 @@ public class BulletController : MonoBehaviour
     IEnumerator DeathDelay()
     {
         yield return new WaitForSeconds(lifeTime);
-        pool.ReturnObject(gameObject);
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -71,7 +71,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46bd3df56b4e5bb4e981bdb08c7fbff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageIndication: {fileID: 5744389645827954008, guid: 2e5b4b77d997747a4ae0904c9db4eaaa, type: 3}
   EnemyScriptableObject: {fileID: 11400000, guid: e56b1c3a976c2c340ae0e253703cc197, type: 2}
   bloodParticlePool: {fileID: 0}
   range: 50
@@ -214,3 +213,4 @@ MonoBehaviour:
   ratBaby: {fileID: 336245509954985436, guid: 36b932923fb436c4ea0ae80d6c17196f, type: 3}
   currState: 
   range: 50
+  eSpeed: 1
