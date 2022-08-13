@@ -8,11 +8,14 @@ public class MosquitoEnemy : MonoBehaviour
     public GameObject player;
     public EnemyController enemyController;
     public SpriteRenderer spriteRenderer;
+    private Vector2 newTargetPosition;
 
     public string currState;
     public float range;
     private bool chooseDir = false;
     private Vector2 randomDir;
+    private int randX;
+    private int randY;
 
     public float eSpeed = 3f;
 
@@ -23,6 +26,18 @@ public class MosquitoEnemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyController = GetComponent<EnemyController>();
+        StartCoroutine(UpdateTarget());
+    }
+
+    private IEnumerator UpdateTarget()
+    {
+        while (true)
+        {
+            randX = Random.Range(-4, 4);
+            randY = Random.Range(-4, 4);
+            newTargetPosition = new Vector3(player.transform.position.x + randX, player.transform.position.y + randY, 0);
+            yield return new WaitForSeconds(3);
+        }
     }
     private void Update()
     {
@@ -66,9 +81,7 @@ public class MosquitoEnemy : MonoBehaviour
     void Follow()
     {
 
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, eSpeed * Time.deltaTime);
-
-
+        transform.position = Vector3.MoveTowards(transform.position, newTargetPosition, eSpeed * Time.deltaTime);
 
     }
 
@@ -81,5 +94,10 @@ public class MosquitoEnemy : MonoBehaviour
         Quaternion nextRotation = Quaternion.Euler(randomDir);
         //transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
         chooseDir = false;
+    }
+
+   public Vector2 PosPerSeconds()
+    {
+        return newTargetPosition;
     }
 }

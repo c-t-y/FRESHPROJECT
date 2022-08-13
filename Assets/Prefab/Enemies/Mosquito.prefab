@@ -97,7 +97,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7966753505342990434}
   currState: 
   range: 50
-  eSpeed: 1.5
+  eSpeed: 2.5
 --- !u!114 &6759371731554313894
 MonoBehaviour:
   m_ObjectHideFlags: 0
