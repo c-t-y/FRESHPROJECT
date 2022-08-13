@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 27287960}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (16)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1053,7 +1053,7 @@ MonoBehaviour:
   bulletSpread: 0.1
   currentHealth: 0
   playerDamage: 0
-  playerSpeed: 2
+  playerSpeed: 20
 --- !u!50 &117968659
 Rigidbody2D:
   serializedVersion: 4
@@ -2018,7 +2018,7 @@ GameObject:
   - component: {fileID: 230226635}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (11)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2291,7 +2291,7 @@ GameObject:
   - component: {fileID: 283820217}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (18)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2572,7 +2572,7 @@ GameObject:
   - component: {fileID: 330448705}
   m_Layer: 0
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: BoundsRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2748,7 +2748,7 @@ GameObject:
   - component: {fileID: 381574876}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (14)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2846,7 +2846,7 @@ GameObject:
   - component: {fileID: 413186917}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (7)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2877,7 +2877,7 @@ GameObject:
   - component: {fileID: 413500369}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (13)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3248,7 +3248,7 @@ GameObject:
   - component: {fileID: 490583840}
   m_Layer: 0
   m_Name: Square (4)
-  m_TagString: Untagged
+  m_TagString: BoundsBottom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3588,7 +3588,7 @@ GameObject:
   - component: {fileID: 546721439}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (4)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5126,7 +5126,7 @@ GameObject:
   - component: {fileID: 917463223}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (17)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5373,7 +5373,7 @@ GameObject:
   - component: {fileID: 988200649}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (12)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5542,7 +5542,7 @@ GameObject:
   - component: {fileID: 1030793844}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (3)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6596,7 +6596,7 @@ GameObject:
   - component: {fileID: 1147134897}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (2)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6609,7 +6609,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147134896}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.17, y: 3, z: 0}
+  m_LocalPosition: {x: -0.31, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6944,7 +6944,7 @@ GameObject:
   - component: {fileID: 1230128089}
   m_Layer: 0
   m_Name: Square (3)
-  m_TagString: Untagged
+  m_TagString: BoundsTop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7058,7 +7058,7 @@ GameObject:
   - component: {fileID: 1250395949}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7501,7 +7501,7 @@ GameObject:
   - component: {fileID: 1347756134}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (6)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7642,7 +7642,7 @@ GameObject:
   - component: {fileID: 1363787687}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (5)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7735,7 +7735,7 @@ GameObject:
   - component: {fileID: 1376023877}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (8)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8239,7 +8239,7 @@ GameObject:
   - component: {fileID: 1492631571}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (1)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13412,7 +13412,7 @@ GameObject:
   - component: {fileID: 1562087634}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (9)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13691,7 +13691,7 @@ GameObject:
   - component: {fileID: 1664780917}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (15)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14031,7 +14031,7 @@ GameObject:
   - component: {fileID: 1762932001}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (10)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14261,7 +14261,7 @@ GameObject:
   - component: {fileID: 1835505478}
   m_Layer: 0
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: BoundsLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14839,6 +14839,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1922867006}
+  - component: {fileID: 1922867007}
   m_Layer: 0
   m_Name: Enemy Wave SpawnGroup
   m_TagString: Untagged
@@ -14881,6 +14882,22 @@ Transform:
   m_Father: {fileID: 117968660}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1922867007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922867005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
 --- !u!1001 &1928116398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15348,7 +15365,7 @@ GameObject:
   - component: {fileID: 2031496593}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (19)
-  m_TagString: Untagged
+  m_TagString: WaveSpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

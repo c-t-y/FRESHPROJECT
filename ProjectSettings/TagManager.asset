@@ -26,6 +26,12 @@ TagManager:
   - BloodParticlePool
   - DamageIndicatorPooler
   - BulletPool
+  - Bounds
+  - WaveSpawnPoint
+  - BoundsTop
+  - BoundsLeft
+  - BoundsRight
+  - BoundsBottom
   layers:
   - Default
   - TransparentFX
