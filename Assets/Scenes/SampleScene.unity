@@ -282,6 +282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 27287960}
+  - component: {fileID: 27287961}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (16)
   m_TagString: WaveSpawnPoint
@@ -304,6 +305,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &27287961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27287959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1 &46429130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,6 +2034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 230226635}
+  - component: {fileID: 230226636}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (11)
   m_TagString: WaveSpawnPoint
@@ -2038,6 +2057,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &230226636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230226634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!4 &234818351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6138827670826203616, guid: c407c4a85c8005b44b778755a9cbcf1b, type: 3}
@@ -2289,6 +2325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 283820217}
+  - component: {fileID: 283820218}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (18)
   m_TagString: WaveSpawnPoint
@@ -2311,6 +2348,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &283820218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283820216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1001 &285536930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2746,6 +2800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 381574876}
+  - component: {fileID: 381574877}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (14)
   m_TagString: WaveSpawnPoint
@@ -2768,6 +2823,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &381574877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381574875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!4 &392092360 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6138827670826203616, guid: c407c4a85c8005b44b778755a9cbcf1b, type: 3}
@@ -2844,6 +2916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 413186917}
+  - component: {fileID: 413186918}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (7)
   m_TagString: WaveSpawnPoint
@@ -2866,6 +2939,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &413186918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413186916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1 &413500368
 GameObject:
   m_ObjectHideFlags: 0
@@ -2875,6 +2965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 413500369}
+  - component: {fileID: 413500370}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (13)
   m_TagString: WaveSpawnPoint
@@ -2897,6 +2988,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &413500370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413500368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!4 &438672448 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6138827670826203616, guid: c407c4a85c8005b44b778755a9cbcf1b, type: 3}
@@ -3586,6 +3694,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 546721439}
+  - component: {fileID: 546721440}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (4)
   m_TagString: WaveSpawnPoint
@@ -3608,6 +3717,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &546721440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546721438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1001 &559282844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5124,6 +5250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 917463223}
+  - component: {fileID: 917463224}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (17)
   m_TagString: WaveSpawnPoint
@@ -5146,6 +5273,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &917463224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917463222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1001 &929765173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5371,6 +5515,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 988200649}
+  - component: {fileID: 988200650}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (12)
   m_TagString: WaveSpawnPoint
@@ -5393,6 +5538,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &988200650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988200648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1001 &990029714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5540,6 +5702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1030793844}
+  - component: {fileID: 1030793845}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (3)
   m_TagString: WaveSpawnPoint
@@ -5562,6 +5725,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1030793845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030793843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1 &1044767177
 GameObject:
   m_ObjectHideFlags: 0
@@ -6594,6 +6774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1147134897}
+  - component: {fileID: 1147134898}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (2)
   m_TagString: WaveSpawnPoint
@@ -6616,6 +6797,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1147134898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147134896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1 &1150774292
 GameObject:
   m_ObjectHideFlags: 0
@@ -7056,6 +7254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1250395949}
+  - component: {fileID: 1250395950}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint
   m_TagString: WaveSpawnPoint
@@ -7078,6 +7277,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1250395950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250395948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1 &1306081745
 GameObject:
   m_ObjectHideFlags: 0
@@ -7499,6 +7715,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1347756134}
+  - component: {fileID: 1347756135}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (6)
   m_TagString: WaveSpawnPoint
@@ -7521,6 +7738,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1347756135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347756133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1 &1349445198
 GameObject:
   m_ObjectHideFlags: 0
@@ -7640,6 +7874,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1363787687}
+  - component: {fileID: 1363787688}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (5)
   m_TagString: WaveSpawnPoint
@@ -7662,6 +7897,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1363787688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363787686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1001 &1374760668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7733,6 +7985,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1376023877}
+  - component: {fileID: 1376023878}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (8)
   m_TagString: WaveSpawnPoint
@@ -7755,6 +8008,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1376023878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376023876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1001 &1408426839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8237,6 +8507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1492631571}
+  - component: {fileID: 1492631572}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (1)
   m_TagString: WaveSpawnPoint
@@ -8259,6 +8530,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1492631572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492631570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1001 &1513295548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13355,10 +13643,7 @@ MonoBehaviour:
   - {fileID: 917463223}
   - {fileID: 283820217}
   - {fileID: 2031496593}
-  topBounds: {fileID: 0}
-  leftBounds: {fileID: 0}
-  rightBounds: {fileID: 0}
-  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!4 &1549785029
 Transform:
   m_ObjectHideFlags: 0
@@ -13414,6 +13699,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1562087634}
+  - component: {fileID: 1562087635}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (9)
   m_TagString: WaveSpawnPoint
@@ -13436,6 +13722,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1562087635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562087633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1 &1586036804
 GameObject:
   m_ObjectHideFlags: 0
@@ -13693,6 +13996,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1664780917}
+  - component: {fileID: 1664780918}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (15)
   m_TagString: WaveSpawnPoint
@@ -13715,6 +14019,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1664780918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664780916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1001 &1670807406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14033,6 +14354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1762932001}
+  - component: {fileID: 1762932002}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (10)
   m_TagString: WaveSpawnPoint
@@ -14055,6 +14377,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1762932002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762932000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1 &1792292226
 GameObject:
   m_ObjectHideFlags: 0
@@ -14843,6 +15182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1922867006}
+  - component: {fileID: 1922867007}
   m_Layer: 0
   m_Name: Enemy Wave SpawnGroup
   m_TagString: Untagged
@@ -14885,6 +15225,23 @@ Transform:
   m_Father: {fileID: 117968660}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1922867007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922867005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1001 &1928116398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15350,6 +15707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2031496593}
+  - component: {fileID: 2031496594}
   m_Layer: 0
   m_Name: EnemyWaveSpawnPoint (19)
   m_TagString: WaveSpawnPoint
@@ -15372,6 +15730,23 @@ Transform:
   m_Father: {fileID: 1922867006}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2031496594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031496592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
+  isInBounds: 0
 --- !u!1001 &2050301589
 PrefabInstance:
   m_ObjectHideFlags: 0
