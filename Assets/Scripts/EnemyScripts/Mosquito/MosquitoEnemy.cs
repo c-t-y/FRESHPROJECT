@@ -16,6 +16,7 @@ public class MosquitoEnemy : MonoBehaviour
     private Vector2 randomDir;
     private int randX;
     private int randY;
+    private int randWait;
 
     public float eSpeed = 3f;
 
@@ -35,8 +36,9 @@ public class MosquitoEnemy : MonoBehaviour
         {
             randX = Random.Range(-4, 4);
             randY = Random.Range(-4, 4);
+            randWait = Random.Range(3, 4);
             newTargetPosition = new Vector3(player.transform.position.x + randX, player.transform.position.y + randY, 0);
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(randWait);
         }
     }
     private void Update()
@@ -96,8 +98,5 @@ public class MosquitoEnemy : MonoBehaviour
         chooseDir = false;
     }
 
-   public Vector2 PosPerSeconds()
-    {
-        return newTargetPosition;
-    }
+ 
 }
