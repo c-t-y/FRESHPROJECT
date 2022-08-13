@@ -16,8 +16,8 @@ public class EnemyIncSpawner : MonoBehaviour
     private float randX;
     private float randY;
 
-    float delayAndSpawnRate = 3;
-    float timeUntilSpawnRateIncrease = 15;
+    float delayAndSpawnRate = 6;
+    float timeUntilSpawnRateIncrease = 30;
 
 
     void Start()

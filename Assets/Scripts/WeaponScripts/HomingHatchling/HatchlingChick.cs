@@ -15,7 +15,7 @@ public class HatchlingChick : MonoBehaviour
     {
         damageIndicatorPool = GameObject.FindGameObjectWithTag("DamageIndicatorPooler").GetComponent<Pooler>();
         player = GameObject.FindGameObjectWithTag("Player");
-        chickSpeed = 8f;
+        chickSpeed = player.GetComponent<PlayerController>().playerSpeed * 1.75f;
     }
 
     // Update is called once per frame
