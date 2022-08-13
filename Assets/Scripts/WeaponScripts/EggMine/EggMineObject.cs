@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using EZCameraShake;
 
 public class EggMineObject : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class EggMineObject : MonoBehaviour
     public void Explode()
     {
         GetComponent<Collider2D>().enabled = true;
+        //CameraShaker.Instance.ShakeOnce(3f, 2f, .05f, .3f);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

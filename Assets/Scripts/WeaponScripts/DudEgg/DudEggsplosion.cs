@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class DudEggsplosion : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class DudEggsplosion : MonoBehaviour
     }
     IEnumerator DeathDelay()
     {
+        CameraShaker.Instance.ShakeOnce(10f, 10f, .05f, .3f);
         yield return new WaitForSeconds(.5f);
         Destroy(gameObject);
     }
