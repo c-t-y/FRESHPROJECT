@@ -13355,6 +13355,10 @@ MonoBehaviour:
   - {fileID: 917463223}
   - {fileID: 283820217}
   - {fileID: 2031496593}
+  topBounds: {fileID: 0}
+  leftBounds: {fileID: 0}
+  rightBounds: {fileID: 0}
+  bottomBounds: {fileID: 0}
 --- !u!4 &1549785029
 Transform:
   m_ObjectHideFlags: 0
@@ -14839,7 +14843,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1922867006}
-  - component: {fileID: 1922867007}
   m_Layer: 0
   m_Name: Enemy Wave SpawnGroup
   m_TagString: Untagged
@@ -14882,22 +14885,6 @@ Transform:
   m_Father: {fileID: 117968660}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1922867007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922867005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 641926a42c8eb4118ad4e4bb167c0486, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  topBounds: {fileID: 0}
-  leftBounds: {fileID: 0}
-  rightBounds: {fileID: 0}
-  bottomBounds: {fileID: 0}
 --- !u!1001 &1928116398
 PrefabInstance:
   m_ObjectHideFlags: 0
