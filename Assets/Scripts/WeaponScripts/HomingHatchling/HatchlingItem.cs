@@ -70,28 +70,28 @@ public class HatchlingItem : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow) && allowFire == true)
             {
-                ShootSalmonella("up");
+                ShootHatchling("up");
                 allowFire = false;
                 StartCoroutine(FireCooldown());
 
             }
             if (Input.GetKey(KeyCode.DownArrow) && allowFire == true)
             {
-                ShootSalmonella("down");
+                ShootHatchling("down");
                 allowFire = false;
                 StartCoroutine(FireCooldown());
 
             }
             if (Input.GetKey(KeyCode.LeftArrow) && allowFire == true)
             {
-                ShootSalmonella("left");
+                ShootHatchling("left");
                 allowFire = false;
                 StartCoroutine(FireCooldown());
 
             }
             if (Input.GetKey(KeyCode.RightArrow) && allowFire == true)
             {
-                ShootSalmonella("right");
+                ShootHatchling("right");
                 allowFire = false;
                 StartCoroutine(FireCooldown());
             }
@@ -106,7 +106,7 @@ public class HatchlingItem : MonoBehaviour
     }
 
 
-    void ShootSalmonella(string direction)
+    void ShootHatchling(string direction)
     {
         //float randBullet = Random.Range(-bulletSpread, bulletSpread);
 
