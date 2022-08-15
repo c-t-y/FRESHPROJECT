@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WaveController : MonoBehaviour
 {
@@ -13,20 +14,25 @@ public class WaveController : MonoBehaviour
     private float timeBtwnSpawns;
     private int i = 0;
     public bool isInBounds;
-
+    public GameObject waveTextGameObject;
+    public TextMeshProUGUI waveText;
 
     private bool stopSpawning = false;
 
     private void Awake()
     {
+
         currentWave = waves[i];
         timeBtwnSpawns = currentWave.TimeBeforeThisWave;
+
+    }
+    private void Start()
+    {
 
     }
 
     private void Update()
     {
-
 
 
 
@@ -48,6 +54,7 @@ public class WaveController : MonoBehaviour
 
     private void SpawnWave()
     {
+        WaveTextOverlay();
         for (int i = 0; i < currentWave.NumberToSpawn; i++)
         {
 
@@ -61,7 +68,10 @@ public class WaveController : MonoBehaviour
 
 
         }
+
+
     }
+
 
     private void IncWave()
     {
@@ -74,5 +84,18 @@ public class WaveController : MonoBehaviour
         {
             stopSpawning = true;
         }
+    }
+
+    private void WaveTextOverlay()
+    {
+        waveTextGameObject.SetActive(true);
+        waveText.text = "Wave " + (i + 1).ToString();
+        StartCoroutine(ShowWaveText());
+    }
+    IEnumerator ShowWaveText()
+    {
+
+        yield return new WaitForSeconds(3);
+        waveTextGameObject.SetActive(false);
     }
 }

@@ -32,6 +32,7 @@ TagManager:
   - BoundsLeft
   - BoundsRight
   - BoundsBottom
+  - WaveText
   layers:
   - Default
   - TransparentFX
