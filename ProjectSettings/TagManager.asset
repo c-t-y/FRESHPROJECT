@@ -21,6 +21,18 @@ TagManager:
   - ShopManager
   - Camera
   - HealthBar
+  - ItemStorage
+  - StrikeParticlePool
+  - BloodParticlePool
+  - DamageIndicatorPooler
+  - BulletPool
+  - Bounds
+  - WaveSpawnPoint
+  - BoundsTop
+  - BoundsLeft
+  - BoundsRight
+  - BoundsBottom
+  - WaveText
   layers:
   - Default
   - TransparentFX

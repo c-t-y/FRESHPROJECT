@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7218000754421155332}
   - component: {fileID: 2341028652921738194}
   - component: {fileID: 3284923047837561291}
-  - component: {fileID: 6693991963677096372}
   - component: {fileID: -8227059282040606679}
+  - component: {fileID: 8214362661442049030}
   m_Layer: 0
   m_Name: Coin2
   m_TagString: Item
@@ -113,25 +113,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &6693991963677096372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658746632730724373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a3dbd3b20765c24da635f4076e28a01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  gameManager: {fileID: 0}
-  coinValue: 4
-  healthValue: 0
-  currentHealth: 0
-  healthBar: {fileID: 0}
-  allowHeal: 0
 --- !u!95 &-8227059282040606679
 Animator:
   serializedVersion: 4
@@ -152,3 +133,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8214362661442049030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658746632730724373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e498fcb4a9324ba1a7f0cbeec7a7943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinValue: 0
+  player: {fileID: 0}

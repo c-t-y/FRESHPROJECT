@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eHealth: 25
   eRange: 100
-  eSpeed: 1
+  eSpeed: 7
   eAttackDmg: 1
   eAttackRng: 0.5
   eAttackCD: 1

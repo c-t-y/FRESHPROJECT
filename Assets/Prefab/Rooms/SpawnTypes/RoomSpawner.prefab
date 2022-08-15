@@ -73,7 +73,10 @@ MonoBehaviour:
   SpawnTable:
   - name: Mosquito
     enemy: {fileID: 7738067282039349218, guid: 9af3eda14be764ddc99c790b71ae6e2b, type: 3}
-    spawnRarity: 100
+    spawnRarity: 65
+  - name: RatMom
+    enemy: {fileID: 1166517251213273434, guid: 349e2365b84384b41b349c71c1a4d465, type: 3}
+    spawnRarity: 25
   - name: Frog
     enemy: {fileID: 4050165427265814892, guid: 1cb2fe5739fb65e4ea8ddc5b7bd0a16a, type: 3}
     spawnRarity: 10

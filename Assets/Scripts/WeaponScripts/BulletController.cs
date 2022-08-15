@@ -5,15 +5,16 @@ using UnityEngine;
 //testing push
 public class BulletController : MonoBehaviour
 {
-
     public float lifeTime = 4f;
     public GameObject player;
-    public GameObject damageIndication;
     public GameObject strikeParticles;
+
+    public Pooler damageIndicatorPool;
 
     // Start is called before the first frame update
     void Start()
     {
+        damageIndicatorPool = GameObject.FindGameObjectWithTag("DamageIndicatorPooler").GetComponent<Pooler>();
 
         StartCoroutine(DeathDelay());
     }
@@ -26,7 +27,7 @@ public class BulletController : MonoBehaviour
     IEnumerator DeathDelay()
     {
         yield return new WaitForSeconds(lifeTime);
-        Destroy(gameObject);
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -34,7 +35,12 @@ public class BulletController : MonoBehaviour
 
         if (other.CompareTag("Enemy"))
         {
-            Instantiate(damageIndication, transform.position, Quaternion.identity);
+            //Instantiate(damageIndication, transform.position, Quaternion.identity);
+            GameObject damageIndicator = damageIndicatorPool.GetObject();
+            damageIndicator.transform.position = transform.position;
+            damageIndicator.SetActive(true);
+
+
             Instantiate(strikeParticles, transform.position, Quaternion.identity);
             other.gameObject.GetComponent<EnemyController>().Hit();
 
@@ -52,4 +58,5 @@ public class BulletController : MonoBehaviour
 
 
 }
+
 

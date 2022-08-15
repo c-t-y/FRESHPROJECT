@@ -6,15 +6,18 @@ public class WeaponController : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Animator animator;
+    public Pooler bulletPool;
     public bool allowFire;
-    public float bulletSpread = .3f;
+    public float bulletSpread = .1f;
     public float bulletSpeed;
     public float fireRate;
+
 
     // Start is called before the first frame update
     void Start()
     {
         allowFire = true;
+
     }
 
     // Update is called once per frame
@@ -73,6 +76,8 @@ public class WeaponController : MonoBehaviour
 
     void Shoot(string direction)
     {
+
+
         float randBullet = Random.Range(-bulletSpread, bulletSpread);
 
         if (direction == "up")

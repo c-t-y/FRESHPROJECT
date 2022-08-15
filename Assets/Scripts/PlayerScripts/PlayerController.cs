@@ -12,7 +12,15 @@ public class PlayerController : MonoBehaviour
     public GameObject deathScreen;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+
+
+    public float calcPlayerDamageXL;
+    public float calcPlayerDamageLarge;
     public float calcPlayerDamage;
+    public float calcPlayerDamageSmall;
+    public float calcPlayerDamageXS;
+
+
     public float dmgCooldown;
     public bool canTakeDmg;
 
@@ -32,7 +40,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         canTakeDmg = true;
-        dmgCooldown = 1;
+        dmgCooldown = 0.5f;
         playerDamage = StatsEnemy.eHealth * 0.25f;
         currentHealth = GameManager.maxHealth;
         healthBar.SetMaxHealth(GameManager.maxHealth);
@@ -75,7 +83,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        calcPlayerDamageXL = Mathf.Ceil(playerDamage * 4f);
+        calcPlayerDamageLarge = Mathf.Ceil(playerDamage * 2f);
         calcPlayerDamage = Mathf.Ceil(playerDamage);
+        calcPlayerDamageSmall = Mathf.Ceil(playerDamage * 0.5f);
+        calcPlayerDamageXS = Mathf.Ceil(playerDamage * 0.25f);
+
         animator.SetFloat("Horizontal", Input.GetAxisRaw("HorizontalMovement"));
         animator.SetFloat("Vertical", Input.GetAxisRaw("VerticalMovement"));
         animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
@@ -95,7 +108,7 @@ public class PlayerController : MonoBehaviour
         currentHealth -= damage;
         canTakeDmg = false;
         healthBar.SetHealth(currentHealth);
-        CameraShaker.Instance.ShakeOnce(8f, 4f, .05f, .3f);
+        //CameraShaker.Instance.ShakeOnce(3f, 2f, .05f, .3f);
         StartCoroutine(FlashRed());
         StartCoroutine(TakeDamageCooldown());
 

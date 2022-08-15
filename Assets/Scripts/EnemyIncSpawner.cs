@@ -13,9 +13,11 @@ public class EnemyIncSpawner : MonoBehaviour
     public int maxEnemies;
     private int remainingEnemies;
     private bool allowSpawn;
+    private float randX;
+    private float randY;
 
-    float delayAndSpawnRate = 3;
-    float timeUntilSpawnRateIncrease = 15;
+    float delayAndSpawnRate = 6;
+    float timeUntilSpawnRateIncrease = 30;
 
 
     void Start()
@@ -23,9 +25,9 @@ public class EnemyIncSpawner : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
 
 
-        spawnBlockDistance = 10f;
+        spawnBlockDistance = 12f;
         spawnMaxDistance = 22f;
-        maxEnemies = 200;
+        maxEnemies = 400;
 
         StartCoroutine(SpawnObject(delayAndSpawnRate));
     }
@@ -87,6 +89,9 @@ public class EnemyIncSpawner : MonoBehaviour
     public void CalculateSpawn()
     {
 
+        randX = Random.Range(-4, 4);
+        randY = Random.Range(-4, 4);
+
         if (spawnspace >= spawnBlockDistance && spawnspace <= spawnMaxDistance && allowSpawn == true)
         {
             spawnChance = 100f;
@@ -120,7 +125,7 @@ public class EnemyIncSpawner : MonoBehaviour
             {
                 if (randomValue <= SpawnTable[j].spawnRarity)
                 {
-                    Instantiate(SpawnTable[j].enemy, transform.position, Quaternion.identity);
+                    Instantiate(SpawnTable[j].enemy, new Vector3(transform.position.x + randX, transform.position.y + randY, 0), Quaternion.identity);
                     return;
                 }
                 randomValue -= SpawnTable[j].spawnRarity;
