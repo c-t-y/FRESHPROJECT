@@ -181,8 +181,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodParticlePool: {fileID: 0}
   speed: 1.5
-  currentHealth: 8
+  currentHealth: 15
   allyDamageTaken: 1
+  facingLeft: 0
 --- !u!95 &7823301395844346978
 Animator:
   serializedVersion: 4

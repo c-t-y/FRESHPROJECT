@@ -165,8 +165,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodParticlePool: {fileID: 0}
   speed: 3
-  currentHealth: 15
+  currentHealth: 25
   allyDamageTaken: 1
+  facingLeft: 0
 --- !u!61 &4101016875143614583
 BoxCollider2D:
   m_ObjectHideFlags: 0
