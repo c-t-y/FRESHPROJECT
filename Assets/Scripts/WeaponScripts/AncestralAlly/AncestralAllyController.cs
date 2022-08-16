@@ -12,6 +12,10 @@ public class AncestralAllyController : MonoBehaviour
     public float speed;
     public float currentHealth;
     public float allyDamageTaken;
+    private Vector2 target1;
+    private Vector2 target2;
+    private Vector2 target3;
+    private Vector2 target4;
 
 
     void Start()
@@ -30,7 +34,12 @@ public class AncestralAllyController : MonoBehaviour
         {
             StartCoroutine(Patrol());
         }
-    
+
+        target1 = new Vector2(player.transform.position.x + 3f, player.transform.position.y + 3f);
+        target2 = new Vector2(player.transform.position.x + -3f, player.transform.position.y + 3f);
+        target3 = new Vector2(player.transform.position.x + -3f, player.transform.position.y + -3f);
+        target4 = new Vector2(player.transform.position.x + 3f, player.transform.position.y + -3f);
+
 
     }
 
@@ -38,13 +47,13 @@ public class AncestralAllyController : MonoBehaviour
     {
         while (true)
         {
-            transform.position = new Vector2(player.transform.position.x + 3f, player.transform.position.y + 3f);
+            transform.position = Vector2.MoveTowards(transform.position, target1, speed * Time.deltaTime);
             yield return new WaitForSeconds(5f);
-            transform.position = new Vector2(player.transform.position.x + -3f, player.transform.position.y + 3f);
+            transform.position = Vector2.MoveTowards(transform.position, target2, speed * Time.deltaTime);
             yield return new WaitForSeconds(5f);
-            transform.position = new Vector2(player.transform.position.x + -3f, player.transform.position.y + -3f);
+            transform.position = Vector2.MoveTowards(transform.position, target3, speed * Time.deltaTime);
             yield return new WaitForSeconds(5f);
-            transform.position = new Vector2(player.transform.position.x + 3f, player.transform.position.y + -3f);
+            transform.position = Vector2.MoveTowards(transform.position, target4, speed * Time.deltaTime);
         }
     }
 

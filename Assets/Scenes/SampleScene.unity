@@ -4093,7 +4093,7 @@ MonoBehaviour:
   cost: 0
   allyEggCoolDown: 0
   itemGrabbed: 0
-  allyEgg: {fileID: 4464142506543968979, guid: 7deaa8d69c26ebe46a10b8e2ad3a4366, type: 3}
+  allyEgg: {fileID: 5175378930576747243, guid: 7deaa8d69c26ebe46a10b8e2ad3a4366, type: 3}
   allowEgg: 0
 --- !u!212 &604997108
 SpriteRenderer:

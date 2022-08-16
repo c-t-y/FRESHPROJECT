@@ -46,7 +46,7 @@ public class RaptorAttack : MonoBehaviour
 
     IEnumerator CoolDown()
     {
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.5f);
         coolDownAttack = true;
         yield return new WaitForSeconds(coolDown);
         coolDownAttack = false;

@@ -80,7 +80,7 @@ public class AncestralItem : MonoBehaviour
 
     public IEnumerator AllyEggCooldown()
     {
-        if (itemGrabbed == true && GameObject.FindGameObjectWithTag("AncestralEgg") == null)
+        //if (itemGrabbed == true && GameObject.FindGameObjectWithTag("AncestralEgg") == null)
         {
             yield return new WaitForSeconds(allyEggCoolDown);
 
