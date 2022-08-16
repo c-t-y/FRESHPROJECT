@@ -49,12 +49,7 @@ public class AncestralAllyController : MonoBehaviour
 
     }
 
-    void Flip()
-    {
-     
-        facingLeft = !facingLeft;
-        transform.Rotate(new Vector3(0, 180, 0));
-    }
+
 
     private IEnumerator UpdateTarget()
     {
