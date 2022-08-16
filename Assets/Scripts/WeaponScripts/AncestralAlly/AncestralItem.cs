@@ -64,20 +64,18 @@ public class AncestralItem : MonoBehaviour
         }
 
 
-        if (GameObject.FindGameObjectsWithTag("AncestralEgg").Length < 1)
+        if (GameObject.FindGameObjectsWithTag("AncestralEgg").Length == 0)
         {
+
+            
             if (itemGrabbed == true && allowEgg == true)
             {
                 Instantiate(allyEgg, player.transform.position, Quaternion.identity);
                 allowEgg = false;
-                
+                StartCoroutine(AllyEggCooldown());
             }
         }
 
-        if (GameObject.FindGameObjectsWithTag("AncestralEgg").Length < 1)
-        {
-            StartCoroutine(AllyEggCooldown());
-        }
     }
 
         public bool IsPlayerInRange()
