@@ -18,7 +18,7 @@ public class AncestralEgg : MonoBehaviour
     
     void Update()
     {
-         if (Time.time - layTime >= 15f)
+         if (Time.time - layTime >= 10f)
         {
             Instantiate(trex, transform.position, Quaternion.identity);
             Destroy(gameObject);
@@ -30,21 +30,21 @@ public class AncestralEgg : MonoBehaviour
 
         if (other.CompareTag("Enemy"))
         {
-           if (Time.time - layTime <= 5f)
+           if (Time.time - layTime <= 3f)
             {
                 Destroy(gameObject);
             }
-            else if (Time.time - layTime <= 10f)
+            else if (Time.time - layTime <= 5f)
             {
                 Instantiate(compy, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
-           else if (Time.time - layTime < 15f)
+           else if (Time.time - layTime < 10f)
             {
                 Instantiate(raptor, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
-            else if (Time.time - layTime >= 15f)
+            else if (Time.time - layTime >= 10f)
             {
                 Instantiate(trex, transform.position, Quaternion.identity);
                 Destroy(gameObject);

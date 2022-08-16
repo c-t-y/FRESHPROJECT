@@ -4093,7 +4093,7 @@ MonoBehaviour:
   cost: 0
   allyEggCoolDown: 0
   itemGrabbed: 0
-  allyEgg: {fileID: 5175378930576747243, guid: 7deaa8d69c26ebe46a10b8e2ad3a4366, type: 3}
+  allyEgg: {fileID: 4376541461872818750, guid: 7deaa8d69c26ebe46a10b8e2ad3a4366, type: 3}
   allowEgg: 0
 --- !u!212 &604997108
 SpriteRenderer:
@@ -4155,7 +4155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604997106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.5, y: -9.51, z: -0.75503397}
+  m_LocalPosition: {x: -25.2, y: -7.92, z: -0.75503397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

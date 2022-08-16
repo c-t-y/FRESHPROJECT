@@ -12,10 +12,13 @@ public class AncestralAllyController : MonoBehaviour
     public float speed;
     public float currentHealth;
     public float allyDamageTaken;
-    private Vector2 target1;
-    private Vector2 target2;
-    private Vector2 target3;
-    private Vector2 target4;
+    private Vector2 newTargetPosition;
+ 
+    private int randX;
+    private int randY;
+    private int randWait;
+    public bool facingLeft = false;
+    private float oldPosition = 0f;
 
 
     void Start()
@@ -24,36 +27,44 @@ public class AncestralAllyController : MonoBehaviour
    
         player = GameObject.FindGameObjectWithTag("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-
+        //transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        oldPosition = transform.position.x;
+        StartCoroutine(UpdateTarget());
+        
     }
 
-    void Update()
+    private void Update()
     {
-        if (Vector2.Distance(transform.position, player.transform.position) < .5f)
+        transform.position = Vector3.MoveTowards(transform.position, newTargetPosition, speed * Time.deltaTime);
+        if(transform.position.x > oldPosition)
         {
-            StartCoroutine(Patrol());
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-
-        target1 = new Vector2(player.transform.position.x + 3f, player.transform.position.y + 3f);
-        target2 = new Vector2(player.transform.position.x + -3f, player.transform.position.y + 3f);
-        target3 = new Vector2(player.transform.position.x + -3f, player.transform.position.y + -3f);
-        target4 = new Vector2(player.transform.position.x + 3f, player.transform.position.y + -3f);
+        if (transform.position.x < oldPosition)
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        oldPosition = transform.position.x;
 
 
     }
 
-    private IEnumerator Patrol()
+    void Flip()
+    {
+     
+        facingLeft = !facingLeft;
+        transform.Rotate(new Vector3(0, 180, 0));
+    }
+
+    private IEnumerator UpdateTarget()
     {
         while (true)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target1, speed * Time.deltaTime);
-            yield return new WaitForSeconds(5f);
-            transform.position = Vector2.MoveTowards(transform.position, target2, speed * Time.deltaTime);
-            yield return new WaitForSeconds(5f);
-            transform.position = Vector2.MoveTowards(transform.position, target3, speed * Time.deltaTime);
-            yield return new WaitForSeconds(5f);
-            transform.position = Vector2.MoveTowards(transform.position, target4, speed * Time.deltaTime);
+            randX = Random.Range(-8, 8);
+            randY = Random.Range(-8, 8);
+            randWait = Random.Range(3, 4);
+            newTargetPosition = new Vector3(player.transform.position.x + randX, player.transform.position.y + randY, 0);
+            yield return new WaitForSeconds(randWait);
         }
     }
 

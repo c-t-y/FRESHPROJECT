@@ -63,13 +63,20 @@ public class AncestralItem : MonoBehaviour
 
         }
 
-       
 
-        if(itemGrabbed == true && allowEgg == true)
+        if (GameObject.FindGameObjectsWithTag("AncestralEgg").Length < 1)
         {
-           Instantiate(allyEgg, player.transform.position, Quaternion.identity);
-           allowEgg = false;
-           StartCoroutine(AllyEggCooldown());
+            if (itemGrabbed == true && allowEgg == true)
+            {
+                Instantiate(allyEgg, player.transform.position, Quaternion.identity);
+                allowEgg = false;
+                
+            }
+        }
+
+        if (GameObject.FindGameObjectsWithTag("AncestralEgg").Length < 1)
+        {
+            StartCoroutine(AllyEggCooldown());
         }
     }
 
@@ -80,12 +87,12 @@ public class AncestralItem : MonoBehaviour
 
     public IEnumerator AllyEggCooldown()
     {
-        //if (itemGrabbed == true && GameObject.FindGameObjectWithTag("AncestralEgg") == null)
-        {
-            yield return new WaitForSeconds(allyEggCoolDown);
+       
+       
+           yield return new WaitForSeconds(allyEggCoolDown);
 
-            allowEgg = true;
-        }
+           allowEgg = true;
+        
     }
 
 

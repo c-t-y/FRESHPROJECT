@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class TrexAttack : MonoBehaviour
 {
+
     private bool coolDownAttack;
     public float coolDown;
-    public Pooler damageIndicatorPool;
+    //public Pooler damageIndicatorPool;
 
     void Start()
     {
@@ -18,13 +19,10 @@ public class TrexAttack : MonoBehaviour
     {
         if (coolDownAttack == false)
         {
-            GetComponent<Collider2D>().enabled = true;
-            StartCoroutine(CoolDown());
+
+            StartCoroutine(Attack());
         }
-        else
-        {
-            GetComponent<Collider2D>().enabled = false;
-        }
+
 
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -32,9 +30,9 @@ public class TrexAttack : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
 
-            GameObject damageIndicator = damageIndicatorPool.GetObject();
-            damageIndicator.transform.position = transform.position;
-            damageIndicator.SetActive(true);
+            //GameObject damageIndicator = damageIndicatorPool.GetObject();
+            //damageIndicator.transform.position = transform.position;
+            //damageIndicator.SetActive(true);
             //Instantiate(strikeParticles, transform.position, Quaternion.identity);
             other.gameObject.GetComponent<EnemyController>().HitLarge();
 
@@ -44,12 +42,14 @@ public class TrexAttack : MonoBehaviour
 
 
 
-    IEnumerator CoolDown()
+    public IEnumerator Attack()
     {
-        yield return new WaitForSeconds(.1f);
+        GetComponent<Collider2D>().enabled = true;
+        yield return new WaitForSeconds(.5f);
+        GetComponent<Collider2D>().enabled = false;
         coolDownAttack = true;
         yield return new WaitForSeconds(coolDown);
         coolDownAttack = false;
+
     }
 }
-

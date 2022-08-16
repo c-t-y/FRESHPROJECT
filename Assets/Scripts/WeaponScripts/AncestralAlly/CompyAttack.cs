@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class CompyAttack : MonoBehaviour
 {
+
     private bool coolDownAttack;
     public float coolDown;
-    public Pooler damageIndicatorPool;
+    //public Pooler damageIndicatorPool;
 
     void Start()
     {
@@ -18,23 +19,20 @@ public class CompyAttack : MonoBehaviour
     {
         if (coolDownAttack == false)
         {
-            GetComponent<Collider2D>().enabled = true;
-            StartCoroutine(CoolDown());
+
+            StartCoroutine(Attack());
         }
-        else
-        {
-            GetComponent<Collider2D>().enabled = false;
-        }
+
 
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
         {
-           
-            GameObject damageIndicator = damageIndicatorPool.GetObject();
-            damageIndicator.transform.position = transform.position;
-            damageIndicator.SetActive(true);
+
+            //GameObject damageIndicator = damageIndicatorPool.GetObject();
+            //damageIndicator.transform.position = transform.position;
+            //damageIndicator.SetActive(true);
             //Instantiate(strikeParticles, transform.position, Quaternion.identity);
             other.gameObject.GetComponent<EnemyController>().HitSmall();
 
@@ -44,11 +42,14 @@ public class CompyAttack : MonoBehaviour
 
 
 
-    IEnumerator CoolDown()
+    public IEnumerator Attack()
     {
-        yield return new WaitForSeconds(.1f);
+        GetComponent<Collider2D>().enabled = true;
+        yield return new WaitForSeconds(.5f);
+        GetComponent<Collider2D>().enabled = false;
         coolDownAttack = true;
         yield return new WaitForSeconds(coolDown);
         coolDownAttack = false;
+
     }
 }
