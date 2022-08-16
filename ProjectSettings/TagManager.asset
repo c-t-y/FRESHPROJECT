@@ -33,6 +33,7 @@ TagManager:
   - BoundsRight
   - BoundsBottom
   - WaveText
+  - AncestralEgg
   layers:
   - Default
   - TransparentFX
