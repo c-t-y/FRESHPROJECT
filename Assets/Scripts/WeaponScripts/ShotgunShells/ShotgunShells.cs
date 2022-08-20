@@ -19,6 +19,9 @@ public class ShotgunShells : MonoBehaviour
     public float shotgunCap;
     public float bulletSpeed;
 
+    private Vector2 itemMove1;
+    private Vector2 itemMove2;
+    public float itemSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +38,24 @@ public class ShotgunShells : MonoBehaviour
         allowFire = true;
         shotgunCap = 3f;
 
+        itemSpeed = 4f;
+        StartCoroutine(ItemFloat());
+        itemMove1 = new Vector3(transform.position.x, transform.position.y + 4, 0);
+        itemMove2 = new Vector3(transform.position.x, transform.position.y - 4, 0);
+
+    }
+
+    public IEnumerator ItemFloat()
+    {
+        while (itemGrabbed == false)
+        {
+            yield return new WaitForSeconds(1.5f);
+            transform.position = Vector3.MoveTowards(transform.position, itemMove1, itemSpeed * Time.deltaTime);
+            yield return new WaitForSeconds(1f);
+            transform.position = Vector3.MoveTowards(transform.position, itemMove2, itemSpeed * Time.deltaTime);
+
+
+        }
     }
 
     // Update is called once per frame
@@ -54,8 +75,13 @@ public class ShotgunShells : MonoBehaviour
             GameManager.itemsGrabbed++;
             GameManager.coinCount -= cost;
             //GetComponent<SpriteRenderer>().enabled = false;
+
+            foreach (Transform child in gameObject.transform)
+            {
+                child.GetComponent<SpriteRenderer>().enabled = false;
+            }
             gameObject.transform.parent = player.transform;
-            if (GameManager.itemsGrabbed < 8)
+            if (GameManager.itemsGrabbed < 9)
             {
                 gameObject.transform.position = new Vector3(itemStorage.transform.position.x, itemStorage.transform.position.y - GameManager.itemsGrabbed, -4);
             }

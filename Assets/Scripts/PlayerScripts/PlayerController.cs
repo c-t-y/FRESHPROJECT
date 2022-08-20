@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         canTakeDmg = true;
-        dmgCooldown = 0.5f;
+        dmgCooldown = 1f;
         playerDamage = StatsEnemy.eHealth * 0.25f;
         currentHealth = GameManager.maxHealth;
         healthBar.SetMaxHealth(GameManager.maxHealth);
