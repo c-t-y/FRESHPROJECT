@@ -7,6 +7,7 @@ public class HawkEnemy : MonoBehaviour
     public GameObject player;
     public EnemyController enemyController;
     public SpriteRenderer spriteRenderer;
+    public Sprite[] sprites; 
 
 
     public string currState;
@@ -91,11 +92,31 @@ public class HawkEnemy : MonoBehaviour
             }
         }
 
+        if (calcDist < 1)
+        {
+            spriteRenderer.sprite = sprites[4];
+        }
+        else if (calcDist <1.25)
+        {
+            spriteRenderer.sprite = sprites[3];
+        }
+        else if (calcDist < 1.5)
+        {
+            spriteRenderer.sprite = sprites[2];
+        }
+        else if (calcDist < 1.75)
+        {
+            spriteRenderer.sprite = sprites[1];
+        }
+        else if (calcDist >=1.75)
+        {
+            spriteRenderer.sprite = sprites[0];
+        }
+
+
         if (Vector3.Distance(transform.position, player.transform.position) <= attackRangeHawk)
         {
             StartCoroutine(FlightStatus());
-
-        
         }
     }
 

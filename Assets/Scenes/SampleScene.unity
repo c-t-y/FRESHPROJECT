@@ -16183,6 +16183,12 @@ MonoBehaviour:
   player: {fileID: 117968655}
   enemyController: {fileID: 1948635046}
   spriteRenderer: {fileID: 0}
+  sprites:
+  - {fileID: 1556802610, guid: 1e4607d60d411d0489bf66a4e519e8e1, type: 3}
+  - {fileID: -186108148, guid: 1e4607d60d411d0489bf66a4e519e8e1, type: 3}
+  - {fileID: 1708516279, guid: 1e4607d60d411d0489bf66a4e519e8e1, type: 3}
+  - {fileID: 1561517040, guid: 1e4607d60d411d0489bf66a4e519e8e1, type: 3}
+  - {fileID: 470426650, guid: 1e4607d60d411d0489bf66a4e519e8e1, type: 3}
   currState: 
   range: 10
   eSpeed: 3
