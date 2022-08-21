@@ -15,7 +15,7 @@ MonoBehaviour:
   <EnemiesInWave>k__BackingField:
   - {fileID: 7738067282039349218, guid: 9af3eda14be764ddc99c790b71ae6e2b, type: 3}
   - {fileID: 7738067282039349218, guid: 9af3eda14be764ddc99c790b71ae6e2b, type: 3}
-  - {fileID: 7738067282039349218, guid: 9af3eda14be764ddc99c790b71ae6e2b, type: 3}
+  - {fileID: 7516373664243744239, guid: 38ff083f9e7e64141aca96b92b7542d5, type: 3}
   - {fileID: 1166517251213273434, guid: 349e2365b84384b41b349c71c1a4d465, type: 3}
   - {fileID: 1166517251213273434, guid: 349e2365b84384b41b349c71c1a4d465, type: 3}
   - {fileID: 4050165427265814892, guid: 1cb2fe5739fb65e4ea8ddc5b7bd0a16a, type: 3}
