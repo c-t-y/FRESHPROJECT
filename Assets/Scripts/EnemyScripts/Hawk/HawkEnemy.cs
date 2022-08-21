@@ -29,6 +29,9 @@ public class HawkEnemy : MonoBehaviour
 
     public bool landed;
     public bool resetMove;
+    public bool groundMode;
+
+    public Animator animator;
 
     private void Start()
     {
@@ -36,18 +39,23 @@ public class HawkEnemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyController = GetComponent<EnemyController>();
+        animator = GetComponent<Animator>();
+
+        GetComponent<Collider2D>().enabled = false;
 
 
         resetMove = false;
         landed = false;
+        groundMode = false;
+        animator.enabled = false;
 
-        InvokeRepeating("TargetUpdate",0,2);
+        //InvokeRepeating("TargetUpdate",0,2);
 
         eSpeed = 1f;
         rotateSpeed = 700f;
 
-        attackRangeHawk = .5f;
-        coolDownHawk = 8f;
+        attackRangeHawk = 1f;
+        coolDownHawk = 3f;
         attackDamageHawk = 2f;
 
     }
@@ -92,25 +100,32 @@ public class HawkEnemy : MonoBehaviour
             }
         }
 
-        if (calcDist < 1)
+        if (groundMode == false)
         {
-            spriteRenderer.sprite = sprites[4];
+            if (calcDist < 1)
+            {
+                spriteRenderer.sprite = sprites[4];
+            }
+            else if (calcDist < 1.25)
+            {
+                spriteRenderer.sprite = sprites[3];
+            }
+            else if (calcDist < 1.5)
+            {
+                spriteRenderer.sprite = sprites[2];
+            }
+            else if (calcDist < 1.75)
+            {
+                spriteRenderer.sprite = sprites[1];
+            }
+            else if (calcDist >= 1.75)
+            {
+                spriteRenderer.sprite = sprites[0];
+            }
         }
-        else if (calcDist <1.25)
+        else
         {
-            spriteRenderer.sprite = sprites[3];
-        }
-        else if (calcDist < 1.5)
-        {
-            spriteRenderer.sprite = sprites[2];
-        }
-        else if (calcDist < 1.75)
-        {
-            spriteRenderer.sprite = sprites[1];
-        }
-        else if (calcDist >=1.75)
-        {
-            spriteRenderer.sprite = sprites[0];
+            animator.enabled = true;
         }
 
 
@@ -123,24 +138,26 @@ public class HawkEnemy : MonoBehaviour
     public IEnumerator FlightStatus()
     {
         landed = true;
-        yield return new WaitForSeconds(1f);
+        groundMode = true;
+        GetComponent<Collider2D>().enabled = true;
+        yield return new WaitForSeconds(.5f);
         if (Vector3.Distance(transform.position, player.transform.position) <= attackRangeHawk)
         {
             Attack();
         }
-        yield return new WaitForSeconds(3f);
-        StartCoroutine(LiftOff());
+        yield return new WaitForSeconds(2f);
+        //StartCoroutine(LiftOff());
         landed = false;
     }
 
-    public IEnumerator LiftOff()
-    {
-        resetMove = true;
-        Wander();
-        yield return new WaitForSeconds(3f);
-        resetMove = false;
+    //public IEnumerator LiftOff()
+    //{
+        //resetMove = true;
+        //Wander();
+        //yield return new WaitForSeconds(3f);
+        //resetMove = false;
 
-    }
+    //}
 
     void Attack()
     {
@@ -182,7 +199,14 @@ public class HawkEnemy : MonoBehaviour
         Vector3 vectorToTarget = player.transform.position - transform.position;
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - 90;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, q, Time.deltaTime * rotateSpeed);
+        if (groundMode == false)
+        {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, q, Time.deltaTime * rotateSpeed);
+        }
+        else
+        {
+            transform.rotation = Quaternion.identity;
+        }
 
     }
 
